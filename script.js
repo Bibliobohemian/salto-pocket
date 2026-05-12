@@ -16,6 +16,12 @@ const visitedBtn =
 const sortSelect =
   document.getElementById("sortSelect");
 
+const favoritesCount =
+  document.getElementById("favoritesCount");
+
+const visitedCount =
+  document.getElementById("visitedCount");
+
 let exhibitors = [];
 
 let currentView = "all";
@@ -41,6 +47,8 @@ async function loadExhibitors(){
 
   exhibitors =
     await response.json();
+
+  updateCounters();
 
   updateView();
 
@@ -69,6 +77,20 @@ function saveVisited(){
 }
 
 /* =========================
+   COUNTERS
+========================= */
+
+function updateCounters(){
+
+  favoritesCount.innerText =
+    favorites.length;
+
+  visitedCount.innerText =
+    visited.length;
+
+}
+
+/* =========================
    FAVORITES
 ========================= */
 
@@ -88,6 +110,8 @@ function toggleFavorite(name){
   }
 
   saveFavorites();
+
+  updateCounters();
 
   updateView();
 
@@ -114,6 +138,24 @@ function toggleVisited(name){
 
   saveVisited();
 
+  updateCounters();
+
+  updateView();
+
+}
+
+/* =========================
+   QUICK SEARCH
+========================= */
+
+function quickSearch(value){
+
+  searchInput.value = value;
+
+  currentView = "all";
+
+  setActiveButton(allBtn);
+
   updateView();
 
 }
@@ -123,6 +165,8 @@ function toggleVisited(name){
 ========================= */
 
 function highlight(text, value){
+
+  if(!text) return "";
 
   if(!value) return text;
 
@@ -169,7 +213,7 @@ function updateView(){
 
   }
 
-  /* NO SEARCH = NO RESULTS */
+  /* EMPTY STATE */
 
   if(
     !value &&
@@ -267,11 +311,15 @@ function renderResults(items, value){
   if(items.length === 0){
 
     results.innerHTML = `
+
       <div class="card">
+
         <h2>
           Nessun risultato
         </h2>
+
       </div>
+
     `;
 
     return;
@@ -302,20 +350,27 @@ function renderResults(items, value){
             </h2>
 
             <p>
+
               <strong>
+
                 ${highlight(
                   item.hall,
                   value
                 )}
+
               </strong>
+
             </p>
 
             <p>
+
               Stand
+
               ${highlight(
                 item.stand,
                 value
               )}
+
             </p>
 
             ${
@@ -324,7 +379,9 @@ function renderResults(items, value){
                 <div class="tags">
 
                   <span class="tag">
+
                     ${item.category}
+
                   </span>
 
                 </div>
@@ -465,7 +522,7 @@ function setActiveButton(button){
 }
 
 /* =========================
-   DEBOUNCE SEARCH
+   SEARCH DEBOUNCE
 ========================= */
 
 let debounce;
@@ -494,6 +551,28 @@ sortSelect.addEventListener(
   "change",
   updateView
 );
+
+/* =========================
+   MAP ZOOM
+========================= */
+
+document
+  .querySelectorAll(".map-card img")
+  .forEach(img => {
+
+    img.addEventListener(
+      "click",
+      () => {
+
+        window.open(
+          img.src,
+          "_blank"
+        );
+
+      }
+    );
+
+  });
 
 /* =========================
    INIT

@@ -160,13 +160,23 @@ function toggleVisited(name){
    QUICK SEARCH
 ========================= */
 
-function quickSearch(value){
+function quickSearch(value, button){
 
   quickFilter = value;
+
+  searchInput.value = "";
 
   currentView = "all";
 
   setActiveButton(allBtn);
+
+  document
+    .querySelectorAll(".quick-btn")
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+  button.classList.add("active");
 
   updateView();
 
@@ -185,6 +195,12 @@ function clearSearch(){
   currentView = "all";
 
   setActiveButton(allBtn);
+
+  document
+    .querySelectorAll(".quick-btn")
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
 
   updateView();
 
@@ -245,7 +261,10 @@ function updateView(){
 
   /* QUICK FILTER */
 
-  if(quickFilter){
+  if(
+    quickFilter &&
+    !value
+  ){
 
     items =
       items.filter(item =>

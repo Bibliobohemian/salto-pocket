@@ -1,64 +1,84 @@
-const stands = document.querySelectorAll(".stand");
+const exhibitors = [
 
-const popup = document.getElementById("popup");
-const popupName = document.getElementById("popupName");
-const popupStand = document.getElementById("popupStand");
+  {
+    name: "BAO Publishing",
+    stand: "B66",
+    hall: "Padiglione 1"
+  },
+
+  {
+    name: "Becco Giallo",
+    stand: "C40",
+    hall: "Padiglione 1"
+  },
+
+  {
+    name: "Coconino Press",
+    stand: "B24",
+    hall: "Padiglione 1"
+  },
+
+  {
+    name: "NN Editore",
+    stand: "Q40",
+    hall: "Padiglione 3"
+  },
+
+  {
+    name: "Iperborea",
+    stand: "R32",
+    hall: "Padiglione 3"
+  },
+
+  {
+    name: "minimum fax",
+    stand: "N39",
+    hall: "Padiglione 3"
+  }
+
+];
 
 const searchInput = document.getElementById("searchInput");
+const results = document.getElementById("results");
 
-stands.forEach((stand) => {
+function renderResults(items){
 
-  stand.addEventListener("click", () => {
+  results.innerHTML = "";
 
-    clearActive();
+  if(items.length === 0){
 
-    stand.classList.add("active");
+    results.innerHTML = `
+      <div class="card">
+        <h2>Nessun risultato</h2>
+      </div>
+    `;
 
-    const name = stand.dataset.name;
-    const code = stand.dataset.stand;
+    return;
+  }
 
-    popupName.textContent = name;
-    popupStand.textContent = `Stand ${code}`;
+  items.forEach((item) => {
 
-    popup.classList.remove("hidden");
-
+    results.innerHTML += `
+      <div class="card">
+        <h2>${item.name}</h2>
+        <p><strong>${item.hall}</strong></p>
+        <p>Stand ${item.stand}</p>
+      </div>
+    `;
   });
 
-});
-
-function clearActive(){
-  stands.forEach((s) => s.classList.remove("active"));
 }
+
+renderResults(exhibitors);
 
 searchInput.addEventListener("input", (e) => {
 
   const value = e.target.value.toLowerCase();
 
-  clearActive();
+  const filtered = exhibitors.filter((item) =>
+    item.name.toLowerCase().includes(value)
+  );
 
-  let found = false;
-
-  stands.forEach((stand) => {
-
-    const name = stand.dataset.name.toLowerCase();
-
-    if(name.includes(value) && value !== ""){
-
-      stand.classList.add("active");
-
-      popupName.textContent = stand.dataset.name;
-      popupStand.textContent = `Stand ${stand.dataset.stand}`;
-
-      popup.classList.remove("hidden");
-
-      found = true;
-
-    }
-
-  });
-
-  if(!found && value === ""){
-    popup.classList.add("hidden");
-  }
+  renderResults(filtered);
 
 });

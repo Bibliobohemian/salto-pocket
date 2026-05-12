@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SalTo Map</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="topbar">
+    <h1>SalTo Map</h1>
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Cerca editore..."
+    />
+  </header>
+
+  <main>
+
+    <section class="map-wrapper">
+
+      <div class="map-container" id="mapContainer">
+
+        <img
+          src="images/pad1.png"
+          alt="Padiglione 1"
+          class="map-image"
+        />
+
+        <svg
+          class="map-overlay"
+          viewBox="0 0 1000 700"
+          preserveAspectRatio="none"
+        >
+
+          <!-- BAO -->
+          <rect
+            x="120"
+            y="470"
+            width="60"
+            height="40"
+            class="stand"
+            data-name="BAO Publishing"
+            data-stand="B48"
+          />
+
+          <!-- BECCO GIALLO -->
+          <rect
+            x="240"
+            y="470"
+            width="60"
+            height="40"
+            class="stand"
+            data-name="Becco Giallo"
+            data-stand="B66"
+          />
+
+          <!-- COCONINO -->
+          <rect
+            x="360"
+            y="470"
+            width="60"
+            height="40"
+            class="stand"
+            data-name="Coconino Press"
+            data-stand="C40"
+          />
+
+        </svg>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="popup" class="popup hidden">
+    <h2 id="popupName"></h2>
+    <p id="popupStand"></p>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

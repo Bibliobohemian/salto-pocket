@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
+:root{
+
+  --salone-blue:#009FE3;
+  --salone-dark:#111111;
+  --salone-light:#f7f7f7;
+  --salone-card:#ffffff;
+  --salone-border:#e7e7e7;
+
+}
+
 body{
-  font-family:Arial, sans-serif;
-  background:#f5f1ea;
-  color:#222;
+  font-family:'Inter',sans-serif;
+
+  background:var(--salone-light);
+
+  color:var(--salone-dark);
 }
 
 /* =========================
@@ -15,23 +29,35 @@ body{
 ========================= */
 
 .topbar{
+
   position:sticky;
   top:0;
   z-index:1000;
 
   background:white;
 
-  padding:16px;
+  padding:18px;
 
   display:flex;
   flex-direction:column;
   gap:14px;
 
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  border-bottom:1px solid
+    var(--salone-border);
+
+  backdrop-filter:blur(12px);
+
 }
 
 .topbar h1{
+
   font-size:28px;
+  font-weight:700;
+
+  color:var(--salone-blue);
+
+  letter-spacing:-1px;
+
 }
 
 /* =========================
@@ -39,16 +65,52 @@ body{
 ========================= */
 
 #searchInput{
+
   width:100%;
 
   padding:16px;
 
   border:none;
-  border-radius:16px;
+  border-radius:18px;
 
-  background:#eee;
+  background:#ededed;
 
   font-size:16px;
+
+  outline:none;
+
+  transition:0.2s;
+
+}
+
+#searchInput:focus{
+
+  background:white;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(0,159,227,0.18);
+
+}
+
+/* =========================
+   SORT
+========================= */
+
+#sortSelect{
+
+  border:none;
+
+  padding:14px;
+
+  border-radius:16px;
+
+  background:#ededed;
+
+  font-size:15px;
+
+  outline:none;
+
 }
 
 /* =========================
@@ -56,12 +118,12 @@ body{
 ========================= */
 
 .filters{
+
   display:flex;
   gap:10px;
 
   overflow-x:auto;
 
-  padding-bottom:2px;
 }
 
 .filters::-webkit-scrollbar{
@@ -69,26 +131,34 @@ body{
 }
 
 .filter-btn{
+
   border:none;
 
-  padding:10px 16px;
+  padding:11px 18px;
 
   border-radius:999px;
 
-  background:#e7e7e7;
+  background:#ececec;
+
+  color:#333;
 
   cursor:pointer;
 
-  font-size:14px;
-
   white-space:nowrap;
 
+  font-size:14px;
+  font-weight:600;
+
   transition:0.2s;
+
 }
 
 .filter-btn.active{
-  background:#222;
+
+  background:var(--salone-blue);
+
   color:white;
+
 }
 
 /* =========================
@@ -96,11 +166,13 @@ body{
 ========================= */
 
 .results{
-  padding:16px;
+
+  padding:18px;
 
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:16px;
+
 }
 
 /* =========================
@@ -108,30 +180,54 @@ body{
 ========================= */
 
 .card{
-  background:white;
 
-  padding:18px;
+  background:var(--salone-card);
 
-  border-radius:22px;
+  padding:20px;
 
-  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  border-radius:24px;
+
+  border:1px solid
+    rgba(0,0,0,0.04);
+
+  box-shadow:
+    0 6px 20px
+    rgba(0,0,0,0.05);
+
 }
 
 .card-top{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-start;
-  gap:14px;
+
+  gap:16px;
+
 }
 
 .card h2{
+
   font-size:20px;
+
+  font-weight:700;
+
+  line-height:1.2;
+
   margin-bottom:8px;
+
 }
 
 .card p{
+
   color:#555;
-  margin-bottom:4px;
+
+  margin-bottom:6px;
+
+  line-height:1.4;
+
 }
 
 /* =========================
@@ -139,26 +235,40 @@ body{
 ========================= */
 
 .actions{
+
   display:flex;
   flex-direction:column;
-  gap:8px;
+
+  gap:10px;
+
 }
 
 .favorite-btn,
 .visited-btn{
+
   border:none;
   background:none;
 
-  font-size:24px;
+  font-size:25px;
 
   cursor:pointer;
 
   transition:0.2s;
+
+}
+
+.favorite-btn:hover,
+.visited-btn:hover{
+
+  transform:scale(1.08);
+
 }
 
 .favorite-btn.active,
 .visited-btn.active{
+
   transform:scale(1.12);
+
 }
 
 /* =========================
@@ -166,28 +276,66 @@ body{
 ========================= */
 
 .tags{
+
   display:flex;
   flex-wrap:wrap;
 
-  gap:6px;
+  gap:8px;
 
-  margin-top:10px;
+  margin-top:12px;
+
 }
 
 .tag{
-  background:#f0ece4;
 
-  padding:6px 10px;
+  background:
+    rgba(0,159,227,0.12);
+
+  color:var(--salone-blue);
+
+  padding:7px 12px;
 
   border-radius:999px;
 
   font-size:12px;
+
+  font-weight:600;
+
 }
 
 /* =========================
-   EMPTY
+   LINKS
 ========================= */
 
-.hidden{
-  display:none;
+a{
+
+  color:var(--salone-blue);
+
+  text-decoration:none;
+
+  font-weight:600;
+
+}
+
+a:hover{
+
+  text-decoration:underline;
+
+}
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+mark{
+
+  background:
+    rgba(0,159,227,0.22);
+
+  color:black;
+
+  padding:0 2px;
+
+  border-radius:4px;
+
 }

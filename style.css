@@ -17,11 +17,31 @@
   --salone-blue:#1370b6;
   --salone-gold:#fbc52c;
 
-  --salone-light:#f6f7f9;
-  --salone-card:#ffffff;
-  --salone-border:#e7e7e7;
+  --bg:#f6f7f9;
+  --card:#ffffff;
+  --text:#151a19;
+  --border:#e7e7e7;
+  --input:#ededed;
 
 }
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+
+  --bg:#101314;
+  --card:#1a1e20;
+  --text:#f5f5f5;
+  --border:#2d3336;
+  --input:#24292c;
+
+}
+
+/* =========================
+   BASE
+========================= */
 
 html,
 body{
@@ -38,9 +58,23 @@ body{
 
   font-family:'Inter',sans-serif;
 
-  background:var(--salone-light);
+  background:var(--bg);
 
-  color:var(--salone-dark);
+  color:var(--text);
+
+  transition:
+    background 0.25s,
+    color 0.25s;
+
+}
+
+input,
+select,
+button{
+
+  -webkit-appearance:none;
+
+  appearance:none;
 
 }
 
@@ -54,7 +88,8 @@ body{
   top:0;
   z-index:1000;
 
-  background:rgba(255,255,255,0.92);
+  background:
+    rgba(255,255,255,0.92);
 
   padding:14px;
 
@@ -65,9 +100,28 @@ body{
 
   border-bottom:
     1px solid
-    var(--salone-border);
+    var(--border);
 
   backdrop-filter:blur(12px);
+
+}
+
+body.dark .topbar{
+
+  background:
+    rgba(16,19,20,0.92);
+
+}
+
+.top-title{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:12px;
 
 }
 
@@ -87,9 +141,42 @@ body{
 
   margin-top:2px;
 
-  color:#666;
+  color:#777;
 
   font-size:12px;
+
+}
+
+body.dark .top-title p{
+
+  color:#aaa;
+
+}
+
+/* =========================
+   DARK MODE BTN
+========================= */
+
+.theme-toggle{
+
+  border:none;
+
+  width:42px;
+  height:42px;
+
+  border-radius:14px;
+
+  background:var(--card);
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+
+  box-shadow:
+    0 4px 14px
+    rgba(0,0,0,0.08);
 
 }
 
@@ -115,7 +202,9 @@ body{
 
   border-radius:16px;
 
-  background:#ededed;
+  background:var(--input);
+
+  color:var(--text);
 
   font-size:16px;
 
@@ -126,8 +215,6 @@ body{
 }
 
 #searchInput:focus{
-
-  background:white;
 
   box-shadow:
     0 0 0 3px
@@ -202,12 +289,6 @@ body{
 
 }
 
-.quick-btn:hover{
-
-  transform:translateY(-1px);
-
-}
-
 .quick-btn.active{
 
   background:var(--salone-blue);
@@ -226,8 +307,6 @@ body{
 
   overflow-x:auto;
 
-  padding-bottom:2px;
-
 }
 
 .filters::-webkit-scrollbar{
@@ -242,9 +321,9 @@ body{
 
   border-radius:999px;
 
-  background:#ececec;
+  background:var(--input);
 
-  color:#333;
+  color:var(--text);
 
   cursor:pointer;
 
@@ -285,11 +364,11 @@ body{
 
 .counter-card{
 
-  background:white;
+  background:var(--card);
 
   border:
     1px solid
-    var(--salone-border);
+    var(--border);
 
   border-radius:14px;
 
@@ -315,7 +394,7 @@ body{
 
   margin-top:2px;
 
-  color:#666;
+  color:#777;
 
   font-size:12px;
 
@@ -324,11 +403,14 @@ body{
 /* =========================
    SORT
 ========================= */
+
 #sortWrapper{
   display:none;
 }
 
 #sortSelect{
+
+  width:100%;
 
   border:none;
 
@@ -336,7 +418,9 @@ body{
 
   border-radius:14px;
 
-  background:#ededed;
+  background:var(--input);
+
+  color:var(--text);
 
   font-size:14px;
 
@@ -366,7 +450,7 @@ body{
 
 .card{
 
-  background:var(--salone-card);
+  background:var(--card);
 
   padding:18px;
 
@@ -379,6 +463,12 @@ body{
   box-shadow:
     0 6px 20px
     rgba(0,0,0,0.05);
+
+}
+
+body.dark .card{
+
+  box-shadow:none;
 
 }
 
@@ -408,13 +498,19 @@ body{
 
 .card p{
 
-  color:#555;
+  color:#666;
 
   margin-bottom:5px;
 
   line-height:1.4;
 
   font-size:14px;
+
+}
+
+body.dark .card p{
+
+  color:#bbb;
 
 }
 
@@ -443,22 +539,6 @@ body{
 
   cursor:pointer;
 
-  transition:0.2s;
-
-}
-
-.favorite-btn:hover,
-.visited-btn:hover{
-
-  transform:scale(1.08);
-
-}
-
-.favorite-btn.active,
-.visited-btn.active{
-
-  transform:scale(1.12);
-
 }
 
 /* =========================
@@ -482,7 +562,7 @@ body{
   background:
     rgba(249,229,58,0.25);
 
-  color:var(--salone-dark);
+  color:var(--text);
 
   padding:6px 10px;
 
@@ -508,12 +588,6 @@ a{
 
 }
 
-a:hover{
-
-  text-decoration:underline;
-
-}
-
 /* =========================
    MAPS
 ========================= */
@@ -533,7 +607,7 @@ a:hover{
 }
 
 /* =========================
-   UTILITIES
+   MAP GRID
 ========================= */
 
 .utility-grid{
@@ -551,7 +625,9 @@ a:hover{
 
   border:none;
 
-  background:white;
+  background:var(--card);
+
+  color:var(--text);
 
   padding:18px 14px;
 
@@ -569,13 +645,11 @@ a:hover{
     0 6px 20px
     rgba(0,0,0,0.05);
 
-  transition:0.2s;
-
 }
 
-.utility-btn:hover{
+body.dark .utility-btn{
 
-  transform:translateY(-2px);
+  box-shadow:none;
 
 }
 
@@ -610,6 +684,69 @@ a:hover{
 }
 
 /* =========================
+   MAP MODAL
+========================= */
+
+.map-modal{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    rgba(0,0,0,0.92);
+
+  z-index:9999;
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+
+}
+
+.map-modal.active{
+
+  display:flex;
+
+}
+
+.map-modal img{
+
+  max-width:100%;
+
+  max-height:100%;
+
+  border-radius:20px;
+
+}
+
+.close-map-btn{
+
+  position:absolute;
+
+  top:20px;
+  right:20px;
+
+  width:46px;
+  height:46px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:white;
+
+  font-size:20px;
+
+  cursor:pointer;
+
+}
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -619,7 +756,7 @@ a:hover{
 
   text-align:center;
 
-  color:#666;
+  color:#777;
 
 }
 
@@ -648,16 +785,6 @@ mark{
 
 }
 
-input,
-select,
-button{
-
-  -webkit-appearance:none;
-
-  appearance:none;
-
-}
-
 /* =========================
    MOBILE
 ========================= */
@@ -670,5 +797,4 @@ button{
 
   }
 
-}
 }

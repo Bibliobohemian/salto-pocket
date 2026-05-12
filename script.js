@@ -28,6 +28,111 @@ const favoritesCount =
 const visitedCount =
   document.getElementById("visitedCount");
 
+/* =========================
+   DARK MODE
+========================= */
+
+const themeToggle =
+  document.getElementById("themeToggle");
+
+const savedTheme =
+  localStorage.getItem("theme");
+
+if(savedTheme === "dark"){
+
+  document.body.classList.add("dark");
+
+  themeToggle.innerText = "☀️";
+
+}
+
+themeToggle.addEventListener(
+  "click",
+  () => {
+
+    document.body.classList.toggle("dark");
+
+    const isDark =
+      document.body.classList.contains("dark");
+
+    themeToggle.innerText =
+      isDark
+      ? "☀️"
+      : "🌙";
+
+    localStorage.setItem(
+      "theme",
+      isDark
+      ? "dark"
+      : "light"
+    );
+
+  }
+);
+
+/* =========================
+   MAP MODAL
+========================= */
+
+const mapModal =
+  document.getElementById("mapModal");
+
+const mapImage =
+  document.getElementById("mapImage");
+
+const closeMapBtn =
+  document.getElementById("closeMapBtn");
+
+function openMap(src){
+
+  mapImage.src = src;
+
+  mapModal.classList.add("active");
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+function closeMap(){
+
+  mapModal.classList.remove("active");
+
+  document.body.style.overflow =
+    "";
+
+}
+
+closeMapBtn.addEventListener(
+  "click",
+  closeMap
+);
+
+/* =========================
+   OFFLINE MODE
+========================= */
+
+if(
+  "serviceWorker" in navigator
+){
+
+  window.addEventListener(
+    "load",
+    () => {
+
+      navigator.serviceWorker.register(
+        "service-worker.js"
+      );
+
+    }
+  );
+
+}
+
+/* =========================
+   APP
+========================= */
+
 let exhibitors = [];
 
 let currentView = "all";
@@ -242,8 +347,7 @@ function updateView(){
     .toLowerCase()
     .trim();
 
-  /* SHOW SORT ONLY
-     FOR LISTS */
+  /* SHOW SORT */
 
   if(
     currentView === "favorites"
@@ -395,7 +499,7 @@ function updateView(){
 
   });
 
-  /* LIMIT RESULTS */
+  /* LIMIT */
 
   items = items.slice(0, 80);
 
@@ -625,7 +729,7 @@ function setActiveButton(button){
 }
 
 /* =========================
-   SEARCH DEBOUNCE
+   SEARCH
 ========================= */
 
 let debounce;
@@ -682,7 +786,7 @@ sortSelect.addEventListener(
 );
 
 /* =========================
-   GLOBAL FUNCTIONS
+   GLOBAL
 ========================= */
 
 window.quickSearch =
@@ -693,6 +797,9 @@ window.toggleFavorite =
 
 window.toggleVisited =
   toggleVisited;
+
+window.openMap =
+  openMap;
 
 /* =========================
    INIT

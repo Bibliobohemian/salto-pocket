@@ -12,35 +12,39 @@
 
   <title>SalTo Pocket</title>
 
+  <!-- PWA -->
+
   <link
-  rel="manifest"
-  href="manifest.json"
-/>
+    rel="manifest"
+    href="manifest.json"
+  />
 
-<meta
-  name="theme-color"
-  content="#df2b29"
-/>
+  <meta
+    name="theme-color"
+    content="#df2b29"
+  />
 
-<link
-  rel="apple-touch-icon"
-  href="images/icon-192.png"
-/>
+  <link
+    rel="apple-touch-icon"
+    href="images/icon-192.png"
+  />
 
-<meta
-  name="apple-mobile-web-app-capable"
-  content="yes"
-/>
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  />
 
-<meta
-  name="apple-mobile-web-app-status-bar-style"
-  content="default"
-/>
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  />
 
-<meta
-  name="apple-mobile-web-app-title"
-  content="SalTo Pocket"
-/>
+  <meta
+    name="apple-mobile-web-app-title"
+    content="SalTo Pocket"
+  />
+
+  <!-- STYLE -->
 
   <link rel="stylesheet" href="style.css" />
 
@@ -56,11 +60,24 @@
 
     <div class="top-title">
 
-      <h1>SalTo Pocket</h1>
+      <div>
 
-      <p>
-        Your survival kit for the Salone.
-      </p>
+        <h1>SalTo Pocket</h1>
+
+        <p>
+          Your survival kit for the Salone.
+        </p>
+
+      </div>
+
+      <!-- DARK MODE -->
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+      >
+        🌙
+      </button>
 
     </div>
 
@@ -216,45 +233,50 @@
 
       <div class="utility-grid">
 
-        <a
+        <button
           class="utility-btn"
-          href="images/SDL26_mappa_V_1.png"
-          target="_blank"
+          onclick="openMap(
+            'images/SDL26_mappa_V_1.png'
+          )"
         >
           🗺️ Mappa completa
-        </a>
+        </button>
 
-        <a
+        <button
           class="utility-btn"
-          href="images/SDL26_mappa_V_2.png"
-          target="_blank"
+          onclick="openMap(
+            'images/SDL26_mappa_V_2.png'
+          )"
         >
           🏛️ Sale e spazi
-        </a>
+        </button>
 
-        <a
+        <button
           class="utility-btn"
-          href="images/SDL26_mappa_V_3.png"
-          target="_blank"
+          onclick="openMap(
+            'images/SDL26_mappa_V_3.png'
+          )"
         >
           ☕ Cibo e punti acqua
-        </a>
+        </button>
 
-        <a
+        <button
           class="utility-btn"
-          href="images/SDL26_mappa_V_4.png"
-          target="_blank"
+          onclick="openMap(
+            'images/SDL26_mappa_V_4.png'
+          )"
         >
           🚻 Servizi igienici
-        </a>
+        </button>
 
-        <a
+        <button
           class="utility-btn"
-          href="images/SDL26_mappa_V_5.png"
-          target="_blank"
+          onclick="openMap(
+            'images/SDL26_mappa_V_5.png'
+          )"
         >
           🛎️ Servizi
-        </a>
+        </button>
 
       </div>
 
@@ -262,15 +284,39 @@
 
   </main>
 
- <!-- =========================
+  <!-- =========================
+       MAP MODAL
+  ========================== -->
+
+  <div
+    id="mapModal"
+    class="map-modal"
+  >
+
+    <button
+      id="closeMapBtn"
+      class="close-map-btn"
+    >
+      ✕
+    </button>
+
+    <img
+      id="mapImage"
+      src=""
+      alt="Mappa"
+    />
+
+  </div>
+
+  <!-- =========================
        FOOTER
   ========================== -->
 
   <footer class="footer">
 
     <p>
-      Creato da Bibliobohemian per sopravvivere al Salone.
-      Se ti ho salvato i piedi, mi lasci un follow? ❤️
+      Creato da Bibliobohemian
+      per sopravvivere al Salone.
     </p>
 
     <a
@@ -281,6 +327,8 @@
     </a>
 
   </footer>
+
+  <!-- SCRIPT -->
 
   <script src="script.js"></script>
 

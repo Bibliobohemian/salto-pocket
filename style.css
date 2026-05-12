@@ -645,6 +645,16 @@ mark{
 
 }
 
+input,
+select,
+button{
+
+  -webkit-appearance:none;
+
+  appearance:none;
+
+}
+
 /* =========================
    MOBILE
 ========================= */
@@ -657,4 +667,5 @@ mark{
 
   }
 
+}
 }

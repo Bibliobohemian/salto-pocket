@@ -2,11 +2,11 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>SalTo Map</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -23,66 +23,9 @@
 
   <main>
 
-    <section class="map-wrapper">
-
-      <div class="map-container" id="mapContainer">
-
-        <img
-          src="images/pad1-new.png"
-          alt="Padiglione 1"
-          class="map-image"
-        />
-
-<svg
-  class="map-overlay"
-  viewBox="0 0 100 100"
-  preserveAspectRatio="none"
->
-
-<!-- BAO -->
-<rect
-  x="25.7"
-  y="58.8"
-  width="4.4"
-  height="5.4"
-  class="stand"
-  data-name="BAO Publishing"
-  data-stand="B66"
-/>
-
-<!-- BECCO GIALLO -->
-<rect
-  x="45.1"
-  y="53.8"
-  width="4.4"
-  height="5.2"
-  class="stand"
-  data-name="Becco Giallo"
-  data-stand="C40"
-/>
-
-<!-- COCONINO -->
-<rect
-  x="54.2"
-  y="66"
-  width="4.6"
-  height="5.5"
-  class="stand"
-  data-name="Coconino Press"
-  data-stand="B24"
-/>
-        </svg>
-<div class="debug-point" style="left:43%; top:57%;"></div>
-      </div>
-
-    </section>
+    <div id="results" class="results"></div>
 
   </main>
-
-  <div id="popup" class="popup hidden">
-    <h2 id="popupName"></h2>
-    <p id="popupStand"></p>
-  </div>
 
   <script src="script.js"></script>
 

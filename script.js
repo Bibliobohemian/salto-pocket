@@ -169,6 +169,37 @@ function updateView(){
 
   }
 
+  /* NO SEARCH = NO RESULTS */
+
+  if(
+    !value &&
+    currentView === "all"
+  ){
+
+    results.innerHTML = `
+
+      <div class="card">
+
+        <h2>
+          Cerca un espositore
+        </h2>
+
+        <p>
+          Cerca per:
+          editore,
+          stand,
+          padiglione
+          o categoria.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
   /* SEARCH */
 
   if(value){
@@ -216,6 +247,10 @@ function updateView(){
     );
 
   });
+
+  /* LIMIT RESULTS */
+
+  items = items.slice(0, 80);
 
   renderResults(items, value);
 

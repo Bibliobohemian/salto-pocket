@@ -1,45 +1,17 @@
-const exhibitors = [
-
-  {
-    name: "BAO Publishing",
-    stand: "B66",
-    hall: "Padiglione 1"
-  },
-
-  {
-    name: "Becco Giallo",
-    stand: "C40",
-    hall: "Padiglione 1"
-  },
-
-  {
-    name: "Coconino Press",
-    stand: "B24",
-    hall: "Padiglione 1"
-  },
-
-  {
-    name: "NN Editore",
-    stand: "Q40",
-    hall: "Padiglione 3"
-  },
-
-  {
-    name: "Iperborea",
-    stand: "R32",
-    hall: "Padiglione 3"
-  },
-
-  {
-    name: "minimum fax",
-    stand: "N39",
-    hall: "Padiglione 3"
-  }
-
-];
-
 const searchInput = document.getElementById("searchInput");
 const results = document.getElementById("results");
+
+let exhibitors = [];
+
+async function loadExhibitors(){
+
+  const response = await fetch("data/exhibitors.json");
+
+  exhibitors = await response.json();
+
+  renderResults(exhibitors);
+
+}
 
 function renderResults(items){
 
@@ -69,16 +41,20 @@ function renderResults(items){
 
 }
 
-renderResults(exhibitors);
-
 searchInput.addEventListener("input", (e) => {
 
   const value = e.target.value.toLowerCase();
 
   const filtered = exhibitors.filter((item) =>
-    item.name.toLowerCase().includes(value)
+
+    item.name.toLowerCase().includes(value) ||
+    item.stand.toLowerCase().includes(value) ||
+    item.hall.toLowerCase().includes(value)
+
   );
 
   renderResults(filtered);
 
 });
+
+loadExhibitors();

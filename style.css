@@ -781,6 +781,16 @@ body.dark .utility-btn{
 
 }
 
+.disclaimer{
+
+  opacity:0.7;
+
+  font-size:11px;
+
+  line-height:1.4;
+
+}
+
 /* =========================
    HIGHLIGHT
 ========================= */

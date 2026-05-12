@@ -48,6 +48,13 @@ async function loadExhibitors(){
   exhibitors =
     await response.json();
 
+  exhibitors =
+    exhibitors.filter(item =>
+      item.name &&
+      item.hall &&
+      item.stand
+    );
+
   updateCounters();
 
   updateView();
@@ -283,6 +290,20 @@ function updateView(){
     sortSelect.value;
 
   items.sort((a,b) => {
+
+    if(sortBy === "stand"){
+
+      return (a.stand || "")
+        .localeCompare(
+          b.stand || "",
+          undefined,
+          {
+            numeric:true,
+            sensitivity:"base"
+          }
+        );
+
+    }
 
     return (
       a[sortBy] || ""
@@ -553,26 +574,17 @@ sortSelect.addEventListener(
 );
 
 /* =========================
-   MAP ZOOM
+   GLOBAL FUNCTIONS
 ========================= */
 
-document
-  .querySelectorAll(".map-card img")
-  .forEach(img => {
+window.quickSearch =
+  quickSearch;
 
-    img.addEventListener(
-      "click",
-      () => {
+window.toggleFavorite =
+  toggleFavorite;
 
-        window.open(
-          img.src,
-          "_blank"
-        );
-
-      }
-    );
-
-  });
+window.toggleVisited =
+  toggleVisited;
 
 /* =========================
    INIT

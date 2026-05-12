@@ -18,9 +18,24 @@
 
 <body>
 
+  <!-- =========================
+       TOPBAR
+  ========================== -->
+
   <header class="topbar">
 
-    <h1>SalTo Map</h1>
+    <div class="top-title">
+
+      <h1>SalTo Map</h1>
+
+      <p>
+        Sopravvivere al Salone,
+        ma con stile.
+      </p>
+
+    </div>
+
+    <!-- SEARCH -->
 
     <input
       type="text"
@@ -28,7 +43,41 @@
       placeholder="Cerca editore, stand, categoria..."
     />
 
-    <!-- TOP FILTERS -->
+    <!-- QUICK PADS -->
+
+    <div class="quick-pads">
+
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD 1')"
+      >
+        PAD 1
+      </button>
+
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD 2')"
+      >
+        PAD 2
+      </button>
+
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD 3')"
+      >
+        PAD 3
+      </button>
+
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD OVAL')"
+      >
+        OVAL
+      </button>
+
+    </div>
+
+    <!-- FILTERS -->
 
     <div class="filters">
 
@@ -55,6 +104,32 @@
 
     </div>
 
+    <!-- COUNTERS -->
+
+    <div class="counters">
+
+      <div class="counter-card">
+
+        <span id="favoritesCount">
+          0
+        </span>
+
+        <p>Preferiti</p>
+
+      </div>
+
+      <div class="counter-card">
+
+        <span id="visitedCount">
+          0
+        </span>
+
+        <p>Visitati</p>
+
+      </div>
+
+    </div>
+
     <!-- SORT -->
 
     <select id="sortSelect">
@@ -75,14 +150,138 @@
 
   </header>
 
+  <!-- =========================
+       MAIN
+  ========================== -->
+
   <main>
+
+    <!-- RESULTS -->
 
     <div
       id="results"
       class="results"
     ></div>
 
+    <!-- MAPS -->
+
+    <section class="maps-section">
+
+      <h2>
+        Mappe padiglioni
+      </h2>
+
+      <div class="maps-grid">
+
+        <div class="map-card">
+
+          <img
+            src="images/pad1.jpg"
+            alt="Padiglione 1"
+          />
+
+          <p>Padiglione 1</p>
+
+        </div>
+
+        <div class="map-card">
+
+          <img
+            src="images/pad2.jpg"
+            alt="Padiglione 2"
+          />
+
+          <p>Padiglione 2</p>
+
+        </div>
+
+        <div class="map-card">
+
+          <img
+            src="images/pad3.jpg"
+            alt="Padiglione 3"
+          />
+
+          <p>Padiglione 3</p>
+
+        </div>
+
+        <div class="map-card">
+
+          <img
+            src="images/oval.jpg"
+            alt="Oval"
+          />
+
+          <p>Oval</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- UTILITIES -->
+
+    <section class="utilities">
+
+      <h2>
+        Utility
+      </h2>
+
+      <div class="utility-grid">
+
+        <button
+          class="utility-btn"
+        >
+          🚻 Cerca bagno
+        </button>
+
+        <button
+          class="utility-btn"
+        >
+          💧 Cerca fontanelle
+        </button>
+
+        <button
+          class="utility-btn"
+        >
+          ☕ Cerca bar
+        </button>
+
+        <button
+          class="utility-btn"
+        >
+          🌿 Spazio silenzio
+        </button>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <p>
+      Creato da Bibliobohemian
+      per sopravvivere al Salone.
+      Se ti ha salvato i piedi,
+offrimi un follow.
+    </p>
+
+    <a
+      href="https://instagram.com/bibliobohemian"
+      target="_blank"
+    >
+      @bibliobohemian
+    </a>
+
+  </footer>
 
   <script src="script.js"></script>
 

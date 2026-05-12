@@ -1,21 +1,37 @@
-const searchInput = document.getElementById("searchInput");
-const results = document.getElementById("results");
+const searchInput =
+  document.getElementById("searchInput");
 
-const allBtn = document.getElementById("allBtn");
-const favoritesBtn = document.getElementById("favoritesBtn");
+const results =
+  document.getElementById("results");
+
+const allBtn =
+  document.getElementById("allBtn");
+
+const favoritesBtn =
+  document.getElementById("favoritesBtn");
+
+const visitedBtn =
+  document.getElementById("visitedBtn");
+
+const sortSelect =
+  document.getElementById("sortSelect");
 
 let exhibitors = [];
 
 let currentView = "all";
 
 let favorites =
-  JSON.parse(localStorage.getItem("favorites")) || [];
+  JSON.parse(
+    localStorage.getItem("favorites")
+  ) || [];
 
 let visited =
-  JSON.parse(localStorage.getItem("visited")) || [];
+  JSON.parse(
+    localStorage.getItem("visited")
+  ) || [];
 
 /* =========================
-   LOAD DATA
+   LOAD
 ========================= */
 
 async function loadExhibitors(){
@@ -60,9 +76,10 @@ function toggleFavorite(name){
 
   if(favorites.includes(name)){
 
-    favorites = favorites.filter(
-      (fav) => fav !== name
-    );
+    favorites =
+      favorites.filter(
+        fav => fav !== name
+      );
 
   } else {
 
@@ -84,9 +101,10 @@ function toggleVisited(name){
 
   if(visited.includes(name)){
 
-    visited = visited.filter(
-      (item) => item !== name
-    );
+    visited =
+      visited.filter(
+        item => item !== name
+      );
 
   } else {
 
@@ -101,48 +119,105 @@ function toggleVisited(name){
 }
 
 /* =========================
-   FILTER LOGIC
+   SEARCH HIGHLIGHT
 ========================= */
 
-function applyFilters(items){
+function highlight(text, value){
 
-  const value =
-    searchInput.value.toLowerCase();
+  if(!value) return text;
 
-  return items.filter((item) =>
+  const regex =
+    new RegExp(`(${value})`, "gi");
 
-    item.name.toLowerCase().includes(value) ||
-
-    item.stand.toLowerCase().includes(value) ||
-
-    item.hall.toLowerCase().includes(value) ||
-
-    item.category.toLowerCase().includes(value)
-
+  return text.replace(
+    regex,
+    "<mark>$1</mark>"
   );
 
 }
 
 /* =========================
-   VIEW LOGIC
+   FILTER + SORT
 ========================= */
 
 function updateView(){
 
-  let items = exhibitors;
+  let items = [...exhibitors];
+
+  const value =
+    searchInput.value
+    .toLowerCase()
+    .trim();
+
+  /* FILTER VIEW */
 
   if(currentView === "favorites"){
 
-    items = exhibitors.filter(
-      (item) =>
+    items =
+      items.filter(item =>
         favorites.includes(item.name)
-    );
+      );
 
   }
 
-  items = applyFilters(items);
+  if(currentView === "visited"){
 
-  renderResults(items);
+    items =
+      items.filter(item =>
+        visited.includes(item.name)
+      );
+
+  }
+
+  /* SEARCH */
+
+  if(value){
+
+    items =
+      items.filter(item =>
+
+        item.name
+          ?.toLowerCase()
+          .includes(value)
+
+        ||
+
+        item.stand
+          ?.toLowerCase()
+          .includes(value)
+
+        ||
+
+        item.hall
+          ?.toLowerCase()
+          .includes(value)
+
+        ||
+
+        item.category
+          ?.toLowerCase()
+          .includes(value)
+
+      );
+
+  }
+
+  /* SORT */
+
+  const sortBy =
+    sortSelect.value;
+
+  items.sort((a,b) => {
+
+    return (
+      a[sortBy] || ""
+    ).localeCompare(
+      b[sortBy] || ""
+    );
+
+  });
+
+  renderResults(items, value);
 
 }
 
@@ -150,7 +225,7 @@ function updateView(){
    RENDER
 ========================= */
 
-function renderResults(items){
+function renderResults(items, value){
 
   results.innerHTML = "";
 
@@ -158,7 +233,9 @@ function renderResults(items){
 
     results.innerHTML = `
       <div class="card">
-        <h2>Nessun risultato</h2>
+        <h2>
+          Nessun risultato
+        </h2>
       </div>
     `;
 
@@ -166,7 +243,7 @@ function renderResults(items){
 
   }
 
-  items.forEach((item) => {
+  items.forEach(item => {
 
     const isFavorite =
       favorites.includes(item.name);
@@ -183,17 +260,27 @@ function renderResults(items){
           <div>
 
             <h2>
-              ${item.name}
+              ${highlight(
+                item.name,
+                value
+              )}
             </h2>
 
             <p>
               <strong>
-                ${item.hall}
+                ${highlight(
+                  item.hall,
+                  value
+                )}
               </strong>
             </p>
 
             <p>
-              Stand ${item.stand}
+              Stand
+              ${highlight(
+                item.stand,
+                value
+              )}
             </p>
 
             ${
@@ -233,20 +320,40 @@ function renderResults(items){
 
             <button
               class="visited-btn ${
-                isVisited ? "active" : ""
+                isVisited
+                ? "active"
+                : ""
               }"
-              onclick="toggleVisited('${item.name}')"
+              onclick="
+                toggleVisited(
+                  '${item.name}'
+                )
+              "
             >
-              ${isVisited ? "✅" : "☑️"}
+              ${
+                isVisited
+                ? "✅"
+                : "☑️"
+              }
             </button>
 
             <button
               class="favorite-btn ${
-                isFavorite ? "active" : ""
+                isFavorite
+                ? "active"
+                : ""
               }"
-              onclick="toggleFavorite('${item.name}')"
+              onclick="
+                toggleFavorite(
+                  '${item.name}'
+                )
+              "
             >
-              ${isFavorite ? "❤️" : "🤍"}
+              ${
+                isFavorite
+                ? "❤️"
+                : "🤍"
+              }
             </button>
 
           </div>
@@ -262,22 +369,21 @@ function renderResults(items){
 }
 
 /* =========================
-   TOP FILTERS
+   FILTER BUTTONS
 ========================= */
 
-allBtn.addEventListener("click", () => {
+allBtn.addEventListener(
+  "click",
+  () => {
 
-  currentView = "all";
+    currentView = "all";
 
-  allBtn.classList.add("active");
+    setActiveButton(allBtn);
 
-  favoritesBtn.classList.remove(
-    "active"
-  );
+    updateView();
 
-  updateView();
-
-});
+  }
+);
 
 favoritesBtn.addEventListener(
   "click",
@@ -285,12 +391,8 @@ favoritesBtn.addEventListener(
 
     currentView = "favorites";
 
-    favoritesBtn.classList.add(
-      "active"
-    );
-
-    allBtn.classList.remove(
-      "active"
+    setActiveButton(
+      favoritesBtn
     );
 
     updateView();
@@ -298,17 +400,64 @@ favoritesBtn.addEventListener(
   }
 );
 
+visitedBtn.addEventListener(
+  "click",
+  () => {
+
+    currentView = "visited";
+
+    setActiveButton(
+      visitedBtn
+    );
+
+    updateView();
+
+  }
+);
+
+function setActiveButton(button){
+
+  [
+    allBtn,
+    favoritesBtn,
+    visitedBtn
+  ].forEach(btn =>
+    btn.classList.remove("active")
+  );
+
+  button.classList.add("active");
+
+}
+
 /* =========================
-   SEARCH
+   DEBOUNCE SEARCH
 ========================= */
+
+let debounce;
 
 searchInput.addEventListener(
   "input",
   () => {
 
-    updateView();
+    clearTimeout(debounce);
+
+    debounce =
+      setTimeout(() => {
+
+        updateView();
+
+      }, 120);
 
   }
+);
+
+/* =========================
+   SORT
+========================= */
+
+sortSelect.addEventListener(
+  "change",
+  updateView
 );
 
 /* =========================

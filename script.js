@@ -625,6 +625,23 @@ searchInput.addEventListener(
 );
 
 /* =========================
+   CLOSE KEYBOARD IOS
+========================= */
+
+searchInput.addEventListener(
+  "keydown",
+  (event) => {
+
+    if(event.key === "Enter"){
+
+      searchInput.blur();
+
+    }
+
+  }
+);
+
+/* =========================
    CLEAR SEARCH BTN
 ========================= */
 

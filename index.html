@@ -1,621 +1,255 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="it">
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+<head>
 
-:root{
+  <meta charset="UTF-8" />
 
-  --salone-red:#df2b29;
-  --salone-lightblue:#34b4e7;
-  --salone-yellow:#f9e53a;
-  --salone-dark:#151a19;
-  --salone-pink:#ea4f92;
-  --salone-green:#89c443;
-  --salone-blue:#1370b6;
-  --salone-gold:#fbc52c;
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  --salone-light:#f6f7f9;
-  --salone-card:#ffffff;
-  --salone-border:#e7e7e7;
+  <title>SalTo Pocket</title>
 
-}
+  <link rel="stylesheet" href="style.css" />
 
-body{
+</head>
 
-  font-family:'Inter',sans-serif;
+<body>
 
-  background:var(--salone-light);
+  <!-- =========================
+       TOPBAR
+  ========================== -->
 
-  color:var(--salone-dark);
+  <header class="topbar">
 
-}
+    <div class="top-title">
 
-/* =========================
-   TOPBAR
-========================= */
+      <h1>SalTo Pocket</h1>
 
-.topbar{
+      <p>
+        Your survival kit for the Salone.
+      </p>
 
-  position:sticky;
-  top:0;
-  z-index:1000;
+    </div>
 
-  background:rgba(255,255,255,0.92);
+    <!-- SEARCH -->
 
-  padding:14px;
+    <div class="search-wrapper">
 
-  display:flex;
-  flex-direction:column;
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cerca editore, stand, categoria..."
+      />
 
-  gap:12px;
+      <button
+        id="clearSearchBtn"
+      >
+        ✕
+      </button>
 
-  border-bottom:
-    1px solid
-    var(--salone-border);
+    </div>
 
-  backdrop-filter:blur(12px);
+    <!-- QUICK PADS -->
 
-}
+    <div class="quick-pads">
 
-.top-title h1{
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD 1')"
+      >
+        PAD 1
+      </button>
 
-  font-size:24px;
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD 2')"
+      >
+        PAD 2
+      </button>
 
-  font-weight:700;
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD 3')"
+      >
+        PAD 3
+      </button>
 
-  color:var(--salone-red);
+      <button
+        class="quick-btn"
+        onclick="quickSearch('PAD OVAL')"
+      >
+        OVAL
+      </button>
 
-  letter-spacing:-1px;
+    </div>
 
-}
+    <!-- FILTERS -->
 
-.top-title p{
+    <div class="filters">
 
-  margin-top:2px;
+      <button
+        id="allBtn"
+        class="filter-btn active"
+      >
+        Tutti
+      </button>
 
-  color:#666;
+      <button
+        id="favoritesBtn"
+        class="filter-btn"
+      >
+        ❤️ Preferiti
+      </button>
 
-  font-size:12px;
+      <button
+        id="visitedBtn"
+        class="filter-btn"
+      >
+        ✅ Visitati
+      </button>
 
-}
+    </div>
 
-/* =========================
-   SEARCH
-========================= */
+    <!-- COUNTERS -->
 
-#searchInput{
+    <div class="counters">
 
-  width:100%;
+      <div class="counter-card">
 
-  padding:14px;
+        <span id="favoritesCount">
+          0
+        </span>
 
-  border:none;
+        <p>Preferiti</p>
 
-  border-radius:16px;
+      </div>
 
-  background:#ededed;
+      <div class="counter-card">
 
-  font-size:15px;
+        <span id="visitedCount">
+          0
+        </span>
 
-  outline:none;
+        <p>Visitati</p>
 
-  transition:0.2s;
+      </div>
 
-}
+    </div>
 
-#searchInput:focus{
+    <!-- SORT -->
 
-  background:white;
+    <select id="sortSelect">
 
-  box-shadow:
-    0 0 0 3px
-    rgba(52,180,231,0.22);
+      <option value="name">
+        Ordina: Nome
+      </option>
 
-}
+      <option value="hall">
+        Ordina: Padiglione
+      </option>
 
-/* =========================
-   QUICK PADS
-========================= */
+      <option value="stand">
+        Ordina: Stand
+      </option>
 
-.quick-pads{
+    </select>
 
-  display:flex;
+  </header>
 
-  gap:8px;
+  <!-- =========================
+       MAIN
+  ========================== -->
 
-  overflow-x:auto;
+  <main>
 
-}
+    <!-- RESULTS -->
 
-.quick-pads::-webkit-scrollbar{
-  display:none;
-}
+    <div
+      id="results"
+      class="results"
+    ></div>
 
-.quick-btn{
+    <!-- MAPPE -->
 
-  border:none;
+    <section class="maps-section">
 
-  background:
-    var(--salone-pink);
+      <h2>
+        Mappe utili
+      </h2>
 
-  color:white;
+      <div class="utility-grid">
 
-  padding:10px 14px;
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_1.png"
+          target="_blank"
+        >
+          🗺️ Mappa completa
+        </a>
 
-  border-radius:999px;
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_2.png"
+          target="_blank"
+        >
+          🏛️ Sale e spazi
+        </a>
 
-  font-weight:600;
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_3.png"
+          target="_blank"
+        >
+          ☕ Cibo e punti acqua
+        </a>
 
-  font-size:13px;
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_4.png"
+          target="_blank"
+        >
+          🚻 Servizi igienici
+        </a>
 
-  cursor:pointer;
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_5.png"
+          target="_blank"
+        >
+          🛎️ Servizi
+        </a>
 
-  white-space:nowrap;
+      </div>
 
-  transition:0.2s;
+    </section>
 
-}
+  </main>
 
-.quick-btn:hover{
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-  transform:translateY(-1px);
+  <footer class="footer">
 
-}
+    <p>
+      Creato da Bibliobohemian per sopravvivere al Salone.
+      Se ti ho salvato i piedi, mi lasci un follow? ❤️
+    </p>
 
-/* =========================
-   FILTERS
-========================= */
+    <a
+      href="https://instagram.com/bibliobohemian"
+      target="_blank"
+    >
+      @bibliobohemian
+    </a>
 
-.filters{
+  </footer>
 
-  display:flex;
+  <script src="script.js"></script>
 
-  gap:8px;
+</body>
 
-  overflow-x:auto;
-
-}
-
-.filters::-webkit-scrollbar{
-  display:none;
-}
-
-.filter-btn{
-
-  border:none;
-
-  padding:10px 14px;
-
-  border-radius:999px;
-
-  background:#ececec;
-
-  color:#333;
-
-  cursor:pointer;
-
-  white-space:nowrap;
-
-  font-size:13px;
-
-  font-weight:600;
-
-  transition:0.2s;
-
-}
-
-.filter-btn.active{
-
-  background:var(--salone-blue);
-
-  color:white;
-
-}
-
-/* =========================
-   COUNTERS
-========================= */
-
-.counters{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:8px;
-
-}
-
-.counter-card{
-
-  background:white;
-
-  border:
-    1px solid
-    var(--salone-border);
-
-  border-radius:14px;
-
-  padding:10px;
-
-  text-align:center;
-
-}
-
-.counter-card span{
-
-  display:block;
-
-  font-size:22px;
-
-  font-weight:700;
-
-  color:var(--salone-green);
-
-}
-
-.counter-card p{
-
-  margin-top:2px;
-
-  color:#666;
-
-  font-size:12px;
-
-}
-
-/* =========================
-   SORT
-========================= */
-
-#sortSelect{
-
-  border:none;
-
-  padding:12px;
-
-  border-radius:14px;
-
-  background:#ededed;
-
-  font-size:14px;
-
-  outline:none;
-
-}
-
-/* =========================
-   RESULTS
-========================= */
-
-.results{
-
-  padding:16px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:14px;
-
-}
-
-/* =========================
-   CARD
-========================= */
-
-.card{
-
-  background:var(--salone-card);
-
-  padding:18px;
-
-  border-radius:22px;
-
-  border:
-    1px solid
-    rgba(0,0,0,0.04);
-
-  box-shadow:
-    0 6px 20px
-    rgba(0,0,0,0.05);
-
-}
-
-.card-top{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:flex-start;
-
-  gap:14px;
-
-}
-
-.card h2{
-
-  font-size:18px;
-
-  font-weight:700;
-
-  line-height:1.2;
-
-  margin-bottom:8px;
-
-}
-
-.card p{
-
-  color:#555;
-
-  margin-bottom:5px;
-
-  line-height:1.4;
-
-  font-size:14px;
-
-}
-
-/* =========================
-   ACTIONS
-========================= */
-
-.actions{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:8px;
-
-}
-
-.favorite-btn,
-.visited-btn{
-
-  border:none;
-
-  background:none;
-
-  font-size:22px;
-
-  cursor:pointer;
-
-  transition:0.2s;
-
-}
-
-.favorite-btn:hover,
-.visited-btn:hover{
-
-  transform:scale(1.08);
-
-}
-
-.favorite-btn.active,
-.visited-btn.active{
-
-  transform:scale(1.12);
-
-}
-
-/* =========================
-   TAGS
-========================= */
-
-.tags{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:8px;
-
-  margin-top:10px;
-
-}
-
-.tag{
-
-  background:
-    rgba(249,229,58,0.25);
-
-  color:var(--salone-dark);
-
-  padding:6px 10px;
-
-  border-radius:999px;
-
-  font-size:11px;
-
-  font-weight:600;
-
-}
-
-/* =========================
-   LINKS
-========================= */
-
-a{
-
-  color:var(--salone-pink);
-
-  text-decoration:none;
-
-  font-weight:600;
-
-}
-
-a:hover{
-
-  text-decoration:underline;
-
-}
-
-/* =========================
-   MAPS
-========================= */
-
-.maps-section{
-
-  padding:16px;
-
-}
-
-.maps-section h2{
-
-  margin-bottom:12px;
-
-  font-size:20px;
-
-}
-
-/* =========================
-   UTILITIES
-========================= */
-
-.utilities{
-
-  padding:16px;
-
-}
-
-.utilities h2{
-
-  margin-bottom:12px;
-
-  font-size:20px;
-
-}
-
-.utility-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:12px;
-
-}
-
-.utility-btn{
-
-  border:none;
-
-  background:white;
-
-  padding:18px 14px;
-
-  border-radius:20px;
-
-  font-size:14px;
-
-  font-weight:600;
-
-  cursor:pointer;
-
-  text-align:center;
-
-  box-shadow:
-    0 6px 20px
-    rgba(0,0,0,0.05);
-
-  transition:0.2s;
-
-}
-
-.utility-btn:hover{
-
-  transform:translateY(-2px);
-
-}
-
-.utility-btn:nth-child(1){
-  border-top:
-    6px solid
-    var(--salone-blue);
-}
-
-.utility-btn:nth-child(2){
-  border-top:
-    6px solid
-    var(--salone-green);
-}
-
-.utility-btn:nth-child(3){
-  border-top:
-    6px solid
-    var(--salone-pink);
-}
-
-.utility-btn:nth-child(4){
-  border-top:
-    6px solid
-    var(--salone-gold);
-}
-
-.utility-btn:nth-child(5){
-  border-top:
-    6px solid
-    var(--salone-red);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-
-  padding:40px 20px;
-
-  text-align:center;
-
-  color:#666;
-
-}
-
-.footer p{
-
-  margin-bottom:10px;
-
-  font-size:14px;
-
-}
-
-/* =========================
-   HIGHLIGHT
-========================= */
-
-mark{
-
-  background:
-    rgba(249,229,58,0.6);
-
-  color:black;
-
-  padding:0 2px;
-
-  border-radius:4px;
-
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:600px){
-
-  .utility-grid{
-
-    grid-template-columns:1fr;
-
-  }
-
-}
+</html>

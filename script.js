@@ -16,6 +16,9 @@ const favoritesBtn =
 const visitedBtn =
   document.getElementById("visitedBtn");
 
+const sortWrapper =
+  document.getElementById("sortWrapper");
+
 const sortSelect =
   document.getElementById("sortSelect");
 
@@ -239,6 +242,25 @@ function updateView(){
     .toLowerCase()
     .trim();
 
+  /* SHOW SORT ONLY
+     FOR LISTS */
+
+  if(
+    currentView === "favorites"
+    ||
+    currentView === "visited"
+  ){
+
+    sortWrapper.style.display =
+      "block";
+
+  } else {
+
+    sortWrapper.style.display =
+      "none";
+
+  }
+
   /* FILTER VIEW */
 
   if(currentView === "favorites"){
@@ -366,9 +388,9 @@ function updateView(){
     }
 
     return (
-      a[sortBy] || ""
+      a.name || ""
     ).localeCompare(
-      b[sortBy] || ""
+      b.name || ""
     );
 
   });

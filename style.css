@@ -116,3 +116,12 @@ body{
 .hidden{
   display:none;
 }
+
+.debug-point{
+  position:absolute;
+  width:12px;
+  height:12px;
+  background:red;
+  border-radius:50%;
+  z-index:5000;
+}

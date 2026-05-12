@@ -15,25 +15,16 @@ let visited =
   JSON.parse(localStorage.getItem("visited")) || [];
 
 /* =========================
-   FILTRI CATEGORIE
-========================= */
-
-const categoryFilters = {
-  romance: false,
-  fumetti: false,
-  indipendenti: false,
-  big: false
-};
-
-/* =========================
    LOAD DATA
 ========================= */
 
 async function loadExhibitors(){
 
-  const response = await fetch("data/exhibitors.json");
+  const response =
+    await fetch("data/exhibitors.json");
 
-  exhibitors = await response.json();
+  exhibitors =
+    await response.json();
 
   updateView();
 
@@ -110,26 +101,6 @@ function toggleVisited(name){
 }
 
 /* =========================
-   CATEGORY FILTERS
-========================= */
-
-function toggleCategory(category){
-
-  categoryFilters[category] =
-    !categoryFilters[category];
-
-  const button =
-    document.querySelector(
-      `[data-category="${category}"]`
-    );
-
-  button.classList.toggle("active");
-
-  updateView();
-
-}
-
-/* =========================
    FILTER LOGIC
 ========================= */
 
@@ -138,47 +109,17 @@ function applyFilters(items){
   const value =
     searchInput.value.toLowerCase();
 
-  let filtered = items.filter((item) =>
+  return items.filter((item) =>
 
     item.name.toLowerCase().includes(value) ||
+
     item.stand.toLowerCase().includes(value) ||
-    item.hall.toLowerCase().includes(value)
+
+    item.hall.toLowerCase().includes(value) ||
+
+    item.category.toLowerCase().includes(value)
 
   );
-
-  if(categoryFilters.romance){
-
-    filtered = filtered.filter(
-      (item) => item.categories?.includes("romance")
-    );
-
-  }
-
-  if(categoryFilters.fumetti){
-
-    filtered = filtered.filter(
-      (item) => item.categories?.includes("fumetti")
-    );
-
-  }
-
-  if(categoryFilters.indipendenti){
-
-    filtered = filtered.filter(
-      (item) => item.categories?.includes("indipendenti")
-    );
-
-  }
-
-  if(categoryFilters.big){
-
-    filtered = filtered.filter(
-      (item) => item.categories?.includes("big")
-    );
-
-  }
-
-  return filtered;
 
 }
 
@@ -193,7 +134,8 @@ function updateView(){
   if(currentView === "favorites"){
 
     items = exhibitors.filter(
-      (item) => favorites.includes(item.name)
+      (item) =>
+        favorites.includes(item.name)
     );
 
   }
@@ -245,7 +187,9 @@ function renderResults(items){
             </h2>
 
             <p>
-              <strong>${item.hall}</strong>
+              <strong>
+                ${item.hall}
+              </strong>
             </p>
 
             <p>
@@ -253,14 +197,32 @@ function renderResults(items){
             </p>
 
             ${
-              item.categories
+              item.category
               ? `
                 <div class="tags">
-                  ${item.categories.map(
-                    (cat) =>
-                      `<span class="tag">${cat}</span>`
-                  ).join("")}
+
+                  <span class="tag">
+                    ${item.category}
+                  </span>
+
                 </div>
+              `
+              : ""
+            }
+
+            ${
+              item.link
+              ? `
+                <p style="margin-top:10px;">
+
+                  <a
+                    href="${item.link}"
+                    target="_blank"
+                  >
+                    Pagina espositore
+                  </a>
+
+                </p>
               `
               : ""
             }
@@ -308,32 +270,46 @@ allBtn.addEventListener("click", () => {
   currentView = "all";
 
   allBtn.classList.add("active");
-  favoritesBtn.classList.remove("active");
+
+  favoritesBtn.classList.remove(
+    "active"
+  );
 
   updateView();
 
 });
 
-favoritesBtn.addEventListener("click", () => {
+favoritesBtn.addEventListener(
+  "click",
+  () => {
 
-  currentView = "favorites";
+    currentView = "favorites";
 
-  favoritesBtn.classList.add("active");
-  allBtn.classList.remove("active");
+    favoritesBtn.classList.add(
+      "active"
+    );
 
-  updateView();
+    allBtn.classList.remove(
+      "active"
+    );
 
-});
+    updateView();
+
+  }
+);
 
 /* =========================
    SEARCH
 ========================= */
 
-searchInput.addEventListener("input", () => {
+searchInput.addEventListener(
+  "input",
+  () => {
 
-  updateView();
+    updateView();
 
-});
+  }
+);
 
 /* =========================
    INIT

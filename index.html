@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-  <title>SalTo Map</title>
+  <title>SalTo Pocket</title>
 
   <link rel="stylesheet" href="style.css" />
 
@@ -26,11 +26,10 @@
 
     <div class="top-title">
 
-      <h1>SalTo Map</h1>
+      <h1>SalTo Pocket</h1>
 
       <p>
-        Sopravvivere al Salone,
-        ma con stile.
+        Your survival kit for the Salone.
       </p>
 
     </div>
@@ -163,59 +162,55 @@
       class="results"
     ></div>
 
-    <!-- MAPS -->
+    <!-- MAPPE -->
 
     <section class="maps-section">
 
       <h2>
-        Mappe padiglioni
+        Mappe utili
       </h2>
 
-      <div class="maps-grid">
+      <div class="utility-grid">
 
-        <div class="map-card">
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_1.png"
+          target="_blank"
+        >
+          🗺️ Mappa completa
+        </a>
 
-          <img
-            src="images/pad1.jpg"
-            alt="Padiglione 1"
-          />
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_2.png"
+          target="_blank"
+        >
+          🏛️ Sale e spazi
+        </a>
 
-          <p>Padiglione 1</p>
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_3.png"
+          target="_blank"
+        >
+          ☕ Cibo e punti acqua
+        </a>
 
-        </div>
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_4.png"
+          target="_blank"
+        >
+          🚻 Servizi igienici
+        </a>
 
-        <div class="map-card">
-
-          <img
-            src="images/pad2.jpg"
-            alt="Padiglione 2"
-          />
-
-          <p>Padiglione 2</p>
-
-        </div>
-
-        <div class="map-card">
-
-          <img
-            src="images/pad3.jpg"
-            alt="Padiglione 3"
-          />
-
-          <p>Padiglione 3</p>
-
-        </div>
-
-        <div class="map-card">
-
-          <img
-            src="images/oval.jpg"
-            alt="Oval"
-          />
-
-          <p>Oval</p>
-
-        </div>
+        <a
+          class="utility-btn"
+          href="images/SDL26_mappa_V_5.png"
+          target="_blank"
+        >
+          🛎️ Servizi
+        </a>
 
       </div>
 
@@ -233,18 +228,21 @@
 
         <button
           class="utility-btn"
+          onclick="quickSearch('bagno')"
         >
           🚻 Cerca bagno
         </button>
 
         <button
           class="utility-btn"
+          onclick="quickSearch('fontanelle')"
         >
           💧 Cerca fontanelle
         </button>
 
         <button
           class="utility-btn"
+          onclick="quickSearch('bar')"
         >
           ☕ Cerca bar
         </button>
@@ -270,8 +268,7 @@
     <p>
       Creato da Bibliobohemian
       per sopravvivere al Salone.
-      Se ti ha salvato i piedi,
-offrimi un follow.
+      Se ti ho salvato i piedi, mi lasci un follow? ❤️
     </p>
 
     <a

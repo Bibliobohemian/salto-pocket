@@ -1,6 +1,9 @@
 const searchInput =
   document.getElementById("searchInput");
 
+const clearSearchBtn =
+  document.getElementById("clearSearchBtn");
+
 const results =
   document.getElementById("results");
 
@@ -25,6 +28,8 @@ const visitedCount =
 let exhibitors = [];
 
 let currentView = "all";
+
+let quickFilter = "";
 
 let favorites =
   JSON.parse(
@@ -157,7 +162,25 @@ function toggleVisited(name){
 
 function quickSearch(value){
 
-  searchInput.value = value;
+  quickFilter = value;
+
+  currentView = "all";
+
+  setActiveButton(allBtn);
+
+  updateView();
+
+}
+
+/* =========================
+   CLEAR SEARCH
+========================= */
+
+function clearSearch(){
+
+  searchInput.value = "";
+
+  quickFilter = "";
 
   currentView = "all";
 
@@ -220,10 +243,28 @@ function updateView(){
 
   }
 
+  /* QUICK FILTER */
+
+  if(quickFilter){
+
+    items =
+      items.filter(item =>
+
+        item.hall
+          ?.toLowerCase()
+          .includes(
+            quickFilter.toLowerCase()
+          )
+
+      );
+
+  }
+
   /* EMPTY STATE */
 
   if(
     !value &&
+    !quickFilter &&
     currentView === "all"
   ){
 
@@ -562,6 +603,15 @@ searchInput.addEventListener(
       }, 120);
 
   }
+);
+
+/* =========================
+   CLEAR SEARCH BTN
+========================= */
+
+clearSearchBtn.addEventListener(
+  "click",
+  clearSearch
 );
 
 /* =========================

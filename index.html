@@ -54,38 +54,42 @@
 
     <!-- QUICK PADS -->
 
-    <div class="quick-pads">
+<div class="quick-pads">
 
-      <button
-        class="quick-btn"
-        onclick="quickSearch('PAD 1')"
-      >
-        PAD 1
-      </button>
+  <button
+    class="quick-btn"
+    data-pad="PAD 1"
+    onclick="quickSearch('PAD 1', this)"
+  >
+    PAD 1
+  </button>
 
-      <button
-        class="quick-btn"
-        onclick="quickSearch('PAD 2')"
-      >
-        PAD 2
-      </button>
+  <button
+    class="quick-btn"
+    data-pad="PAD 2"
+    onclick="quickSearch('PAD 2', this)"
+  >
+    PAD 2
+  </button>
 
-      <button
-        class="quick-btn"
-        onclick="quickSearch('PAD 3')"
-      >
-        PAD 3
-      </button>
+  <button
+    class="quick-btn"
+    data-pad="PAD 3"
+    onclick="quickSearch('PAD 3', this)"
+  >
+    PAD 3
+  </button>
 
-      <button
-        class="quick-btn"
-        onclick="quickSearch('PAD OVAL')"
-      >
-        OVAL
-      </button>
+  <button
+    class="quick-btn"
+    data-pad="PAD OVAL"
+    onclick="quickSearch('PAD OVAL', this)"
+  >
+    OVAL
+  </button>
 
-    </div>
-
+</div>
+    
     <!-- FILTERS -->
 
     <div class="filters">

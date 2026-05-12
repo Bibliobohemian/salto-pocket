@@ -72,3 +72,21 @@ body{
 .hidden{
   display:none;
 }
+
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.favorite-btn{
+  border:none;
+  background:none;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.favorite-btn.active{
+  transform:scale(1.1);
+}

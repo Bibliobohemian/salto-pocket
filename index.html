@@ -54,42 +54,42 @@
 
     <!-- QUICK PADS -->
 
-<div class="quick-pads">
+    <div class="quick-pads">
 
-  <button
-    class="quick-btn"
-    data-pad="PAD 1"
-    onclick="quickSearch('PAD 1', this)"
-  >
-    PAD 1
-  </button>
+      <button
+        class="quick-btn"
+        data-pad="PAD 1"
+        onclick="quickSearch('PAD 1', this)"
+      >
+        PAD 1
+      </button>
 
-  <button
-    class="quick-btn"
-    data-pad="PAD 2"
-    onclick="quickSearch('PAD 2', this)"
-  >
-    PAD 2
-  </button>
+      <button
+        class="quick-btn"
+        data-pad="PAD 2"
+        onclick="quickSearch('PAD 2', this)"
+      >
+        PAD 2
+      </button>
 
-  <button
-    class="quick-btn"
-    data-pad="PAD 3"
-    onclick="quickSearch('PAD 3', this)"
-  >
-    PAD 3
-  </button>
+      <button
+        class="quick-btn"
+        data-pad="PAD 3"
+        onclick="quickSearch('PAD 3', this)"
+      >
+        PAD 3
+      </button>
 
-  <button
-    class="quick-btn"
-    data-pad="PAD OVAL"
-    onclick="quickSearch('PAD OVAL', this)"
-  >
-    OVAL
-  </button>
+      <button
+        class="quick-btn"
+        data-pad="PAD OVAL"
+        onclick="quickSearch('PAD OVAL', this)"
+      >
+        OVAL
+      </button>
 
-</div>
-    
+    </div>
+
     <!-- FILTERS -->
 
     <div class="filters">
@@ -145,21 +145,21 @@
 
     <!-- SORT -->
 
-    <select id="sortSelect">
+    <div id="sortWrapper">
 
-      <option value="name">
-        Ordina: Nome
-      </option>
+      <select id="sortSelect">
 
-      <option value="hall">
-        Ordina: Padiglione
-      </option>
+        <option value="name">
+          Ordina: Nome
+        </option>
 
-      <option value="stand">
-        Ordina: Stand
-      </option>
+        <option value="stand">
+          Ordina: Stand
+        </option>
 
-    </select>
+      </select>
+
+    </div>
 
   </header>
 
@@ -232,7 +232,7 @@
 
   </main>
 
-  <!-- =========================
+ <!-- =========================
        FOOTER
   ========================== -->
 

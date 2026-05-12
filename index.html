@@ -25,7 +25,7 @@
     <input
       type="text"
       id="searchInput"
-      placeholder="Cerca editore, stand o padiglione..."
+      placeholder="Cerca editore, stand, categoria..."
     />
 
     <!-- TOP FILTERS -->
@@ -46,7 +46,32 @@
         ❤️ Preferiti
       </button>
 
+      <button
+        id="visitedBtn"
+        class="filter-btn"
+      >
+        ✅ Visitati
+      </button>
+
     </div>
+
+    <!-- SORT -->
+
+    <select id="sortSelect">
+
+      <option value="name">
+        Ordina: Nome
+      </option>
+
+      <option value="hall">
+        Ordina: Padiglione
+      </option>
+
+      <option value="stand">
+        Ordina: Stand
+      </option>
+
+    </select>
 
   </header>
 

@@ -216,6 +216,61 @@
 
   <main>
 
+    <!-- =========================
+         MISSIONI
+    ========================== -->
+
+    <section class="missions-section">
+
+      <div class="missions-header">
+
+        <h2>
+          🎯 Missioni Salone
+        </h2>
+
+        <button
+          id="toggleMissionForm"
+          class="add-mission-btn"
+        >
+          + Aggiungi
+        </button>
+
+      </div>
+
+      <div
+        id="missionForm"
+        class="mission-form hidden"
+      >
+
+        <input
+          type="text"
+          id="missionBook"
+          placeholder="Libro da cercare"
+        />
+
+        <input
+          list="publisherList"
+          id="missionPublisher"
+          placeholder="Editore"
+        />
+
+        <datalist id="publisherList"></datalist>
+
+        <button
+          id="saveMissionBtn"
+        >
+          Salva missione
+        </button>
+
+      </div>
+
+      <div
+        id="missionsList"
+        class="missions-list"
+      ></div>
+
+    </section>
+
     <!-- RESULTS -->
 
     <div
@@ -282,46 +337,46 @@
 
     </section>
 
-<!-- =========================
-     TRASPORTI
-========================= -->
+    <!-- =========================
+         TRASPORTI
+    ========================== -->
 
-<section class="maps-section">
+    <section class="maps-section">
 
-  <h2>
-    Trasporti utili
-  </h2>
+      <h2>
+        Trasporti utili
+      </h2>
 
-  <div class="utility-grid">
+      <div class="utility-grid">
 
-    <a
-      class="utility-btn"
-      href="https://maps.google.com/?q=Lingotto+Fiere+Torino"
-      target="_blank"
-    >
-      📍 Google Maps Torino
-    </a>
+        <a
+          class="utility-btn"
+          href="https://maps.google.com/?q=Lingotto+Fiere+Torino"
+          target="_blank"
+        >
+          📍 Google Maps Torino
+        </a>
 
-    <a
-      class="utility-btn"
-      href="https://www.gtt.to.it/cms/ricerca-percorsi"
-      target="_blank"
-    >
-      🚇 Bus e metro
-    </a>
+        <a
+          class="utility-btn"
+          href="https://www.gtt.to.it/cms/ricerca-percorsi"
+          target="_blank"
+        >
+          🚇 Bus e metro
+        </a>
 
-    <a
-      class="utility-btn"
-      href="https://wetaxi.it/taxitorino/it/"
-      target="_blank"
-    >
-      🚕 Taxi Torino
-    </a>
+        <a
+          class="utility-btn"
+          href="https://wetaxi.it/taxitorino/it/"
+          target="_blank"
+        >
+          🚕 Taxi Torino
+        </a>
 
-  </div>
+      </div>
 
-</section>
-    
+    </section>
+
   </main>
 
   <!-- =========================
@@ -348,40 +403,51 @@
 
   </div>
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <!-- =========================
+       SCROLL TOP
+  ========================== -->
 
-<footer class="footer">
+  <button
+    id="scrollTopBtn"
+    class="scroll-top-btn"
+  >
+    ↑
+  </button>
 
-  <p>
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-    Creato da
+  <footer class="footer">
 
-    <a
-      href="https://instagram.com/bibliobohemian"
-      target="_blank"
-    >
-      @Bibliobohemian
-    </a>
+    <p>
 
-    per sopravvivere al Salone.
+      Creato da
 
-  </p>
+      <a
+        href="https://instagram.com/bibliobohemian"
+        target="_blank"
+      >
+        @Bibliobohemian
+      </a>
 
-  <p>
-    Se ti ho salvato i piedi,
-    mi lasci un follow? ❤️
-  </p>
+      per sopravvivere al Salone.
 
-  <p class="disclaimer">
-  SalTo Pocket è un progetto indipendente
-  creato da Bibliobohemian e non è affiliato
-  ufficialmente al Salone Internazionale
-  del Libro di Torino.
-</p>
-  
-</footer>
+    </p>
+
+    <p>
+      Se ti ho salvato i piedi,
+      mi lasci un follow? ❤️
+    </p>
+
+    <p class="disclaimer">
+      SalTo Pocket è un progetto indipendente
+      creato da Bibliobohemian e non è affiliato
+      ufficialmente al Salone Internazionale
+      del Libro di Torino.
+    </p>
+
+  </footer>
 
   <!-- SCRIPT -->
 

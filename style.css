@@ -696,13 +696,6 @@ body.dark .utility-btn{
   background:
     rgba(255,255,255,0.92);
 
-  body.dark .map-modal{
-
-  background:
-    rgba(0,0,0,0.92);
-
-}
-
   z-index:9999;
 
   display:none;
@@ -712,6 +705,13 @@ body.dark .utility-btn{
   justify-content:center;
 
   padding:20px;
+
+}
+
+body.dark .map-modal{
+
+  background:
+    rgba(0,0,0,0.92);
 
 }
 
@@ -819,6 +819,218 @@ mark{
     grid-template-columns:1fr;
 
   }
+
+}
+
+
+/* =========================
+   MISSIONS
+========================= */
+
+.missions-section{
+
+  padding:16px;
+
+}
+
+.missions-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:12px;
+
+  gap:12px;
+
+}
+
+.missions-header h2{
+
+  font-size:20px;
+
+}
+
+.add-mission-btn,
+#saveMissionBtn{
+
+  border:none;
+
+  background:var(--salone-blue);
+
+  color:white;
+
+  padding:12px 16px;
+
+  border-radius:14px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+}
+
+.mission-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+  margin-bottom:14px;
+
+}
+
+.mission-form input{
+
+  width:100%;
+
+  border:none;
+
+  background:var(--input);
+
+  color:var(--text);
+
+  padding:14px;
+
+  border-radius:14px;
+
+  font-size:16px;
+
+}
+
+.hidden{
+  display:none;
+}
+
+.missions-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+}
+
+.mission-card{
+
+  background:var(--card);
+
+  border:1px solid var(--border);
+
+  border-radius:20px;
+
+  padding:16px;
+
+}
+
+.mission-card-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  gap:12px;
+
+}
+
+.mission-card h3{
+
+  font-size:16px;
+
+  margin-bottom:6px;
+
+}
+
+.mission-card p{
+
+  font-size:13px;
+
+  color:#777;
+
+  line-height:1.4;
+
+}
+
+body.dark .mission-card p{
+
+  color:#aaa;
+
+}
+
+.mission-actions{
+
+  display:flex;
+
+  gap:8px;
+
+}
+
+.mission-actions button{
+
+  border:none;
+
+  background:none;
+
+  font-size:20px;
+
+  cursor:pointer;
+
+}
+
+.mission-done{
+
+  opacity:0.65;
+
+}
+
+/* =========================
+   SCROLL TOP
+========================= */
+
+.scroll-top-btn{
+
+  position:fixed;
+
+  right:18px;
+  bottom:18px;
+
+  width:52px;
+  height:52px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:var(--salone-red);
+
+  color:white;
+
+  font-size:22px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  z-index:999;
+
+  display:none;
+
+  box-shadow:
+    0 10px 25px
+    rgba(0,0,0,0.18);
+
+}
+
+.scroll-top-btn.show{
+
+  display:block;
 
 }
 

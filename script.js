@@ -861,6 +861,105 @@ function renderMissions(){
 
   }
 
+  const grouped = {};
+
+  missions.forEach(item => {
+
+    const hall =
+      item.hall || "Altro";
+
+    if(!grouped[hall]){
+
+      grouped[hall] = [];
+
+    }
+
+    grouped[hall].push(item);
+
+  });
+
+  Object.keys(grouped).forEach(hall => {
+
+    missionsList.innerHTML += `
+
+      <div class="mission-group">
+
+        <h3 class="mission-group-title">
+          ${hall}
+        </h3>
+
+        <div id="group-${hall}">
+        </div>
+
+      </div>
+
+    `;
+
+    const container =
+      document.getElementById(
+        `group-${hall}`
+      );
+
+    grouped[hall].forEach(item => {
+
+      container.innerHTML += `
+
+        <div class="mission-card ${
+          item.done
+          ? "mission-done"
+          : ""
+        }">
+
+          <div class="mission-card-top">
+
+            <div>
+
+              <h3>
+                📚 ${item.book}
+              </h3>
+
+              <p>
+                ${item.publisher}
+              </p>
+
+              <p>
+                ${item.stand}
+              </p>
+
+            </div>
+
+            <div class="mission-actions">
+
+              <button
+                onclick="toggleMission(${item.id})"
+              >
+                ${
+                  item.done
+                  ? "✅"
+                  : "☑️"
+                }
+              </button>
+
+              <button
+                onclick="deleteMission(${item.id})"
+              >
+                🗑️
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+
+    });
+
+  });
+
+}
+
   missions.forEach(item => {
 
     missionsList.innerHTML += `

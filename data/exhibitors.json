@@ -63,7 +63,7 @@
     "link": "https://www.salonelibro.it/elenco-espositori/aliberti_compagnia_editoriale/SL404752068"
   },
   {
-    "name": "LAURA ARDIZZONE",
+    "name": "Laura Ardizzone",
     "hall": "PAD 2",
     "stand": "F118-G117",
     "category": "Autore self-Publisher",
@@ -91,7 +91,7 @@
     "link": "https://www.salonelibro.it/elenco-espositori/amedeo_mettifogo/SL814284956"
   },
   {
-    "name": "",
+    "name": "Apostrofo Ribelle",
     "hall": "PAD 2",
     "stand": "F141",
     "category": "Servizi e consulenza per l’editoria",
@@ -245,7 +245,7 @@
     "link": "https://www.salonelibro.it/elenco-espositori/cg_edizioni_medico_scientifiche/SL929861863"
   },
   {
-    "name": "",
+    "name": "Cicap - Comitato Italiano per il Controllo Delle Affermazioni Sulle Pseudoscienze",
     "hall": "PAD 2",
     "stand": "F35",
     "category": "Editoria e produzione contenuti",
@@ -8609,4 +8609,3042 @@
     "category": "Editoria e produzione contenuti",
     "link": "https://www.salonelibro.it/elenco-espositori/zephyro_edizioni/SL670111637"
   }
+
+    {
+    "name": 001 Edizioni",
+    "hall": "PAD 1",
+    "stand": "C31",
+    "category": "Editoria",
+    "link": "https://www.salonelibro.it"
+  }
+
+  [
+  {
+    "name": "Arpeggio Libero Editrice",
+    "hall": "OVAL",
+    "stand": "T41"
+  },
+  {
+    "name": "Arte della STAMPA",
+    "hall": "PAD 2",
+    "stand": "F28"
+  },
+  {
+    "name": "Edizioni Artebambini",
+    "hall": "PAD 3",
+    "stand": "N30"
+  },
+  {
+    "name": "Arteta Edizioni",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "L'Asino d'oro Edizioni",
+    "hall": "PAD 2",
+    "stand": "K17"
+  },
+  {
+    "name": "Asmodee Italia",
+    "hall": "PAD 3",
+    "stand": "Q31"
+  },
+  {
+    "name": "Assemblea Regionale Siciliana",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Associazione degli editori",
+    "hall": "OVAL",
+    "stand": "V154-W153"
+  },
+  {
+    "name": "Associazione di Storia Contemporanea",
+    "hall": "PAD 2",
+    "stand": "J21"
+  },
+  {
+    "name": "Associazione Editori Veneti - Regione del Veneto",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Associazione Italiana Editori",
+    "hall": "OVAL",
+    "stand": "T82"
+  },
+  {
+    "name": "Associazione Nazionale Venezia Giulia e Dalmazia - CDM",
+    "hall": "OVAL",
+    "stand": "T106-U105"
+  },
+  {
+    "name": "Associazione Partigiani D'Italia",
+    "hall": "PAD 2",
+    "stand": "G39"
+  },
+  {
+    "name": "Associazione Polyedra",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Associazione Scrittori FVG",
+    "hall": "OVAL",
+    "stand": "V154-W153"
+  },
+  {
+    "name": "Astarte Edizioni",
+    "hall": "PAD 2",
+    "stand": "J70"
+  },
+  {
+    "name": "astoria",
+    "hall": "OVAL",
+    "stand": "V38-W37/V50-W49"
+  },
+  {
+    "name": "Astra editori",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Astro Edizioni",
+    "hall": "PAD 1",
+    "stand": "E52"
+  },
+  {
+    "name": "Astrolabio - Ubaldini Edizioni",
+    "hall": "OVAL",
+    "stand": "U30"
+  },
+  {
+    "name": "Atene Del Canavese",
+    "hall": "PAD 2",
+    "stand": "K31/K10"
+  },
+  {
+    "name": "Atene Edizioni",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Atile Edizioni",
+    "hall": "PAD 2",
+    "stand": "F39"
+  },
+  {
+    "name": "Atmosphere Libri",
+    "hall": "PAD 3",
+    "stand": "Q59"
+  },
+  {
+    "name": "Attaccapanni Press",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Attraverso",
+    "hall": "PAD 2",
+    "stand": "J27"
+  },
+  {
+    "name": "audible",
+    "hall": "OVAL",
+    "stand": "W118-X117"
+  },
+  {
+    "name": "Augh!",
+    "hall": "PAD 2",
+    "stand": "L101"
+  },
+  {
+    "name": "Aurea Nox",
+    "hall": "PAD 2",
+    "stand": "M126"
+  },
+  {
+    "name": "Autori Italiani - CSA",
+    "hall": "PAD 2",
+    "stand": "F66"
+  },
+  {
+    "name": "Avagliano Editore",
+    "hall": "PAD 3",
+    "stand": "Q143"
+  },
+  {
+    "name": "AVE - Editrice AVE",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Avvenire Nuova Editoriale Italiana",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Edizioni Astragalo",
+    "hall": "PAD 2",
+    "stand": "K69/K10"
+  },
+  {
+    "name": "Babalibri",
+    "hall": "PAD 3",
+    "stand": "Q52-R51"
+  },
+  {
+    "name": "Baima Ronchetti",
+    "hall": "PAD 2",
+    "stand": "K78"
+  },
+  {
+    "name": "Bakemono Lab",
+    "hall": "PAD 2",
+    "stand": "F41"
+  },
+  {
+    "name": "Baldini+Castoldi",
+    "hall": "PAD 3",
+    "stand": "P82-Q81"
+  },
+  {
+    "name": "Balena Gobba",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Balzano Editore",
+    "hall": "PAD 2",
+    "stand": "M150"
+  },
+  {
+    "name": "BAO Publishing",
+    "hall": "PAD 3",
+    "stand": "N82"
+  },
+  {
+    "name": "Barta",
+    "hall": "PAD 2",
+    "stand": "J18"
+  },
+  {
+    "name": "Be Strong Edizioni - il blog di Eleonora Marsella",
+    "hall": "PAD 2",
+    "stand": "H106"
+  },
+  {
+    "name": "Becco Giallo",
+    "hall": "PAD 2",
+    "stand": "K82-L81"
+  },
+  {
+    "name": "Bee Write",
+    "hall": "PAD 2",
+    "stand": "F106"
+  },
+  {
+    "name": "Beisler Editore",
+    "hall": "PAD 3",
+    "stand": "R32"
+  },
+  {
+    "name": "Beppe Grande editore",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Betti Editrice",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "biancoenero edizioni",
+    "hall": "PAD 3",
+    "stand": "R32"
+  },
+  {
+    "name": "Bibliopolis edizioni di filosofia e scienze",
+    "hall": "PAD 2/OVAL",
+    "stand": "G65/X50"
+  },
+  {
+    "name": "Biblioteca Granata - ToroMio",
+    "hall": "PAD 1",
+    "stand": "B09"
+  },
+  {
+    "name": "Bibliotheka",
+    "hall": "OVAL",
+    "stand": "T22-U21"
+  },
+  {
+    "name": "Black Dog",
+    "hall": "PAD 1",
+    "stand": "B77"
+  },
+  {
+    "name": "Blackie Edizioni",
+    "hall": "PAD 2",
+    "stand": "L77"
+  },
+  {
+    "name": "BlekBord",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Bohem Press Italia",
+    "hall": "PAD 3",
+    "stand": "R32"
+  },
+  {
+    "name": "Bollati Boringhieri",
+    "hall": "OVAL",
+    "stand": "V38-W37/V50-W49"
+  },
+  {
+    "name": "Bompiani",
+    "hall": "OVAL",
+    "stand": "U94-V93"
+  },
+  {
+    "name": "Bonfirraro Editore",
+    "hall": "PAD 3/OVAL",
+    "stand": "P69/V126-W125"
+  },
+  {
+    "name": "Bookendipity.com",
+    "hall": "PAD 2",
+    "stand": "M146"
+  },
+  {
+    "name": "Booksystem",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Bookwire",
+    "hall": "PZ 5/PAD 2",
+    "stand": "07/F154-G153"
+  },
+  {
+    "name": "Bottega Errante Edizioni",
+    "hall": "PAD 3",
+    "stand": "P60"
+  },
+  {
+    "name": "Briks",
+    "hall": "OVAL",
+    "stand": "V02"
+  },
+  {
+    "name": "Brumar Editore",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Buckfast edizioni",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Buendia Books",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Buk Buk Editore",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "BukRomance",
+    "hall": "PAD 2",
+    "stand": "F141"
+  },
+  {
+    "name": "Burno",
+    "hall": "PAD 3",
+    "stand": "Q40"
+  },
+  {
+    "name": "Edizioni Bepress",
+    "hall": "PAD 2",
+    "stand": "L78-M77"
+  },
+  {
+    "name": "Edizioni Bette",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "La Bottega dell'invisibile",
+    "hall": "PAD 3",
+    "stand": "N39"
+  },
+  {
+    "name": "Lybro - Bazzacco",
+    "hall": "PZ 5/PAD 2",
+    "stand": "26/F154-G153"
+  },
+  {
+    "name": "Armando Curcio Editore",
+    "hall": "PAD 3",
+    "stand": "N139"
+  },
+  {
+    "name": "Associazione \"Coordinamento University Press Italiane\"",
+    "hall": "PAD 2",
+    "stand": "G31"
+  },
+  {
+    "name": "C&P Adver Effigi",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "C.G edizioni medico scientifiche",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Caatalog - la prima piattaforma all in one per librerie indipendenti",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "Caffèorchidea",
+    "hall": "PAD 2",
+    "stand": "M65"
+  },
+  {
+    "name": "CAI Edizioni - Club Alpino Italiano",
+    "hall": "OVAL",
+    "stand": "X57"
+  },
+  {
+    "name": "Cairo",
+    "hall": "OVAL",
+    "stand": "V81"
+  },
+  {
+    "name": "Caissa Italia",
+    "hall": "PAD 3",
+    "stand": "P52"
+  },
+  {
+    "name": "Callive Edizioni",
+    "hall": "OVAL",
+    "stand": "U138-V137/T161"
+  },
+  {
+    "name": "Camelozampa",
+    "hall": "PAD 3",
+    "stand": "Q27"
+  },
+  {
+    "name": "Camena edizioni",
+    "hall": "PAD 2",
+    "stand": "H130-J129"
+  },
+  {
+    "name": "Camera dei Deputati",
+    "hall": "OVAL",
+    "stand": "T154-U153"
+  },
+  {
+    "name": "Camera di commercio di Torino",
+    "hall": "PZ 5/PAD 2",
+    "stand": "01/F154-G153"
+  },
+  {
+    "name": "Canicola",
+    "hall": "PAD 2",
+    "stand": "M70"
+  },
+  {
+    "name": "Cantoni Editore",
+    "hall": "PAD 1",
+    "stand": "E45"
+  },
+  {
+    "name": "Capire Edizioni - Cartacanta Editore",
+    "hall": "OVAL",
+    "stand": "T118-U117"
+  },
+  {
+    "name": "Capovolte",
+    "hall": "PAD 2",
+    "stand": "L110"
+  },
+  {
+    "name": "Capricorno Edizioni",
+    "hall": "PAD 2",
+    "stand": "M102/K10"
+  },
+  {
+    "name": "Carocci Editore",
+    "hall": "PAD 2",
+    "stand": "L43"
+  },
+  [
+  {
+    "name": "Carte Amaranto",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Cartedit",
+    "hall": "OVAL",
+    "stand": "U06-V05"
+  },
+  {
+    "name": "Carthago Edizioni",
+    "hall": "OVAL",
+    "stand": "W31"
+  },
+  {
+    "name": "Carthusia Edizioni",
+    "hall": "PAD 3",
+    "stand": "S51"
+  },
+  {
+    "name": "Cartman Edizioni",
+    "hall": "PAD 2",
+    "stand": "G78"
+  },
+  {
+    "name": "Casa editrice Corbaccio",
+    "hall": "OVAL",
+    "stand": "V38-W37/V50-W49"
+  },
+  {
+    "name": "Casa editrice Edalizao",
+    "hall": "PAD 3",
+    "stand": "Q18-R17"
+  },
+  {
+    "name": "Casa Editrice el squero",
+    "hall": "PAD 2",
+    "stand": "H09"
+  },
+  {
+    "name": "Casa Editrice Il Filo di Arianna",
+    "hall": "PAD 2/OVAL",
+    "stand": "G65/V169"
+  },
+  {
+    "name": "Casa Falconieri",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Casagrande Edizioni",
+    "hall": "OVAL",
+    "stand": "T89"
+  },
+  {
+    "name": "Casalini Libri",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "Castelvecchi",
+    "hall": "PAD 3",
+    "stand": "P116-Q115"
+  },
+  {
+    "name": "Castoro Off",
+    "hall": "PAD 2",
+    "stand": "L102-M101"
+  },
+  {
+    "name": "Catartica Edizioni",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Cavalluccio Rosso",
+    "hall": "PAD 1/OVAL",
+    "stand": "E44/X50"
+  },
+  {
+    "name": "CDM Lab/Créuze de Mä Edizioni",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "CELID",
+    "hall": "OVAL",
+    "stand": "T22-U21"
+  },
+  {
+    "name": "Centro Studi Piemontesi - Ca dë Studi Piemontèis",
+    "hall": "OVAL",
+    "stand": "T98-U97"
+  },
+  {
+    "name": "Centro Studi Silvio Pellico",
+    "hall": "PAD 3",
+    "stand": "Q41"
+  },
+  {
+    "name": "Cesati Editore",
+    "hall": "PAD 2",
+    "stand": "F32"
+  },
+  {
+    "name": "Cesvol Umbria",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Charlie Creative Lab",
+    "hall": "PAD 2",
+    "stand": "F141"
+  },
+  {
+    "name": "Chiarelettere",
+    "hall": "OVAL",
+    "stand": "V38-W37/V50-W49"
+  },
+  {
+    "name": "Chora & Will Media",
+    "hall": "OVAL",
+    "stand": "T94-U93"
+  },
+  {
+    "name": "Ciao. Discoteca Italiana",
+    "hall": "PAD 3",
+    "stand": "P32"
+  },
+  {
+    "name": "Cicap - Comitato Italiano per il Controllo Delle Affermazioni Sulle Pseudoscienze",
+    "hall": "PAD 2",
+    "stand": "F35"
+  },
+  {
+    "name": "Ciclope Lettore",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Cierre Edizioni",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Cine Sud",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Cineteca della Calabria",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Città del Sole Edizioni",
+    "hall": "OVAL",
+    "stand": "U138-V137/T161"
+  },
+  {
+    "name": "Città di Torino",
+    "hall": "PAD 1",
+    "stand": "D102"
+  },
+  {
+    "name": "Città Metropolitana di Reggio Calabria",
+    "hall": "OVAL",
+    "stand": "T161"
+  },
+  {
+    "name": "Città metropolitana di Torino",
+    "hall": "PAD 1",
+    "stand": "D102"
+  },
+  {
+    "name": "Cittadella Editrice",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Clape di Culture “Patrie dal Friûl”",
+    "hall": "OVAL",
+    "stand": "V154-W153"
+  },
+  {
+    "name": "Claudiana",
+    "hall": "PAD 2",
+    "stand": "G32"
+  },
+  {
+    "name": "Clavilux",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "CLEUP - Cooperativa Libraria Editrice Università di Padova",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Clinkers- Pastaacolazione",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Cliquot",
+    "hall": "PAD 3",
+    "stand": "Q73"
+  },
+  {
+    "name": "CN Casa Nuvolari",
+    "hall": "PAD 3",
+    "stand": "S114"
+  },
+  {
+    "name": "CNA Nazionale - Editoria Indipendente",
+    "hall": "PAD 2",
+    "stand": "H27"
+  },
+  {
+    "name": "CNF - Fai - il Dubbio - Coa Torino",
+    "hall": "OVAL",
+    "stand": "U82"
+  },
+  {
+    "name": "Coconino Press",
+    "hall": "PAD 2",
+    "stand": "K82-L81"
+  },
+  {
+    "name": "Coda di volpe",
+    "hall": "PAD 2",
+    "stand": "L101"
+  },
+  {
+    "name": "CODICE EDIZIONI - Giangiacomo Feltrinelli editore",
+    "hall": "OVAL",
+    "stand": "U50-V49"
+  },
+  {
+    "name": "Coedit Edizioni",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Cogito Studios",
+    "hall": "PAD 2",
+    "stand": "G110"
+  },
+  {
+    "name": "Collettivo Midian Comics",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Collettivo Viscosa",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Colonnese Editore",
+    "hall": "PAD 3/OVAL",
+    "stand": "R119/X50"
+  },
+  {
+    "name": "Come si scrive una grande storia",
+    "hall": "PAD 2",
+    "stand": "J10"
+  },
+  {
+    "name": "COMICON Edizioni",
+    "hall": "PAD 2",
+    "stand": "H32"
+  },
+  {
+    "name": "Comics&Science",
+    "hall": "PAD 2",
+    "stand": "L118-M117"
+  },
+  {
+    "name": "Compilatio",
+    "hall": "PZ 5/PAD 2",
+    "stand": "27/F154-G153"
+  },
+  {
+    "name": "Condaghes",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Condiviso",
+    "hall": "PAD 3",
+    "stand": "R59"
+  },
+  {
+    "name": "Confprofessioni",
+    "hall": "OVAL",
+    "stand": "W174"
+  },
+  {
+    "name": "Congregazione Sacra Famiglia di Nazareth - Ed. Queriniana",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Consiglio Nazionale delle Ricerche",
+    "hall": "PAD 3",
+    "stand": "P28"
+  },
+  {
+    "name": "Consiglio Regionale della Basilicata",
+    "hall": "OVAL",
+    "stand": "X82"
+  },
+  {
+    "name": "Contacta",
+    "hall": "PAD 2",
+    "stand": "L39"
+  },
+  {
+    "name": "Contrasto",
+    "hall": "PAD 3",
+    "stand": "S102"
+  },
+  {
+    "name": "Controversi Edizioni",
+    "hall": "PAD 3",
+    "stand": "S82"
+  },
+  {
+    "name": "Coordinamento Solidarietà Valle d'Aosta - CSV VDA ODV",
+    "hall": "OVAL",
+    "stand": "T130-U129"
+  },
+  {
+    "name": "Coordinamento Torino Pride GLBT",
+    "hall": "PAD 1",
+    "stand": "B81"
+  },
+  {
+    "name": "Coppola editore",
+    "hall": "PAD 3/OVAL",
+    "stand": "Q137/X50"
+  },
+  {
+    "name": "Core Core",
+    "hall": "PAD 1",
+    "stand": "E30"
+  },
+  {
+    "name": "Core Matrix",
+    "hall": "PAD 3",
+    "stand": "N143"
+  },
+  {
+    "name": "Corraini Edizioni",
+    "hall": "PAD 3",
+    "stand": "S48"
+  },
+  {
+    "name": "Corsiero Editore",
+    "hall": "PAD 2",
+    "stand": "G65"
+  },
+  {
+    "name": "Cose Note Edizioni",
+    "hall": "PAD 1",
+    "stand": "C14"
+  },
+  {
+    "name": "Costa edizioni",
+    "hall": "PAD 2",
+    "stand": "L27"
+  },
+  {
+    "name": "Cranio Creations",
+    "hall": "PAD 1",
+    "stand": "E72"
+  },
+  {
+    "name": "Cratera",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Creativamente",
+    "hall": "PAD 2",
+    "stand": "F83"
+  },
+  {
+    "name": "Criseopa",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "CROCETTI - Giangiacomo Feltrinelli editore",
+    "hall": "OVAL",
+    "stand": "U50-V49"
+  },
+  {
+    "name": "CSVnet - associazione",
+    "hall": "OVAL",
+    "stand": "T130-U129"
+  },
+  {
+    "name": "Centri di servizio per il volontariato CSVnet Piemonte",
+    "hall": "OVAL",
+    "stand": "T130-U129"
+  },
+  {
+    "name": "Cultura e Salute Editore Perugia",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Edizioni Caracol",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Edizioni Clichy",
+    "hall": "PAD 2",
+    "stand": "K44"
+  },
+  {
+    "name": "Il Cappellaio Matto edizioni",
+    "hall": "PAD 2",
+    "stand": "H102"
+  },
+  {
+    "name": "Patrizia Carrozza",
+    "hall": "PAD 2",
+    "stand": "F141"
+  },
+  {
+    "name": "Roberto Calzetti Editore",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Carlo Delfino Editore",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "D editore",
+    "hall": "PAD 3",
+    "stand": "P65"
+  },
+  {
+    "name": "D'Amato",
+    "hall": "OVAL",
+    "stand": "T62"
+  },
+  {
+    "name": "Daco",
+    "hall": "PAD 3",
+    "stand": "S69"
+  },
+  {
+    "name": "Dadò Armando Editore",
+    "hall": "PAD OVAL",
+    "stand": "T89"
+  },
+  {
+    "name": "Daimon edizioni",
+    "hall": "PAD 2",
+    "stand": "L27"
+  }
+[
+  {
+    "name": "001 Edizioni",
+    "hall": "PAD 1",
+    "stand": "C31"
+  },
+  {
+    "name": "21lettere",
+    "hall": "PAD 3",
+    "stand": "P13"
+  },
+  {
+    "name": "66thand2nd",
+    "hall": "PAD 3",
+    "stand": "N102-P101"
+  },
+  {
+    "name": "78Edizioni",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "8tto Edizioni",
+    "hall": "PAD 2",
+    "stand": "M60"
+  },
+  {
+    "name": "A.C.I.MA. Edizioni Mandala",
+    "hall": "PAD 3",
+    "stand": "N66"
+  },
+  {
+    "name": "A.CAR Edizioni",
+    "hall": "OVAL",
+    "stand": "T38"
+  },
+  {
+    "name": "A.N.S.I.TO2 UniPegaso Torino",
+    "hall": "PAD 3",
+    "stand": "R18-S17"
+  },
+  {
+    "name": "Abao Aqu",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Abbà edizioni",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "ABEditore",
+    "hall": "OVAL",
+    "stand": "T49"
+  },
+  {
+    "name": "Aboca Edizioni",
+    "hall": "OVAL",
+    "stand": "W06-X05"
+  },
+  {
+    "name": "Abra Books",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Accademia University Press",
+    "hall": "OVAL",
+    "stand": "T22-U21"
+  },
+  {
+    "name": "Accento edizioni",
+    "hall": "PAD 2",
+    "stand": "K102"
+  },
+  {
+    "name": "Accornero edizioni",
+    "hall": "PAD 2",
+    "stand": "G65"
+  },
+  {
+    "name": "Acheron Books",
+    "hall": "PAD 1",
+    "stand": "B48"
+  },
+  {
+    "name": "Aculei Edizioni",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Ad Futurum Memoriam",
+    "hall": "OVAL",
+    "stand": "V154-W153"
+  },
+  {
+    "name": "ADD Editore",
+    "hall": "PAD 2",
+    "stand": "L52-M51"
+  },
+  {
+    "name": "ADEI - Associazione degli editori indipendenti",
+    "hall": "PAD 2",
+    "stand": "G65"
+  },
+  {
+    "name": "Adelphi Edizioni",
+    "hall": "OVAL",
+    "stand": "W102-X101"
+  },
+  {
+    "name": "ADHOC",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Aes - Associazione Editori Sardi",
+    "hall": "PAD 2",
+    "stand": "H130-J129"
+  },
+  {
+    "name": "Aesthetica Edizioni",
+    "hall": "PAD 2",
+    "stand": "L78-M77"
+  },
+  {
+    "name": "AGC Edizioni",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Agenzia Alcatraz",
+    "hall": "PAD 2",
+    "stand": "M74"
+  },
+  {
+    "name": "Agenzia X",
+    "hall": "PAD 2",
+    "stand": "L78-M77"
+  },
+  {
+    "name": "Aguaplano Libri",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Edizioni Aiora",
+    "hall": "OVAL",
+    "stand": "V28"
+  },
+  {
+    "name": "Aipsa Edizioni",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Alba Edizioni",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Albania - Centro di Cultura Albanese",
+    "hall": "OVAL",
+    "stand": "T157"
+  },
+  {
+    "name": "Edizioni Alegre",
+    "hall": "PAD 3",
+    "stand": "N32-P31"
+  },
+  {
+    "name": "Associazione Librai Editori della Svizzera Italiana",
+    "hall": "OVAL",
+    "stand": "T89"
+  },
+  {
+    "name": "Aletti Editore",
+    "hall": "PAD 2",
+    "stand": "L69"
+  },
+  {
+    "name": "Alfa Editrice",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Algeria",
+    "hall": "PAD 2",
+    "stand": "L130-M129"
+  },
+  {
+    "name": "Algra Editore",
+    "hall": "PAD 2/OVAL",
+    "stand": "M118/V126-W125"
+  },
+  {
+    "name": "Ali Associazione librai italiani",
+    "hall": "PZ 5/PAD 2",
+    "stand": "30/K104/F154-G153"
+  },
+  {
+    "name": "ali&no editrice",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Aliberti Compagnia Editoriale",
+    "hall": "OVAL",
+    "stand": "W01"
+  },
+  {
+    "name": "Allagalla Editore",
+    "hall": "PAD 2",
+    "stand": "G43"
+  },
+  {
+    "name": "Alleanza Cooperative Italiane Comunicazione",
+    "hall": "OVAL",
+    "stand": "T74-U73"
+  },
+  {
+    "name": "Allemandi - Il Giornale dell'Arte",
+    "hall": "OVAL",
+    "stand": "U81"
+  },
+  {
+    "name": "Alpes Italia",
+    "hall": "PAD 2",
+    "stand": "K01"
+  },
+  {
+    "name": "Alter Ego",
+    "hall": "PAD 2",
+    "stand": "L101"
+  },
+  {
+    "name": "Altreconomia",
+    "hall": "PAD 3",
+    "stand": "N32-P31"
+  },
+  {
+    "name": "Altrecose (Iperborea)",
+    "hall": "PAD 2",
+    "stand": "K51"
+  },
+  {
+    "name": "AltreVoci Edizioni",
+    "hall": "PAD 2",
+    "stand": "L66"
+  },
+  {
+    "name": "Always Magic",
+    "hall": "OVAL",
+    "stand": "U61"
+  },
+  {
+    "name": "Always Publishing",
+    "hall": "OVAL",
+    "stand": "U63"
+  },
+  {
+    "name": "Amazon Kindle Direct Publishing",
+    "hall": "PAD 2",
+    "stand": "F102"
+  },
+  {
+    "name": "Amicolibro",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Editorial Anagrama",
+    "hall": "OVAL",
+    "stand": "U50-V49"
+  },
+  {
+    "name": "Anarpe",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "Ancora",
+    "hall": "OVAL",
+    "stand": "T125/U102-V101"
+  },
+  {
+    "name": "Andrea Parodi Editore",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Anegami Bookish Boutique",
+    "hall": "PAD 1",
+    "stand": "E60"
+  },
+  {
+    "name": "Angelica Editore",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Another Coffee Stories Editore",
+    "hall": "PAD 1",
+    "stand": "D40"
+  },
+  {
+    "name": "Antea Edizioni",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Antefama Edizioni",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Anthology Digital Publishing",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Antiche Porte Editrice",
+    "hall": "OVAL",
+    "stand": "T118-U117"
+  },
+  {
+    "name": "Antiga Edizioni",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Antonio",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "De Rosa Editore"
+  },
+  {
+    "name": "Apalós",
+    "hall": "PAD 2",
+    "stand": "J22"
+  },
+  {
+    "name": "ape Junior",
+    "hall": "OVAL",
+    "stand": "V38-W37/V50-W49"
+  },
+  {
+    "name": "Apeiron Edizioni",
+    "hall": "PAD 2",
+    "stand": "H10"
+  },
+  {
+    "name": "APOGEO - Giangiacomo Feltrinelli editore",
+    "hall": "OVAL",
+    "stand": "U50-V49"
+  },
+  {
+    "name": "Apogeo Editore",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Apostrofo Ribelle",
+    "hall": "PAD 2",
+    "stand": "F141"
+  },
+  {
+    "name": "Appunti di Viaggio",
+    "hall": "PAD 2",
+    "stand": "G65"
+  },
+  {
+    "name": "Araba Fenice Edizioni",
+    "hall": "PAD 2",
+    "stand": "H51/K10"
+  },
+  {
+    "name": "Nino Aragno Editore",
+    "hall": "OVAL",
+    "stand": "V29"
+  },
+  {
+    "name": "ArborLibri",
+    "hall": "PAD 3",
+    "stand": "R27"
+  },
+  {
+    "name": "Arcadia Edizioni",
+    "hall": "OVAL",
+    "stand": "T22-U21"
+  },
+  {
+    "name": "Arcana",
+    "hall": "PAD 3",
+    "stand": "P113-Q115"
+  },
+  {
+    "name": "Archivi del Sud Edizioni",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Archivorum",
+    "hall": "PAD 3",
+    "stand": "Q129"
+  },
+  {
+    "name": "Area51Lab - Liberi Dentro AVP",
+    "hall": "PAD 2",
+    "stand": "GV19"
+  },
+  {
+    "name": "Ares",
+    "hall": "OVAL",
+    "stand": "U37"
+  },
+  {
+    "name": "Argentorato",
+    "hall": "PAD 2",
+    "stand": "G65"
+  },
+  {
+    "name": "Argentovivo",
+    "hall": "PZ 5",
+    "stand": "03/F154-G153"
+  },
+  {
+    "name": "Argonauta Edizioni",
+    "hall": "PAD 3/PAD 2",
+    "stand": "R125/K10"
+  },
+  {
+    "name": "Argonautilus - Fiera del Libro di Iglesias",
+    "hall": "PAD 2",
+    "stand": "L67"
+  },
+  {
+    "name": "Arinisi Rossella Piccola Casa della Scrittura",
+    "hall": "PAD 2",
+    "stand": "F141"
+  },
+  {
+    "name": "Aristea",
+    "hall": "PAD 1",
+    "stand": "C78"
+  },
+  {
+    "name": "Arkadia Editore",
+    "hall": "OVAL/PAD 2",
+    "stand": "V01/J130-K129"
+  },
+  {
+    "name": "Edizioni Arktos",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Armenia Edizioni",
+    "hall": "PAD 2",
+    "stand": "J86"
+  },
+  {
+    "name": "Armillaria Edizioni",
+    "hall": "PAD 2",
+    "stand": "L110"
+  },
+  {
+    "name": "Arnaud Projects and Experiences",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  }
+]
+    [
+  {
+    "name": "Dalia Edizioni",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Dami Editore",
+    "hall": "OVAL",
+    "stand": "U94-V93"
+  },
+  {
+    "name": "Damster edizioni",
+    "hall": "PAD 2",
+    "stand": "J32"
+  },
+  {
+    "name": "DBE Barbaro Editore",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "De Agostini Libri",
+    "hall": "OVAL",
+    "stand": "V82-W81/W82-X81"
+  },
+  {
+    "name": "De Ferrari Editore-Janua",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "De Nigris Editore",
+    "hall": "OVAL/PAD 1",
+    "stand": "E39/X50"
+  },
+  {
+    "name": "De Tomi Editore",
+    "hall": "PAD 2",
+    "stand": "H21"
+  },
+  {
+    "name": "Decalibro",
+    "hall": "PAD 2/PZ 5",
+    "stand": "18/F154-G153"
+  },
+  {
+    "name": "déclic",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Del Vecchio Editore",
+    "hall": "PAD 3",
+    "stand": "N107"
+  },
+  {
+    "name": "Delrai Edizioni",
+    "hall": "PAD 2",
+    "stand": "M56"
+  },
+  {
+    "name": "DeriveApprodi",
+    "hall": "PAD 2",
+    "stand": "M110"
+  },
+  {
+    "name": "DGline",
+    "hall": "PAD 2/PZ 5",
+    "stand": "23/F154-G153"
+  },
+  {
+    "name": "Dhora",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Di Felice Edizioni",
+    "hall": "PAD 2/PAD 3",
+    "stand": "N135/L27"
+  },
+  {
+    "name": "Di Girolamo Editore",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Diabolo Edizioni",
+    "hall": "PAD 3",
+    "stand": "N101"
+  },
+  {
+    "name": "Dialoghi",
+    "hall": "PAD 2",
+    "stand": "J27"
+  },
+  {
+    "name": "Diarkos",
+    "hall": "OVAL",
+    "stand": "U06-V05"
+  },
+  {
+    "name": "Diastema Editrice",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Didattica Attiva",
+    "hall": "PAD 2",
+    "stand": "K27"
+  },
+  {
+    "name": "Dimore Solidali",
+    "hall": "PAD 2",
+    "stand": "F18-G17"
+  },
+  {
+    "name": "Diodato Editore",
+    "hall": "PAD 2",
+    "stand": "F28"
+  },
+  {
+    "name": "Discentis",
+    "hall": "PAD 2",
+    "stand": "G114"
+  },
+  {
+    "name": "Disney-Lucas-Marvel Imprints in licenza a Giunti Editore",
+    "hall": "OVAL",
+    "stand": "U94-V93"
+  },
+  {
+    "name": "Dix",
+    "hall": "OVAL",
+    "stand": "U06-V05"
+  },
+  {
+    "name": "Domino. Rivista Sul Mondo che Cambia",
+    "hall": "PAD 3",
+    "stand": "R58"
+  },
+  {
+    "name": "Domus De Janas",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Donuts Comics",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Donzelli Editore",
+    "hall": "PAD 3",
+    "stand": "S78"
+  },
+  {
+    "name": "Douglas edizioni",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "DPS Comics",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Drakon edizioni",
+    "hall": "PAD 2",
+    "stand": "L27"
+  },
+  {
+    "name": "DV Games e Ghenos Games",
+    "hall": "PAD 1",
+    "stand": "C66"
+  },
+  {
+    "name": "Dz Edizioni - Dz Comics",
+    "hall": "PAD 2",
+    "stand": "G86"
+  },
+  {
+    "name": "Edizioni Dedalo",
+    "hall": "OVAL",
+    "stand": "W73"
+  },
+  {
+    "name": "Edizioni Ducale",
+    "hall": "PAD 3",
+    "stand": "N120"
+  },
+  {
+    "name": "Giuseppe de Nicola Editore",
+    "hall": "OVAL/PAD 3",
+    "stand": "N138/X50"
+  },
+  {
+    "name": "Giuseppe D'Ettoris & figli Editori",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "iDobloni Edizioni",
+    "hall": "PAD 1",
+    "stand": "E42"
+  },
+  {
+    "name": "E. lui Tipografia",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "Echos edizioni",
+    "hall": "PAD 3",
+    "stand": "R65"
+  },
+  {
+    "name": "Eclettica Edizioni",
+    "hall": "PAD 3",
+    "stand": "N142"
+  },
+  {
+    "name": "Eclissi Edizioni",
+    "hall": "PAD 1",
+    "stand": "B51"
+  },
+  {
+    "name": "Ecra",
+    "hall": "OVAL",
+    "stand": "T74-U73"
+  },
+  {
+    "name": "EDB",
+    "hall": "OVAL",
+    "stand": "T102-U101/U102-V101"
+  },
+  {
+    "name": "EDES - Editrice Democratica Sarda",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "ediart editrice",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Edicart Style - edizioni per bambini",
+    "hall": "PAD 1",
+    "stand": "B86"
+  },
+  {
+    "name": "Ediciclo Editore",
+    "hall": "OVAL",
+    "stand": "T22-U21/T138-U137"
+  },
+  {
+    "name": "Edicons d e l'Auger",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Edicola 518 - Emergenze Publishing",
+    "hall": "PAD 3",
+    "stand": "P10"
+  },
+  {
+    "name": "Edicola Edizioni",
+    "hall": "PAD 3",
+    "stand": "P124-Q123"
+  },
+  {
+    "name": "Edikit",
+    "hall": "PAD 1",
+    "stand": "C05"
+  },
+  {
+    "name": "EDISER",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "EDISU Piemonte",
+    "hall": "PAD 3",
+    "stand": "R04-S01"
+  },
+  {
+    "name": "Editori del Piemonte",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Editori Riuniti",
+    "hall": "PAD 2",
+    "stand": "G52"
+  },
+  {
+    "name": "Editoriale Programma",
+    "hall": "PAD 2",
+    "stand": "H101"
+  },
+  {
+    "name": "Editoriale Scienza",
+    "hall": "OVAL",
+    "stand": "U94-V93"
+  },
+  {
+    "name": "Editoriale Unicorn",
+    "hall": "OVAL",
+    "stand": "T138-U137"
+  },
+  {
+    "name": "Editrice Bibliografica",
+    "hall": "PAD 2",
+    "stand": "G118"
+  },
+  {
+    "name": "Editrice Carabba",
+    "hall": "PAD 2",
+    "stand": "L27"
+  },
+  {
+    "name": "Editrice Domenicana Italiana - EDI",
+    "hall": "OVAL",
+    "stand": "U102-V101/X50"
+  },
+  {
+    "name": "Editrice Elledici",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Editrice il Castoro",
+    "hall": "PAD 3",
+    "stand": "P44-Q43"
+  },
+  {
+    "name": "editrice il punto piemonte in bancarella",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Editrice La Piccolina",
+    "hall": "PAD 2/PAD 3",
+    "stand": "R56/K10"
+  },
+  {
+    "name": "Editrice Shalom",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Editrice Taphros",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "EDIUNI Edizioni",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Edizioni Bacme",
+    "hall": "PAD 2",
+    "stand": "L27"
+  },
+  {
+    "name": "Edizione Mea",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni All Around",
+    "hall": "OVAL",
+    "stand": "T74-U73"
+  },
+  {
+    "name": "Edizioni ALTEA",
+    "hall": "PAD 3",
+    "stand": "S65"
+  },
+  {
+    "name": "Edizioni Arianna",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Edizioni Barilù",
+    "hall": "PAD 3",
+    "stand": "Q18-R17"
+  },
+  {
+    "name": "Edizioni BD",
+    "hall": "PAD 1",
+    "stand": "D28-E27"
+  },
+  {
+    "name": "Edizioni Beroe",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Edizioni Biblioteca Dell'Immagine",
+    "hall": "PAD 2",
+    "stand": "H101"
+  },
+  {
+    "name": "Edizioni Cantagalli",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Edizioni Città Nuova",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Edizioni Corsare",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Edizioni Cronopio",
+    "hall": "OVAL",
+    "stand": "V10"
+  },
+  {
+    "name": "Edizioni del Baldo",
+    "hall": "PAD 1",
+    "stand": "C52-D51"
+  },
+  {
+    "name": "Edizioni del Borgo",
+    "hall": "OVAL",
+    "stand": "U94-V93"
+  },
+  {
+    "name": "Edizioni del Delfino Moro",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Edizioni del faro",
+    "hall": "PAD 2",
+    "stand": "F47"
+  },
+  {
+    "name": "Edizioni Della Goccia",
+    "hall": "PAD 2",
+    "stand": "H22"
+  },
+  {
+    "name": "Edizioni Della Torre",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Edizioni Dell'Ippogrifo",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni Dell'orso",
+    "hall": "PAD 3",
+    "stand": "P18"
+  },
+  {
+    "name": "Edizioni di Atlantide",
+    "hall": "PAD 3",
+    "stand": "Q82"
+  },
+  {
+    "name": "Edizioni E/O",
+    "hall": "OVAL",
+    "stand": "V22"
+  },
+  {
+    "name": "Edizioni Effetto",
+    "hall": "PAD 2/PAD 3",
+    "stand": "Q18-R17/K10"
+  },
+  {
+    "name": "Edizioni EL",
+    "hall": "OVAL",
+    "stand": "V78-W77"
+  },
+  {
+    "name": "Edizioni Enrico Spanu",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Edizioni Epoké",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Edizioni Eracle",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni ETS",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Edizioni Espressiva",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Edizioni Fioranna",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni Francescane Italiane",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Edizioni Gabriele-la Parola",
+    "hall": "PAD 2",
+    "stand": "F19"
+  },
+  {
+    "name": "Edizioni Genius Loci",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Edizioni Giacché",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Edizioni Helicon",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Edizioni il Ciliegio",
+    "hall": "OVAL",
+    "stand": "T81"
+  }
+
+      [
+  {
+    "name": "Immagina di Essere Altro",
+    "hall": "PAD 2",
+    "stand": "F59"
+  },
+  {
+    "name": "Impremix Edizioni",
+    "hall": "PAD 2",
+    "stand": "H55/K10"
+  },
+  {
+    "name": "in riga edizioni",
+    "hall": "OVAL",
+    "stand": "T118-U117"
+  },
+  {
+    "name": "In Your Face Comix - Latitudine42",
+    "hall": "PAD 2",
+    "stand": "M74"
+  },
+  {
+    "name": "INAIL",
+    "hall": "OVAL",
+    "stand": "X118"
+  },
+  {
+    "name": "InBlu2000 - Rete Blu",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Indi",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "Indie Rangers",
+    "hall": "PAD 2",
+    "stand": "F119"
+  },
+  {
+    "name": "INFN - Istituto Nazionale di Fisica Nucleare",
+    "hall": "PAD 2",
+    "stand": "L13"
+  },
+  {
+    "name": "Informazioni Editoriali I.E.",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "Infuga Edizioni - Factory Editoriale",
+    "hall": "PAD 1",
+    "stand": "E24"
+  },
+  {
+    "name": "Ink Line Edizioni",
+    "hall": "PAD 2",
+    "stand": "G55/K10"
+  },
+  {
+    "name": "Inknot Edizioni",
+    "hall": "OVAL/PAD 2",
+    "stand": "J17/X50"
+  },
+  {
+    "name": "INPS Istituto Nazionale Previdenza Sociale",
+    "hall": "OVAL",
+    "stand": "X118"
+  },
+  {
+    "name": "Interlinea",
+    "hall": "PAD 2",
+    "stand": "M69"
+  },
+  {
+    "name": "Internazionale",
+    "hall": "OVAL",
+    "stand": "X49"
+  },
+  {
+    "name": "Interno Poesia",
+    "hall": "PAD 2",
+    "stand": "K05"
+  },
+  {
+    "name": "Interno4 edizioni - NdA press - Rocka Tapes - LEF",
+    "hall": "PAD 3",
+    "stand": "N67"
+  },
+  {
+    "name": "Introterra Edizioni",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Iod Edizioni",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Iperborea",
+    "hall": "PAD 2",
+    "stand": "K51"
+  },
+  {
+    "name": "Iren",
+    "hall": "PAD 1",
+    "stand": "B78"
+  },
+  {
+    "name": "IRES Piemonte",
+    "hall": "PAD 3",
+    "stand": "R06-S05"
+  },
+  {
+    "name": "Ischire",
+    "hall": "PAD 2",
+    "stand": "L130-K129"
+  },
+  {
+    "name": "isenzatregua edizioni",
+    "hall": "PAD 1",
+    "stand": "D40"
+  },
+  {
+    "name": "ISKRA Edizioni",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "Isolapalma",
+    "hall": "PAD 2",
+    "stand": "H130-J129/J130-K129"
+  },
+  {
+    "name": "ISRPT Editore",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Istituto Confucio dell'Università di Torino",
+    "hall": "PAD 3",
+    "stand": "R74-S73"
+  },
+  {
+    "name": "Istituto del dramma napoletano",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Istituto per la Storia del Risorgimento Italiano",
+    "hall": "PAD 2",
+    "stand": "J05"
+  },
+  {
+    "name": "IT Publishing",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "Italia Storica Edizioni",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Italo Svevo",
+    "hall": "PAD 2",
+    "stand": "F79"
+  },
+  {
+    "name": "ITL Libri",
+    "hall": "PAD 2",
+    "stand": "F15"
+  },
+  {
+    "name": "L'indipendente",
+    "hall": "OVAL",
+    "stand": "X69"
+  },
+  {
+    "name": "SuperAbile INAIL",
+    "hall": "OVAL",
+    "stand": "X173"
+  },
+  {
+    "name": "Università Iulm, Milano",
+    "hall": "PAD 3",
+    "stand": "S14"
+  },
+  {
+    "name": "Editoriale Jouvence",
+    "hall": "PAD 2",
+    "stand": "L78-M77"
+  },
+  {
+    "name": "Edizioni Joker",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Jaca Book",
+    "hall": "OVAL",
+    "stand": "U06-V05"
+  },
+  {
+    "name": "Janotek",
+    "hall": "PAD 2",
+    "stand": "L27"
+  },
+  {
+    "name": "Janus editore",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Jimenez",
+    "hall": "PAD 3",
+    "stand": "S60"
+  },
+  {
+    "name": "Jo March",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Johan & Levi",
+    "hall": "OVAL",
+    "stand": "W27"
+  },
+  {
+    "name": "Jolly Joker Game Café",
+    "hall": "PAD 1",
+    "stand": "C78"
+  },
+  {
+    "name": "joybook",
+    "hall": "OVAL",
+    "stand": "U06-V05"
+  },
+  {
+    "name": "J-POP Manga",
+    "hall": "PAD 1",
+    "stand": "D28-E27"
+  },
+  {
+    "name": "Jundo",
+    "hall": "PAD 1",
+    "stand": "B40"
+  },
+  {
+    "name": "Casa Editrice Kimerik",
+    "hall": "PAD 2",
+    "stand": "H18"
+  },
+  {
+    "name": "Kalandraka",
+    "hall": "PAD 3",
+    "stand": "R32"
+  },
+  {
+    "name": "Kaleidon",
+    "hall": "OVAL",
+    "stand": "T161"
+  },
+  {
+    "name": "Kalós",
+    "hall": "OVAL/PAD 3",
+    "stand": "R70/V126-W125"
+  },
+  {
+    "name": "Kappalab",
+    "hall": "PAD 1",
+    "stand": "E47"
+  },
+  {
+    "name": "Keller",
+    "hall": "PAD 3",
+    "stand": "P74"
+  },
+  {
+    "name": "Kellermann Editore",
+    "hall": "OVAL",
+    "stand": "V77/T138-U137"
+  },
+  {
+    "name": "Keltia Editrice",
+    "hall": "PAD 2",
+    "stand": "M52"
+  },
+  {
+    "name": "KERMES",
+    "hall": "OVAL",
+    "stand": "T22-U21"
+  },
+  {
+    "name": "Kinetès Edizioni",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Kite Edizioni",
+    "hall": "PAD 3",
+    "stand": "N28"
+  },
+  {
+    "name": "Kitsunelab Edizioni",
+    "hall": "PAD 1",
+    "stand": "E26"
+  },
+  {
+    "name": "Klau agenzia",
+    "hall": "PAD 2",
+    "stand": "F127-F133"
+  },
+  {
+    "name": "Kleiner Flug",
+    "hall": "PAD 3",
+    "stand": "R74-S73"
+  },
+  {
+    "name": "Km Edizioni",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Kudos Editore",
+    "hall": "PAD 2",
+    "stand": "M114"
+  },
+  {
+    "name": "La libreria dei self publisher",
+    "hall": "PAD 2",
+    "stand": "F118-G117",
+    "category": "AUTORE SELF"
+  },
+  {
+    "name": "Libreria degli autori",
+    "hall": "PAD 2",
+    "stand": "G146",
+    "category": "AUTORE SELF"
+  },
+  {
+    "name": "Editori Laterza",
+    "hall": "OVAL",
+    "stand": "W65"
+  },
+  {
+    "name": "Edizioni Del Loggione",
+    "hall": "PAD 2",
+    "stand": "J32"
+  },
+  {
+    "name": "Edizioni Leucotea",
+    "hall": "OVAL/PAD 2",
+    "stand": "F22/V169"
+  },
+  {
+    "name": "Edizioni Lina Brun",
+    "hall": "PAD 2",
+    "stand": "K10"
+  },
+  {
+    "name": "Edizioni Lindau",
+    "hall": "PAD 2",
+    "stand": "F52-G51/K10"
+  },
+  {
+    "name": "Edizioni Lotta Comunista",
+    "hall": "PAD 2",
+    "stand": "K145"
+  },
+  {
+    "name": "Elliot",
+    "hall": "PAD 3",
+    "stand": "P116-Q115"
+  },
+  {
+    "name": "L'orma editore",
+    "hall": "PAD 3",
+    "stand": "P81"
+  },
+  {
+    "name": "La Bancarella Editrice",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "La Bottega dei traduttori",
+    "hall": "PAD 2",
+    "stand": "F110"
+  },
+  {
+    "name": "La Casa degli Artisti",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "La Coccinella",
+    "hall": "OVAL",
+    "stand": "V38-W37/V50-W49"
+  },
+  {
+    "name": "La Corte Editore",
+    "hall": "PAD 2/PAD 3",
+    "stand": "G102/R01"
+  },
+  {
+    "name": "La fine del mondo",
+    "hall": "PAD 1",
+    "stand": "E43"
+  },
+  {
+    "name": "La Lanterna",
+    "hall": "PAD 2",
+    "stand": "F123"
+  },
+  {
+    "name": "La nave di Teseo",
+    "hall": "PAD 3",
+    "stand": "P82-Q81"
+  },
+  {
+    "name": "La Nuova Frontiera",
+    "hall": "PAD 3",
+    "stand": "P81"
+  },
+  {
+    "name": "La Porta Bella- Edizioni RnS",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "La Stampa",
+    "hall": "OVAL",
+    "stand": "U178-V177"
+  },
+  {
+    "name": "La valle del tempo edizioni",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "La Vita Felice",
+    "hall": "OVAL",
+    "stand": "T22-U21"
+  },
+  {
+    "name": "Lab DFG - lo sport tra le righe",
+    "hall": "PAD 1",
+    "stand": "B32"
+  },
+  {
+    "name": "Laboratorio Zanzara",
+    "hall": "PAD 1",
+    "stand": "A56"
+  },
+  {
+    "name": "Lalineascritta - laboratori di scrittura",
+    "hall": "PAD 2",
+    "stand": "F154-G153"
+  },
+  {
+    "name": "Land Publishing",
+    "hall": "PAD 3",
+    "stand": "Q18-R17"
+  },
+  {
+    "name": "Langella Edizioni Napoli",
+    "hall": "PAD 3",
+    "stand": "R119"
+  },
+  {
+    "name": "Lapis Edizioni",
+    "hall": "PAD 3",
+    "stand": "N52"
+  },
+  {
+    "name": "Lareditore - Just Read",
+    "hall": "PAD 2",
+    "stand": "J28/K10"
+  },
+  {
+    "name": "Laruffa editore",
+    "hall": "OVAL",
+    "stand": "T161"
+  },
+  {
+    "name": "Las Vegas Edizioni",
+    "hall": "OVAL",
+    "stand": "U80"
+  },
+  {
+    "name": "Lavieri",
+    "hall": "PAD 2",
+    "stand": "J52"
+  },
+  {
+    "name": "LCI Editore (Libri Interattivi)",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Le Fate Editore",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Le Lucerne",
+    "hall": "PAD 2",
+    "stand": "J06"
+  },
+  {
+    "name": "Le Pecore Nere Editorial",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Le Plurali Editrice",
+    "hall": "PAD 2",
+    "stand": "M60"
+  },
+  {
+    "name": "Le Revisionarie",
+    "hall": "PAD 2",
+    "stand": "F141"
+  },
+  {
+    "name": "LEG",
+    "hall": "OVAL",
+    "stand": "U06-V05"
+  }
+
+        [
+  {
+    "name": "Edizioni il Papavero",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni Lavoro",
+    "hall": "PAD 3",
+    "stand": "P142"
+  },
+  {
+    "name": "Edizioni le Assassine",
+    "hall": "PAD 2",
+    "stand": "H17"
+  },
+  {
+    "name": "Edizioni Lussografica",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Edizioni Magma",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni Mediterranee",
+    "hall": "PAD 3",
+    "stand": "R86-S85"
+  },
+  {
+    "name": "Edizioni Melagrana",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni Messaggero Padova",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Edizioni Neverend",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Edizioni NPE",
+    "hall": "PAD 3",
+    "stand": "Q40"
+  },
+  {
+    "name": "Edizioni Piuma",
+    "hall": "PAD 3",
+    "stand": "P40"
+  },
+  {
+    "name": "Edizioni QED",
+    "hall": "PAD 3",
+    "stand": "Q18-R17"
+  },
+  {
+    "name": "Edizioni Rainbow",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni Realtà Sannita",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Edizioni San Gennaro",
+    "hall": "OVAL/PAD 1",
+    "stand": "E36/X50"
+  },
+  {
+    "name": "Edizioni Sannio",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Edizioni Santa Caterina",
+    "hall": "PAD 2",
+    "stand": "M69"
+  },
+  {
+    "name": "Edizioni Savej",
+    "hall": "PAD 2",
+    "stand": "G18"
+  },
+  {
+    "name": "Edizioni Scout Fiordaliso",
+    "hall": "OVAL",
+    "stand": "U102-V101"
+  },
+  {
+    "name": "Edizioni Sindacali - UGL",
+    "hall": "PAD 2",
+    "stand": "K149"
+  },
+  {
+    "name": "Edizioni Spartaco",
+    "hall": "OVAL/PAD 3",
+    "stand": "Q59/X50"
+  },
+  {
+    "name": "Edizioni Thyrus",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Edizioni03",
+    "hall": "OVAL/PAD 2",
+    "stand": "H145/T138-U137"
+  },
+  {
+    "name": "EDT",
+    "hall": "PAD 2",
+    "stand": "L40-M39"
+  },
+  {
+    "name": "Effatà Editrice",
+    "hall": "OVAL",
+    "stand": "V02/U102-V101"
+  },
+  {
+    "name": "Effequ",
+    "hall": "PAD 3",
+    "stand": "P124-Q123"
+  },
+  {
+    "name": "Egea",
+    "hall": "OVAL",
+    "stand": "T33"
+  },
+  {
+    "name": "Giulio Einaudi editore",
+    "hall": "OVAL",
+    "stand": "V82-W81/W82-X81"
+  },
+  {
+    "name": "Einaudi Ragazzi",
+    "hall": "OVAL",
+    "stand": "V78-W77"
+  },
+  {
+    "name": "El Doctor Sax",
+    "hall": "PAD 2",
+    "stand": "K21"
+  },
+  {
+    "name": "Elara",
+    "hall": "PAD 3",
+    "stand": "N123"
+  },
+  {
+    "name": "Eleusi",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "elèuthera",
+    "hall": "PAD 3",
+    "stand": "N32-P31"
+  },
+  {
+    "name": "elinor marianne",
+    "hall": "PAD 2",
+    "stand": "F32"
+  },
+  {
+    "name": "Elleboro Editore",
+    "hall": "PAD 2",
+    "stand": "J31"
+  },
+  {
+    "name": "Elsa Major Edizioni",
+    "hall": "PAD 3",
+    "stand": "Q18-R17"
+  },
+  {
+    "name": "Elze",
+    "hall": "PZ 5",
+    "stand": "03"
+  },
+  {
+    "name": "EMI (Editrice Missionaria Italiana)",
+    "hall": "OVAL",
+    "stand": "T102-U101"
+  },
+  {
+    "name": "Emme Edizioni",
+    "hall": "OVAL",
+    "stand": "V78-W77"
+  },
+  {
+    "name": "Emme Promozione - Promocomix",
+    "hall": "PAD 2/PZ 5",
+    "stand": "14/F154-G153"
+  },
+  {
+    "name": "Emons Libri e Audiolibri",
+    "hall": "PAD 3",
+    "stand": "Q114"
+  },
+  {
+    "name": "Emuse",
+    "hall": "PAD 3",
+    "stand": "P67"
+  },
+  {
+    "name": "Ensemble edizioni",
+    "hall": "PAD 3",
+    "stand": "Q18-R17"
+  },
+  {
+    "name": "Equilibri cooperativa sociale",
+    "hall": "PAD 3",
+    "stand": "R32"
+  },
+  {
+    "name": "Erga",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Erickson",
+    "hall": "PAD 2",
+    "stand": "J40-K39"
+  },
+  {
+    "name": "Eris Edizioni",
+    "hall": "PAD 2",
+    "stand": "M74"
+  },
+  {
+    "name": "Errekappa Edizioni",
+    "hall": "PAD 3",
+    "stand": "Q17"
+  },
+  {
+    "name": "Espress edizioni",
+    "hall": "PAD 2",
+    "stand": "M102"
+  },
+  {
+    "name": "ETA BETA",
+    "hall": "OVAL",
+    "stand": "T74-U73"
+  },
+  {
+    "name": "Eterea Edizioni - Aist Ass. It. St. Tolkien",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "EUM Edizioni Università di Macerata - Università degli Studi di Macerata",
+    "hall": "PAD 2",
+    "stand": "G31"
+  },
+  {
+    "name": "Euroedizioni Torino",
+    "hall": "PAD 2",
+    "stand": "H06"
+  },
+  {
+    "name": "Europa Edizioni",
+    "hall": "PAD 2",
+    "stand": "M145"
+  },
+  {
+    "name": "EUT Edizioni Università di Trieste",
+    "hall": "PAD 2",
+    "stand": "G31"
+  },
+  {
+    "name": "ExCogita",
+    "hall": "PAD 2",
+    "stand": "G65"
+  },
+  {
+    "name": "Exorma Edizioni",
+    "hall": "PAD 3",
+    "stand": "Q56"
+  },
+  {
+    "name": "Edizioni Frate Indovino",
+    "hall": "OVAL",
+    "stand": "T121/U102-V101/V102-W101/V118-W117"
+  },
+  {
+    "name": "Fabrizio Fabbri Editore",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Falco edizioni",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Fandango Libri",
+    "hall": "PAD 2",
+    "stand": "K82-L81"
+  },
+  {
+    "name": "Gruppo Editoriale Fanucci",
+    "hall": "PAD 2",
+    "stand": "H40-J39"
+  },
+  {
+    "name": "Faros Edizioni",
+    "hall": "PAD 2",
+    "stand": "H130-J129"
+  },
+  {
+    "name": "Fastweb",
+    "hall": "PAD 2/PZ 5",
+    "stand": "06/F154-G153"
+  },
+  {
+    "name": "FATATRAC",
+    "hall": "OVAL",
+    "stand": "U94-V93"
+  },
+  {
+    "name": "Fazi Editore",
+    "hall": "OVAL",
+    "stand": "W74-X73"
+  },
+  {
+    "name": "Federighi Editori",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "Giangiacomo Feltrinelli editore",
+    "hall": "OVAL",
+    "stand": "U50-V49"
+  },
+  {
+    "name": "Festival della Disperazione",
+    "hall": "PAD 3",
+    "stand": "N79"
+  },
+  {
+    "name": "Fingerpicking.net",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "FinisTerrae",
+    "hall": "PAD 2",
+    "stand": "F40"
+  },
+  {
+    "name": "Firenze University Press",
+    "hall": "OVAL/PAD 2",
+    "stand": "G31/U154-V153"
+  },
+  {
+    "name": "Fondazione Candiolo",
+    "hall": "OVAL",
+    "stand": "T105"
+  },
+  {
+    "name": "Fondazione Giubileo per la Cultura",
+    "hall": "PAD 2",
+    "stand": "K03"
+  },
+  {
+    "name": "Fondazione Giuseppe Dessì",
+    "hall": "PAD 2",
+    "stand": "J130-K129"
+  },
+  {
+    "name": "Fondazione Mondadori",
+    "hall": "OVAL",
+    "stand": "T93"
+  },
+  {
+    "name": "Fondazione Mont'e Prama",
+    "hall": "PAD 2",
+    "stand": "J146"
+  },
+  {
+    "name": "Fondazione Pietà di Turchini",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Fondazione Pordenonelegge.it",
+    "hall": "OVAL",
+    "stand": "V154-W153"
+  },
+  {
+    "name": "Forme LibereER",
+    "hall": "PAD 2",
+    "stand": "F47"
+  },
+  {
+    "name": "Francesco Brioschi Editore",
+    "hall": "PAD 2",
+    "stand": "H82"
+  },
+  {
+    "name": "Francesco Gaggia Comics",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Franco Cosimo Panini Editore",
+    "hall": "PAD 3",
+    "stand": "Q51"
+  },
+  {
+    "name": "Franco Di Mauro Editore",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Franco Maria Ricci editore",
+    "hall": "PAD 3",
+    "stand": "P73"
+  },
+  {
+    "name": "FrancoAngeli",
+    "hall": "OVAL",
+    "stand": "W57"
+  },
+  {
+    "name": "Frankenstein Magazine",
+    "hall": "PAD 1",
+    "stand": "A59-A85"
+  },
+  {
+    "name": "Frascati & Serrafalco Editori",
+    "hall": "OVAL",
+    "stand": "V126-W125"
+  },
+  {
+    "name": "Fratelli Frilli Editori",
+    "hall": "OVAL/PAD 3",
+    "stand": "Q139/V169"
+  },
+  {
+    "name": "FUIS (Federazione Unitaria Italiana Scrittori)",
+    "hall": "PAD 2",
+    "stand": "G130-H129"
+  },
+  {
+    "name": "Fuoriscena",
+    "hall": "OVAL",
+    "stand": "V81"
+  },
+  {
+    "name": "Fusta Editore",
+    "hall": "OVAL",
+    "stand": "U49"
+  },
+  {
+    "name": "Futura Libri",
+    "hall": "OVAL",
+    "stand": "V102-W101/V118-W117"
+  },
+  {
+    "name": "Future Fiction",
+    "hall": "PAD 3",
+    "stand": "R74-S73"
+  },
+  {
+    "name": "Fuzetea",
+    "hall": "PZV",
+    "stand": "05"
+  },
+  {
+    "name": "Gabinetto Scientifico Letterario Vieusseux",
+    "hall": "OVAL",
+    "stand": "U154-V153"
+  },
+  {
+    "name": "GAEditori",
+    "hall": "PAD 3",
+    "stand": "R69"
+  },
+  {
+    "name": "Gainsworth",
+    "hall": "PAD 2",
+    "stand": "G27"
+  },
+  {
+    "name": "GAL Terre Locridee",
+    "hall": "OVAL",
+    "stand": "U138-V137"
+  },
+  {
+    "name": "Galata",
+    "hall": "OVAL",
+    "stand": "V169"
+  },
+  {
+    "name": "Gallucci editore",
+    "hall": "PAD 3",
+    "stand": "N44-P43"
+  },
+  {
+    "name": "Gallucci Glifi Centauria Bros Balloon",
+    "hall": "OVAL",
+    "stand": "W25"
+  },
+  {
+    "name": "Galzerano editore",
+    "hall": "OVAL",
+    "stand": "X50"
+  },
+  {
+    "name": "Gambini Editore",
+    "hall": "PAD 2",
+    "stand": "H121"
+  },
+  {
+    "name": "Gamers Hunter Edizioni",
+    "hall": "PAD 1",
+    "stand": "E64"
+  }
+]
+]
+]
+]
+]
 ]

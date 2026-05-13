@@ -216,60 +216,74 @@
 
   <main>
 
-    <!-- =========================
-         MISSIONI
-    ========================== -->
+<!-- =========================
+     MISSIONI
+========================= -->
 
-    <section class="missions-section">
+<section class="missions-wrapper">
 
-      <div class="missions-header">
+  <button
+    id="toggleMissionsBtn"
+    class="toggle-missions-btn"
+  >
+    🎯 Le mie missioni
+  </button>
 
-        <h2>
-          🎯 Missioni Salone
-        </h2>
+  <section
+    id="missionsSection"
+    class="missions-section hidden"
+  >
 
-        <button
-          id="toggleMissionForm"
-          class="add-mission-btn"
-        >
-          + Aggiungi
-        </button>
+    <div class="missions-header">
 
-      </div>
+      <h2>
+        Missioni Salone
+      </h2>
 
-      <div
-        id="missionForm"
-        class="mission-form hidden"
+      <button
+        id="toggleMissionForm"
+        class="add-mission-btn"
       >
+        + Aggiungi
+      </button>
 
-        <input
-          type="text"
-          id="missionBook"
-          placeholder="Libro da cercare"
-        />
+    </div>
 
-        <input
-          list="publisherList"
-          id="missionPublisher"
-          placeholder="Editore"
-        />
+    <div
+      id="missionForm"
+      class="mission-form hidden"
+    >
 
-        <datalist id="publisherList"></datalist>
+      <input
+        type="text"
+        id="missionBook"
+        placeholder="Libro da cercare"
+      />
 
-        <button
-          id="saveMissionBtn"
-        >
-          Salva missione
-        </button>
+      <input
+        list="publisherList"
+        id="missionPublisher"
+        placeholder="Editore"
+      />
 
-      </div>
+      <datalist id="publisherList"></datalist>
 
-      <div
-        id="missionsList"
-        class="missions-list"
-      ></div>
+      <button
+        id="saveMissionBtn"
+      >
+        Salva missione
+      </button>
 
-    </section>
+    </div>
+
+    <div
+      id="missionsList"
+      class="missions-list"
+    ></div>
+
+  </section>
+
+</section>
 
     <!-- RESULTS -->
 

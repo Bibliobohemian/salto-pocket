@@ -990,6 +990,32 @@ body.dark .mission-card p{
 
 }
 
+.mission-group{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+}
+
+.mission-group-title{
+
+  font-size:15px;
+
+  font-weight:700;
+
+  color:var(--salone-blue);
+
+  margin-top:6px;
+
+  margin-bottom:2px;
+
+  padding-left:2px;
+
+}
+
 /* =========================
    SCROLL TOP
 ========================= */

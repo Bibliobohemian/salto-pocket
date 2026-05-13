@@ -53,6 +53,16 @@ const missionPublisher =
 const publisherList =
   document.getElementById("publisherList");
 
+const toggleMissionsBtn =
+  document.getElementById(
+    "toggleMissionsBtn"
+  );
+
+const missionsSection =
+  document.getElementById(
+    "missionsSection"
+  );
+
 let missions =
   JSON.parse(
     localStorage.getItem("missions")
@@ -167,6 +177,21 @@ if(
   );
 
 }
+
+/* =========================
+   TOGGLE MISSIONS
+========================= */
+
+toggleMissionsBtn.addEventListener(
+  "click",
+  () => {
+
+    missionsSection.classList.toggle(
+      "hidden"
+    );
+
+  }
+);
 
 /* =========================
    APP
@@ -390,8 +415,6 @@ function updateView(){
     .toLowerCase()
     .trim();
 
-  /* SHOW SORT */
-
   if(
     currentView === "favorites"
     ||
@@ -407,8 +430,6 @@ function updateView(){
       "none";
 
   }
-
-  /* FILTER VIEW */
 
   if(currentView === "favorites"){
 
@@ -428,8 +449,6 @@ function updateView(){
 
   }
 
-  /* QUICK FILTER */
-
   if(
     quickFilter &&
     !value
@@ -447,8 +466,6 @@ function updateView(){
       );
 
   }
-
-  /* EMPTY STATE */
 
   if(
     !value &&
@@ -479,8 +496,6 @@ function updateView(){
     return;
 
   }
-
-  /* SEARCH */
 
   if(value){
 
@@ -513,8 +528,6 @@ function updateView(){
 
   }
 
-  /* SORT */
-
   const sortBy =
     sortSelect.value;
 
@@ -541,8 +554,6 @@ function updateView(){
     );
 
   });
-
-  /* LIMIT */
 
   items = items.slice(0, 80);
 
@@ -839,6 +850,34 @@ function deleteMission(id){
 
 }
 
+function editMission(id){
+
+  const mission =
+    missions.find(item =>
+      item.id === id
+    );
+
+  if(!mission) return;
+
+  missionBook.value =
+    mission.book;
+
+  missionPublisher.value =
+    mission.publisher;
+
+  missionForm.classList.remove(
+    "hidden"
+  );
+
+  deleteMission(id);
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
 function renderMissions(){
 
   missionsList.innerHTML = "";
@@ -941,6 +980,12 @@ function renderMissions(){
               </button>
 
               <button
+                onclick="editMission(${item.id})"
+              >
+                ✏️
+              </button>
+
+              <button
                 onclick="deleteMission(${item.id})"
               >
                 🗑️
@@ -955,65 +1000,6 @@ function renderMissions(){
       `;
 
     });
-
-  });
-
-}
-
-  missions.forEach(item => {
-
-    missionsList.innerHTML += `
-
-      <div class="mission-card ${
-        item.done
-        ? "mission-done"
-        : ""
-      }">
-
-        <div class="mission-card-top">
-
-          <div>
-
-            <h3>
-              📚 ${item.book}
-            </h3>
-
-            <p>
-              ${item.publisher}
-            </p>
-
-            <p>
-              ${item.hall}
-              ${item.stand}
-            </p>
-
-          </div>
-
-          <div class="mission-actions">
-
-            <button
-              onclick="toggleMission(${item.id})"
-            >
-              ${
-                item.done
-                ? "✅"
-                : "☑️"
-              }
-            </button>
-
-            <button
-              onclick="deleteMission(${item.id})"
-            >
-              🗑️
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    `;
 
   });
 
@@ -1195,6 +1181,9 @@ window.toggleMission =
 
 window.deleteMission =
   deleteMission;
+
+window.editMission =
+  editMission;
 
 /* =========================
    INIT

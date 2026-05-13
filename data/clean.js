@@ -5,7 +5,7 @@ const fs = require("fs");
 // ======================
 
 const raw = fs.readFileSync(
-  "data/espositori.json",
+  "data/exhibitors.json",
   "utf8"
 );
 
@@ -41,14 +41,22 @@ function normalizeStand(stand = "") {
 
 function cleanCategory(category) {
 
-  if (
-    !category ||
-    category !== "AUTORE SELF"
-  ) {
+  if (!category) {
     return null;
   }
 
-  return "AUTORE SELF";
+  const normalized =
+    category
+      .toUpperCase()
+      .trim();
+
+  if (
+    normalized.includes("SELF")
+  ) {
+    return "AUTORE SELF";
+  }
+
+  return null;
 }
 
 // ======================
@@ -84,20 +92,32 @@ function buildRecord({
 
 function expandEntry(entry) {
 
-  const halls =
-    normalizeHall(entry.hall).split("/");
+  const hall =
+    normalizeHall(entry.hall);
 
-  const stands =
-    normalizeStand(entry.stand).split("/");
+  const stand =
+    normalizeStand(entry.stand);
 
-  // Caso:
-  // OVAL/PAD 2
-  // G65/U154-V153
+  const halls = hall.split("/");
 
-  if (
-    halls.length > 1 &&
-    halls.length === stands.length
-  ) {
+  // Se c'è un solo padiglione
+  // NON splittare MAI
+
+  if (halls.length === 1) {
+    return [
+      buildRecord(entry)
+    ];
+  }
+
+  // Se ci sono più padiglioni,
+  // assumiamo che gli stand
+  // siano separati da /
+
+  const stands = stand.split("/");
+
+  // split valido solo se quantità coincide
+
+  if (halls.length === stands.length) {
 
     return halls.map((hall, i) =>
       buildRecord({
@@ -109,7 +129,7 @@ function expandEntry(entry) {
     );
   }
 
-  // Caso normale
+  // fallback sicurezza
 
   return [
     buildRecord(entry)
@@ -134,13 +154,15 @@ for (const entry of data) {
 }
 
 // ======================
-// RIMUOVI RECORD VUOTI
+// RIMUOVI SOLO RECORD SENZA NOME
 // ======================
 
-cleaned = cleaned.filter(item =>
-  item.name &&
-  item.hall &&
-  item.stand
+cleaned = cleaned.filter(
+  item =>
+    item.name &&
+    item.name.length > 1 &&
+    item.hall &&
+    item.stand
 );
 
 // ======================
@@ -181,7 +203,7 @@ cleaned.sort((a, b) =>
 // ======================
 
 fs.writeFileSync(
-  "data/espositori-clean.json",
+  "data/exhibitors-clean.json",
   JSON.stringify(cleaned, null, 2),
   "utf8"
 );

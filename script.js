@@ -29,6 +29,45 @@ const visitedCount =
   document.getElementById("visitedCount");
 
 /* =========================
+   MISSIONI
+========================= */
+
+const missionForm =
+  document.getElementById("missionForm");
+
+const toggleMissionForm =
+  document.getElementById("toggleMissionForm");
+
+const saveMissionBtn =
+  document.getElementById("saveMissionBtn");
+
+const missionsList =
+  document.getElementById("missionsList");
+
+const missionBook =
+  document.getElementById("missionBook");
+
+const missionPublisher =
+  document.getElementById("missionPublisher");
+
+const publisherList =
+  document.getElementById("publisherList");
+
+let missions =
+  JSON.parse(
+    localStorage.getItem("missions")
+  ) || [];
+
+/* =========================
+   SCROLL TOP
+========================= */
+
+const scrollTopBtn =
+  document.getElementById(
+    "scrollTopBtn"
+  );
+
+/* =========================
    DARK MODE
 ========================= */
 
@@ -168,9 +207,13 @@ async function loadExhibitors(){
       item.stand
     );
 
+  populatePublishers();
+
   updateCounters();
 
   updateView();
+
+  renderMissions();
 
 }
 
@@ -668,6 +711,216 @@ function renderResults(items, value){
 }
 
 /* =========================
+   MISSIONI
+========================= */
+
+toggleMissionForm.addEventListener(
+  "click",
+  () => {
+
+    missionForm.classList.toggle(
+      "hidden"
+    );
+
+  }
+);
+
+function populatePublishers(){
+
+  publisherList.innerHTML = "";
+
+  exhibitors.forEach(item => {
+
+    const option =
+      document.createElement("option");
+
+    option.value = item.name;
+
+    publisherList.appendChild(option);
+
+  });
+
+}
+
+function saveMission(){
+
+  const book =
+    missionBook.value.trim();
+
+  const publisher =
+    missionPublisher.value.trim();
+
+  if(!book || !publisher){
+    return;
+  }
+
+  const exhibitor =
+    exhibitors.find(item =>
+      item.name
+        .toLowerCase()
+        ===
+      publisher.toLowerCase()
+    );
+
+  missions.push({
+
+    id:Date.now(),
+
+    book,
+
+    publisher,
+
+    hall:
+      exhibitor?.hall || "",
+
+    stand:
+      exhibitor?.stand || "",
+
+    done:false
+
+  });
+
+  localStorage.setItem(
+    "missions",
+    JSON.stringify(missions)
+  );
+
+  missionBook.value = "";
+
+  missionPublisher.value = "";
+
+  renderMissions();
+
+}
+
+saveMissionBtn.addEventListener(
+  "click",
+  saveMission
+);
+
+function toggleMission(id){
+
+  missions = missions.map(item => {
+
+    if(item.id === id){
+
+      return {
+        ...item,
+        done:!item.done
+      };
+
+    }
+
+    return item;
+
+  });
+
+  localStorage.setItem(
+    "missions",
+    JSON.stringify(missions)
+  );
+
+  renderMissions();
+
+}
+
+function deleteMission(id){
+
+  missions = missions.filter(item =>
+    item.id !== id
+  );
+
+  localStorage.setItem(
+    "missions",
+    JSON.stringify(missions)
+  );
+
+  renderMissions();
+
+}
+
+function renderMissions(){
+
+  missionsList.innerHTML = "";
+
+  if(missions.length === 0){
+
+    missionsList.innerHTML = `
+
+      <div class="card">
+
+        <p>
+          Nessuna missione salvata.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+  missions.forEach(item => {
+
+    missionsList.innerHTML += `
+
+      <div class="mission-card ${
+        item.done
+        ? "mission-done"
+        : ""
+      }">
+
+        <div class="mission-card-top">
+
+          <div>
+
+            <h3>
+              📚 ${item.book}
+            </h3>
+
+            <p>
+              ${item.publisher}
+            </p>
+
+            <p>
+              ${item.hall}
+              ${item.stand}
+            </p>
+
+          </div>
+
+          <div class="mission-actions">
+
+            <button
+              onclick="toggleMission(${item.id})"
+            >
+              ${
+                item.done
+                ? "✅"
+                : "☑️"
+              }
+            </button>
+
+            <button
+              onclick="deleteMission(${item.id})"
+            >
+              🗑️
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+/* =========================
    FILTER BUTTONS
 ========================= */
 
@@ -786,6 +1039,43 @@ sortSelect.addEventListener(
 );
 
 /* =========================
+   SCROLL TOP
+========================= */
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    if(window.scrollY > 500){
+
+      scrollTopBtn.classList.add(
+        "show"
+      );
+
+    } else {
+
+      scrollTopBtn.classList.remove(
+        "show"
+      );
+
+    }
+
+  }
+);
+
+scrollTopBtn.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+/* =========================
    GLOBAL
 ========================= */
 
@@ -800,6 +1090,12 @@ window.toggleVisited =
 
 window.openMap =
   openMap;
+
+window.toggleMission =
+  toggleMission;
+
+window.deleteMission =
+  deleteMission;
 
 /* =========================
    INIT

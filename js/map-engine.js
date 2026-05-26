@@ -3,29 +3,10 @@ const svg =
     ".map-overlay"
   );
 
-const TYPE_COLORS = {
-
-  stand: "#d97706",
-
-  room: "#2563eb",
-
-  food: "#dc2626",
-
-  wc: "#16a34a",
-
-  smoking: "#6b7280",
-
-  kids: "#ec4899",
-
-  info: "#06b6d4",
-
-  entrance: "#facc15",
-
-  service: "#7c3aed",
-
-  unknown: "#ffffff"
-
-};
+const tooltip =
+  document.querySelector(
+    ".tooltip"
+  );
 
 const popup =
   document.querySelector(
@@ -63,6 +44,30 @@ popupClose.addEventListener(
   }
 );
 
+const TYPE_COLORS = {
+
+  stand: "#d97706",
+
+  room: "#2563eb",
+
+  food: "#dc2626",
+
+  wc: "#16a34a",
+
+  smoking: "#6b7280",
+
+  kids: "#ec4899",
+
+  info: "#06b6d4",
+
+  entrance: "#facc15",
+
+  service: "#7c3aed",
+
+  unknown: "#ffffff"
+
+};
+
 async function loadMap() {
 
   const response =
@@ -73,7 +78,9 @@ async function loadMap() {
   const areas =
     await response.json();
 
-  areas.forEach(renderArea);
+  areas.forEach(
+    renderArea
+  );
 
 }
 
@@ -81,7 +88,9 @@ function renderArea(area) {
 
   let element;
 
-  if (area.shape === "rect") {
+  if (
+    area.shape === "rect"
+  ) {
 
     element =
       document.createElementNS(
@@ -111,7 +120,9 @@ function renderArea(area) {
 
   }
 
-  if (area.shape === "circle") {
+  if (
+    area.shape === "circle"
+  ) {
 
     element =
       document.createElementNS(
@@ -160,25 +171,60 @@ function renderArea(area) {
     area.type;
 
   element.addEventListener(
-  "click",
-  () => {
+    "mousemove",
+    (event) => {
 
-    popupName.textContent =
-      area.exhibitor ||
-      area.name;
+      tooltip.textContent =
+        area.name;
 
-    popupLocation.textContent =
-      area.name;
+      tooltip.style.left =
+        event.clientX +
+        12 +
+        "px";
 
-    popupType.textContent =
-      area.type;
+      tooltip.style.top =
+        event.clientY +
+        12 +
+        "px";
 
-    popup.classList.remove(
-      "hidden"
-    );
+      tooltip.classList.remove(
+        "hidden"
+      );
 
-  }
-);
+    }
+  );
+
+  element.addEventListener(
+    "mouseleave",
+    () => {
+
+      tooltip.classList.add(
+        "hidden"
+      );
+
+    }
+  );
+
+  element.addEventListener(
+    "click",
+    () => {
+
+      popupName.textContent =
+        area.exhibitor ||
+        area.name;
+
+      popupLocation.textContent =
+        area.name;
+
+      popupType.textContent =
+        area.type;
+
+      popup.classList.remove(
+        "hidden"
+      );
+
+    }
+  );
 
   svg.appendChild(
     element

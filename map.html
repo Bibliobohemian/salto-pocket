@@ -9,7 +9,9 @@
     name="viewport"
     content="
       width=device-width,
-      initial-scale=1.0
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no
     "
   >
 
@@ -29,6 +31,8 @@
       font-family:
         sans-serif;
 
+      overflow-x: hidden;
+
     }
 
     .topbar {
@@ -37,10 +41,13 @@
 
       top: 0;
 
-      z-index: 100;
+      z-index: 1000;
 
       background:
-        white;
+        rgba(255,255,255,0.96);
+
+      backdrop-filter:
+        blur(10px);
 
       box-shadow:
         0 2px 12px rgba(0,0,0,0.08);
@@ -225,13 +232,19 @@
       background: #facc15;
     }
 
-    .legend-color.service {
-      background: #7c3aed;
+    .legend-color.water {
+      background: #0ea5e9;
+    }
+
+    .legend-color.landmark {
+      background: #f97316;
     }
 
     .map-container {
 
       text-align: center;
+
+      overflow: hidden;
 
     }
 
@@ -246,6 +259,8 @@
       margin:
         24px auto;
 
+      touch-action: pan-x pan-y;
+
     }
 
     .map-image {
@@ -257,6 +272,19 @@
       max-width: 1400px;
 
       height: auto;
+
+      transition:
+        opacity 0.2s,
+        filter 0.2s;
+
+    }
+
+    .map-image.dimmed {
+
+      opacity: 0.55;
+
+      filter:
+        grayscale(0.08);
 
     }
 
@@ -296,7 +324,7 @@
 
     .map-area.active {
 
-      fill-opacity: 0.38 !important;
+      fill-opacity: 0.42 !important;
 
       stroke: #ffffff;
 
@@ -314,9 +342,9 @@
 
     .map-area.dimmed {
 
-      fill-opacity: 0.05 !important;
+      fill-opacity: 0.08 !important;
 
-      stroke-opacity: 0.08 !important;
+      stroke-opacity: 0.12 !important;
 
     }
 
@@ -324,19 +352,19 @@
 
       0% {
 
-        fill-opacity: 0.28;
+        fill-opacity: 0.32;
 
       }
 
       50% {
 
-        fill-opacity: 0.45;
+        fill-opacity: 0.48;
 
       }
 
       100% {
 
-        fill-opacity: 0.28;
+        fill-opacity: 0.32;
 
       }
 
@@ -349,7 +377,7 @@
       inset: 0;
 
       background:
-        rgba(0,0,0,0.45);
+        rgba(0,0,0,0.35);
 
       z-index: 998;
 
@@ -379,12 +407,15 @@
         18px;
 
       width:
-        min(320px, 90vw);
+        min(340px, 90vw);
 
       z-index: 999;
 
       box-shadow:
         0 20px 60px rgba(0,0,0,0.4);
+
+      transition:
+        transform 0.25s ease;
 
     }
 
@@ -472,6 +503,12 @@
 
     @media (max-width: 768px) {
 
+      body {
+
+        padding-bottom: 140px;
+
+      }
+
       .topbar-inner {
 
         padding:
@@ -494,9 +531,38 @@
 
       }
 
+      .map-wrapper {
+
+        margin:
+          16px auto;
+
+      }
+
       .popup {
 
-        padding: 20px;
+        left: 0;
+
+        right: 0;
+
+        top: auto;
+
+        bottom: 0;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        border-radius:
+          24px 24px 0 0;
+
+        transform:
+          translateY(0);
+
+        padding:
+          24px;
+
+        box-sizing:
+          border-box;
 
       }
 
@@ -512,21 +578,14 @@
 
       }
 
+      .tooltip {
+
+        display: none;
+
+      }
+
     }
-    
-.map-image.dimmed {
 
-  opacity: 0.28;
-
-  filter:
-    grayscale(0.15);
-
-  transition:
-    opacity 0.2s,
-    filter 0.2s;
-
-}
-    
   </style>
 
 </head>
@@ -619,10 +678,18 @@
 
         <div
           class="legend-item"
-          data-type="service"
+          data-type="water"
         >
-          <span class="legend-color service"></span>
-          Servizi
+          <span class="legend-color water"></span>
+          Acqua
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="landmark"
+        >
+          <span class="legend-color landmark"></span>
+          Landmark
         </div>
 
       </div>

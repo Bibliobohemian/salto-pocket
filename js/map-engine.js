@@ -518,7 +518,19 @@ legendItems.forEach(item => {
             el.style.display =
               "";
 
+            el.classList.remove(
+              "active"
+            );
+
           });
+
+        document
+          .querySelector(
+            ".map-image"
+          )
+          .classList.remove(
+            "dimmed"
+          );
 
         legendItems.forEach(
           el =>
@@ -535,15 +547,31 @@ legendItems.forEach(item => {
         type;
 
       document
+        .querySelector(
+          ".map-image"
+        )
+        .classList.add(
+          "dimmed"
+        );
+
+      document
         .querySelectorAll(
           ".map-area"
         )
         .forEach(el => {
 
+          const isMatch =
+            el.dataset.type === type;
+
           el.style.display =
-            el.dataset.type === type
+            isMatch
               ? ""
               : "none";
+
+          el.classList.toggle(
+            "active",
+            isMatch
+          );
 
         });
 

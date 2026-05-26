@@ -149,6 +149,41 @@ function setActiveArea(
 
 }
 
+function openArea(
+  area,
+  element
+) {
+
+  tooltip.classList.add(
+    "hidden"
+  );
+
+  setActiveArea(
+    element
+  );
+
+  popupName.textContent =
+    area.exhibitor ||
+    area.name;
+
+  popupLocation.textContent =
+    area.name;
+
+  popupType.textContent =
+    TYPE_LABELS[
+      area.type
+    ] || area.type;
+
+  popup.classList.remove(
+    "hidden"
+  );
+
+  popupBackdrop.classList.remove(
+    "hidden"
+  );
+
+}
+
 async function loadMap() {
 
   const response =
@@ -296,32 +331,9 @@ function renderArea(area) {
     "click",
     () => {
 
-      tooltip.classList.add(
-        "hidden"
-      );
-
-      setActiveArea(
+      openArea(
+        area,
         element
-      );
-
-      popupName.textContent =
-        area.exhibitor ||
-        area.name;
-
-      popupLocation.textContent =
-        area.name;
-
-      popupType.textContent =
-        TYPE_LABELS[
-          area.type
-        ] || area.type;
-
-      popup.classList.remove(
-        "hidden"
-      );
-
-      popupBackdrop.classList.remove(
-        "hidden"
       );
 
     }

@@ -29,7 +29,7 @@
     "id": "P1_TORRE_DI_LIBRI_2",
     "hall": "pad1",
     "name": "Torre di libri",
-    "type": "service",
+    "type": "landmark",
     "shape": "rect",
     "coords": {
       "x": 212,
@@ -42,7 +42,7 @@
     "id": "P1_FONTANELLE_3",
     "hall": "pad1",
     "name": "Fontanelle",
-    "type": "service",
+    "type": "water",
     "shape": "circle",
     "coords": {
       "cx": 63,

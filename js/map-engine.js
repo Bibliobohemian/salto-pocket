@@ -38,6 +38,21 @@ const popupClose =
     ".popup-close"
   );
 
+const searchInput =
+  document.querySelector(
+    ".map-search-input"
+  );
+
+const legendItems =
+  document.querySelectorAll(
+    ".legend-item"
+  );
+
+const AREA_INDEX = [];
+
+let activeFilter =
+  null;
+
 const TYPE_COLORS = {
 
   stand: "#d97706",
@@ -125,19 +140,37 @@ function setActiveArea(
   areaElement
 ) {
 
-  document
-    .querySelectorAll(
-      ".map-area.active"
-    )
-    .forEach(
-      el =>
-        el.classList.remove(
-          "active"
-        )
+  const allAreas =
+    document.querySelectorAll(
+      ".map-area"
     );
+
+  allAreas.forEach(el => {
+
+    el.classList.remove(
+      "active"
+    );
+
+    el.classList.remove(
+      "dimmed"
+    );
+
+  });
 
   if (!areaElement)
     return;
+
+  allAreas.forEach(el => {
+
+    if (el !== areaElement) {
+
+      el.classList.add(
+        "dimmed"
+      );
+
+    }
+
+  });
 
   areaElement.classList.add(
     "active"
@@ -149,6 +182,25 @@ function setActiveArea(
 
 }
 
+function resetMapVisibility() {
+
+  document
+    .querySelectorAll(
+      ".map-area"
+    )
+    .forEach(el => {
+
+      el.style.display =
+        "";
+
+      el.classList.remove(
+        "dimmed"
+      );
+
+    });
+
+}
+
 function openArea(
   area,
   element
@@ -157,6 +209,8 @@ function openArea(
   tooltip.classList.add(
     "hidden"
   );
+
+  resetMapVisibility();
 
   setActiveArea(
     element
@@ -340,9 +394,12 @@ function renderArea(area) {
   );
 
   AREA_INDEX.push({
-  area,
-  element
-});
+
+    area,
+
+    element
+
+  });
 
   svg.appendChild(
     element
@@ -364,17 +421,12 @@ svg.addEventListener(
 
       closePopup();
 
+      resetMapVisibility();
+
     }
 
   }
 );
-
-const searchInput =
-  document.querySelector(
-    ".map-search-input"
-  );
-
-const AREA_INDEX = [];
 
 searchInput.addEventListener(
   "keydown",
@@ -425,15 +477,88 @@ searchInput.addEventListener(
     );
 
     document
-  .querySelector(
-    ".map-wrapper"
-  )
-  .scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
+      .querySelector(
+        ".map-wrapper"
+      )
+      .scrollIntoView({
+
+        behavior:
+          "smooth",
+
+        block:
+          "center"
+
+      });
 
   }
 );
+
+legendItems.forEach(item => {
+
+  item.addEventListener(
+    "click",
+    () => {
+
+      const type =
+        item.dataset.type;
+
+      if (
+        activeFilter === type
+      ) {
+
+        activeFilter =
+          null;
+
+        document
+          .querySelectorAll(
+            ".map-area"
+          )
+          .forEach(el => {
+
+            el.style.display =
+              "";
+
+          });
+
+        legendItems.forEach(
+          el =>
+            el.classList.remove(
+              "inactive"
+            )
+        );
+
+        return;
+
+      }
+
+      activeFilter =
+        type;
+
+      document
+        .querySelectorAll(
+          ".map-area"
+        )
+        .forEach(el => {
+
+          el.style.display =
+            el.dataset.type === type
+              ? ""
+              : "none";
+
+        });
+
+      legendItems.forEach(el => {
+
+        el.classList.toggle(
+          "inactive",
+          el.dataset.type !== type
+        );
+
+      });
+
+    }
+  );
+
+});
 
 loadMap();

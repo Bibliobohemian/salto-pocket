@@ -48,9 +48,17 @@ const legendItems =
     ".legend-item"
   );
 
+const mapImage =
+  document.querySelector(
+    ".map-image"
+  );
+
 const AREA_INDEX = [];
 
 let activeFilter =
+  null;
+
+let activeArea =
   null;
 
 const TYPE_COLORS = {
@@ -70,8 +78,6 @@ const TYPE_COLORS = {
   info: "#06b6d4",
 
   entrance: "#facc15",
-
-  service: "#7c3aed",
 
   water: "#0ea5e9",
 
@@ -106,9 +112,6 @@ const TYPE_LABELS = {
   water:
     "Fontanella",
 
-  service:
-    "Servizio",
-
   landmark:
     "Punto interesse"
 
@@ -136,31 +139,46 @@ popupBackdrop.addEventListener(
   closePopup
 );
 
+function clearAreaStates() {
+
+  document
+    .querySelectorAll(
+      ".map-area"
+    )
+    .forEach(el => {
+
+      el.classList.remove(
+        "active"
+      );
+
+      el.classList.remove(
+        "dimmed"
+      );
+
+    });
+
+}
+
 function setActiveArea(
   areaElement
 ) {
 
-  const allAreas =
-    document.querySelectorAll(
-      ".map-area"
-    );
+  activeArea =
+    areaElement;
 
-  allAreas.forEach(el => {
-
-    el.classList.remove(
-      "active"
-    );
-
-    el.classList.remove(
-      "dimmed"
-    );
-
-  });
+  clearAreaStates();
 
   if (!areaElement)
     return;
 
-  allAreas.forEach(el => {
+  const visibleAreas =
+    [
+      ...document.querySelectorAll(
+        '.map-area:not([style*="display: none"])'
+      )
+    ];
+
+  visibleAreas.forEach(el => {
 
     if (el !== areaElement) {
 
@@ -193,11 +211,105 @@ function resetMapVisibility() {
       el.style.display =
         "";
 
+    });
+
+  mapImage.classList.remove(
+    "dimmed"
+  );
+
+  clearAreaStates();
+
+}
+
+function applyFilter(
+  type
+) {
+
+  activeFilter =
+    type;
+
+  mapImage.classList.add(
+    "dimmed"
+  );
+
+  document
+    .querySelectorAll(
+      ".map-area"
+    )
+    .forEach(el => {
+
+      const isMatch =
+        el.dataset.type === type;
+
+      el.style.display =
+        isMatch
+          ? ""
+          : "none";
+
+      el.classList.remove(
+        "active"
+      );
+
+      el.classList.remove(
+        "dimmed"
+      );
+
+      if (isMatch) {
+
+        el.classList.add(
+          "active"
+        );
+
+      }
+
+    });
+
+  legendItems.forEach(el => {
+
+    el.classList.toggle(
+      "inactive",
+      el.dataset.type !== type
+    );
+
+  });
+
+}
+
+function clearFilter() {
+
+  activeFilter =
+    null;
+
+  document
+    .querySelectorAll(
+      ".map-area"
+    )
+    .forEach(el => {
+
+      el.style.display =
+        "";
+
+      el.classList.remove(
+        "active"
+      );
+
       el.classList.remove(
         "dimmed"
       );
 
     });
+
+  mapImage.classList.remove(
+    "dimmed"
+  );
+
+  legendItems.forEach(el => {
+
+    el.classList.remove(
+      "inactive"
+    );
+
+  });
 
 }
 
@@ -210,7 +322,11 @@ function openArea(
     "hidden"
   );
 
-  resetMapVisibility();
+  if (!activeFilter) {
+
+    resetMapVisibility();
+
+  }
 
   setActiveArea(
     element
@@ -415,13 +531,16 @@ svg.addEventListener(
       event.target === svg
     ) {
 
-      setActiveArea(
-        null
-      );
+      activeArea =
+        null;
 
       closePopup();
 
-      resetMapVisibility();
+      if (!activeFilter) {
+
+        resetMapVisibility();
+
+      }
 
     }
 
@@ -460,9 +579,19 @@ searchInput.addEventListener(
               area.id || ""
             ).toLowerCase();
 
+          const exhibitor =
+            (
+              area.exhibitor || ""
+            ).toLowerCase();
+
           return (
+
             name.includes(query) ||
-            id.includes(query)
+
+            id.includes(query) ||
+
+            exhibitor.includes(query)
+
           );
 
         }
@@ -470,6 +599,15 @@ searchInput.addEventListener(
 
     if (!match)
       return;
+
+    if (
+      activeFilter &&
+      match.area.type !== activeFilter
+    ) {
+
+      clearFilter();
+
+    }
 
     openArea(
       match.area,
@@ -506,83 +644,15 @@ legendItems.forEach(item => {
         activeFilter === type
       ) {
 
-        activeFilter =
-          null;
-
-        document
-          .querySelectorAll(
-            ".map-area"
-          )
-          .forEach(el => {
-
-            el.style.display =
-              "";
-
-            el.classList.remove(
-              "active"
-            );
-
-          });
-
-        document
-          .querySelector(
-            ".map-image"
-          )
-          .classList.remove(
-            "dimmed"
-          );
-
-        legendItems.forEach(
-          el =>
-            el.classList.remove(
-              "inactive"
-            )
-        );
+        clearFilter();
 
         return;
 
       }
 
-      activeFilter =
-        type;
-
-      document
-        .querySelector(
-          ".map-image"
-        )
-        .classList.add(
-          "dimmed"
-        );
-
-      document
-        .querySelectorAll(
-          ".map-area"
-        )
-        .forEach(el => {
-
-          const isMatch =
-            el.dataset.type === type;
-
-          el.style.display =
-            isMatch
-              ? ""
-              : "none";
-
-          el.classList.toggle(
-            "active",
-            isMatch
-          );
-
-        });
-
-      legendItems.forEach(el => {
-
-        el.classList.toggle(
-          "inactive",
-          el.dataset.type !== type
-        );
-
-      });
+      applyFilter(
+        type
+      );
 
     }
   );

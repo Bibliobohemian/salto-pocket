@@ -424,11 +424,14 @@ searchInput.addEventListener(
       match.element
     );
 
-    match.element.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center"
-    });
+    document
+  .querySelector(
+    ".map-wrapper"
+  )
+  .scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 
   }
 );

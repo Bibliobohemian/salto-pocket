@@ -64,6 +64,10 @@ const TYPE_COLORS = {
 
   service: "#7c3aed",
 
+  water: "#0ea5e9",
+
+  landmark: "#f97316",
+  
   unknown: "#ffffff"
 
 };

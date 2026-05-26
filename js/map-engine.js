@@ -27,6 +27,42 @@ const TYPE_COLORS = {
 
 };
 
+const popup =
+  document.querySelector(
+    ".popup"
+  );
+
+const popupName =
+  document.querySelector(
+    ".popup-name"
+  );
+
+const popupLocation =
+  document.querySelector(
+    ".popup-location"
+  );
+
+const popupType =
+  document.querySelector(
+    ".popup-type"
+  );
+
+const popupClose =
+  document.querySelector(
+    ".popup-close"
+  );
+
+popupClose.addEventListener(
+  "click",
+  () => {
+
+    popup.classList.add(
+      "hidden"
+    );
+
+  }
+);
+
 async function loadMap() {
 
   const response =
@@ -124,17 +160,25 @@ function renderArea(area) {
     area.type;
 
   element.addEventListener(
-    "click",
-    () => {
+  "click",
+  () => {
 
-      console.log(area);
+    popupName.textContent =
+      area.exhibitor ||
+      area.name;
 
-      alert(
-        `${area.name}\n${area.type}`
-      );
+    popupLocation.textContent =
+      area.name;
 
-    }
-  );
+    popupType.textContent =
+      area.type;
+
+    popup.classList.remove(
+      "hidden"
+    );
+
+  }
+);
 
   svg.appendChild(
     element

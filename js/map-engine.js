@@ -339,6 +339,11 @@ function renderArea(area) {
     }
   );
 
+  AREA_INDEX.push({
+  area,
+  element
+});
+
   svg.appendChild(
     element
   );
@@ -360,6 +365,70 @@ svg.addEventListener(
       closePopup();
 
     }
+
+  }
+);
+
+const searchInput =
+  document.querySelector(
+    ".map-search-input"
+  );
+
+const AREA_INDEX = [];
+
+searchInput.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key !== "Enter"
+    ) {
+      return;
+    }
+
+    const query =
+      searchInput.value
+        .trim()
+        .toLowerCase();
+
+    if (!query)
+      return;
+
+    const match =
+      AREA_INDEX.find(
+        ({ area }) => {
+
+          const name =
+            (
+              area.name || ""
+            ).toLowerCase();
+
+          const id =
+            (
+              area.id || ""
+            ).toLowerCase();
+
+          return (
+            name.includes(query) ||
+            id.includes(query)
+          );
+
+        }
+      );
+
+    if (!match)
+      return;
+
+    openArea(
+      match.area,
+      match.element
+    );
+
+    match.element.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center"
+    });
 
   }
 );

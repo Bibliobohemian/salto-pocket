@@ -84,6 +84,7 @@
     .legend-color {
 
       width: 16px;
+
       height: 16px;
 
       border-radius: 4px;
@@ -107,33 +108,42 @@
     }
 
     .legend-color.smoking {
-  background: #6b7280;
-}
+      background: #6b7280;
+    }
 
-.legend-color.kids {
-  background: #ec4899;
-}
+    .legend-color.kids {
+      background: #ec4899;
+    }
 
-.legend-color.info {
-  background: #06b6d4;
-}
+    .legend-color.info {
+      background: #06b6d4;
+    }
 
-.legend-color.entrance {
-  background: #facc15;
-}
+    .legend-color.entrance {
+      background: #facc15;
+    }
 
-.legend-color.service {
-  background: #7c3aed;
-}
-    
+    .legend-color.service {
+      background: #7c3aed;
+    }
+
     .map-wrapper {
 
       position: relative;
 
-      width: fit-content;
+      display: inline-block;
 
-margin:
-    24px auto;
+      max-width: 100%;
+
+      margin:
+        24px auto;
+
+    }
+
+    .map-container {
+
+      text-align: center;
+
     }
 
     .map-image {
@@ -144,6 +154,8 @@ margin:
 
       max-width: 1400px;
 
+      height: auto;
+
     }
 
     .map-overlay {
@@ -153,6 +165,7 @@ margin:
       inset: 0;
 
       width: 100%;
+
       height: 100%;
 
     }
@@ -165,13 +178,69 @@ margin:
 
       cursor: pointer;
 
-      transition: 0.2s;
+      transition:
+        fill-opacity 0.2s,
+        stroke-width 0.2s,
+        filter 0.2s;
 
     }
 
     .map-area:hover {
 
-      fill-opacity: 0.645;
+      fill-opacity: 0.45;
+
+    }
+
+    .map-area.active {
+
+      fill-opacity: 0.38 !important;
+
+      stroke: #ffffff;
+
+      stroke-width: 3;
+
+      filter:
+        drop-shadow(
+          0 0 8px rgba(255,255,255,0.7)
+        );
+
+      animation:
+        pulseArea 1.8s infinite;
+
+    }
+
+    @keyframes pulseArea {
+
+      0% {
+
+        fill-opacity: 0.28;
+
+      }
+
+      50% {
+
+        fill-opacity: 0.45;
+
+      }
+
+      100% {
+
+        fill-opacity: 0.28;
+
+      }
+
+    }
+
+    .popup-backdrop {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(0,0,0,0.45);
+
+      z-index: 998;
 
     }
 
@@ -180,20 +249,26 @@ margin:
       position: fixed;
 
       left: 50%;
+
       top: 50%;
 
       transform:
         translate(-50%, -50%);
 
-      background: #1f1f2e;
+      background:
+        #1f1f2e;
 
-      color: white;
+      color:
+        white;
 
-      padding: 24px;
+      padding:
+        24px;
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
-      width: 320px;
+      width:
+        min(320px, 90vw);
 
       z-index: 999;
 
@@ -213,6 +288,7 @@ margin:
       position: absolute;
 
       right: 12px;
+
       top: 8px;
 
       background: none;
@@ -263,20 +339,56 @@ margin:
 
       position: fixed;
 
-      background: #111827;
+      background:
+        #111827;
 
-      color: white;
+      color:
+        white;
 
       padding:
         8px 12px;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
 
       pointer-events: none;
 
       z-index: 9999;
 
       font-size: 14px;
+
+    }
+
+    @media (max-width: 768px) {
+
+      .legend {
+
+        gap: 12px;
+
+        padding:
+          12px 16px;
+
+        font-size: 14px;
+
+      }
+
+      .popup {
+
+        padding: 20px;
+
+      }
+
+      .popup-name {
+
+        font-size: 20px;
+
+      }
+
+      .popup-location {
+
+        font-size: 16px;
+
+      }
 
     }
 
@@ -294,88 +406,75 @@ margin:
 
   </header>
 
-<div class="legend">
+  <div class="legend">
 
-  <div class="legend-item">
-    <span
-      class="legend-color stand">
-    </span>
-    Stand
-  </div>
+    <div class="legend-item">
+      <span class="legend-color stand"></span>
+      Stand
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color room">
-    </span>
-    Sale
-  </div>
+    <div class="legend-item">
+      <span class="legend-color room"></span>
+      Sale
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color food">
-    </span>
-    Food
-  </div>
+    <div class="legend-item">
+      <span class="legend-color food"></span>
+      Food
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color wc">
-    </span>
-    Bagni
-  </div>
+    <div class="legend-item">
+      <span class="legend-color wc"></span>
+      Bagni
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color smoking">
-    </span>
-    Area fumatori
-  </div>
+    <div class="legend-item">
+      <span class="legend-color smoking"></span>
+      Area fumatori
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color kids">
-    </span>
-    Area bambini
-  </div>
+    <div class="legend-item">
+      <span class="legend-color kids"></span>
+      Area bambini
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color info">
-    </span>
-    Infopoint
-  </div>
+    <div class="legend-item">
+      <span class="legend-color info"></span>
+      Infopoint
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color entrance">
-    </span>
-    Ingresso
-  </div>
+    <div class="legend-item">
+      <span class="legend-color entrance"></span>
+      Ingresso
+    </div>
 
-  <div class="legend-item">
-    <span
-      class="legend-color service">
-    </span>
-    Servizi
-  </div>
-
-</div>
+    <div class="legend-item">
+      <span class="legend-color service"></span>
+      Servizi
+    </div>
 
   </div>
 
-  <div class="map-wrapper">
+  <div class="map-container">
 
-    <img
-      class="map-image"
-      src="./maps/2026/pad1/map.png"
-    >
+    <div class="map-wrapper">
 
-    <svg
-      class="map-overlay"
-      viewBox="0 0 1846 811"
-    >
-    </svg>
+      <img
+        class="map-image"
+        src="./maps/2026/pad1/map.png"
+      >
 
+      <svg
+        class="map-overlay"
+        viewBox="0 0 1846 811"
+      >
+      </svg>
+
+    </div>
+
+  </div>
+
+  <div class="popup-backdrop hidden">
   </div>
 
   <div class="popup hidden">

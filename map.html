@@ -392,6 +392,57 @@
 
     }
 
+    .map-search {
+
+  padding:
+    16px 24px;
+
+  background:
+    white;
+
+  position: sticky;
+
+  top: 72px;
+
+  z-index: 40;
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.04);
+
+}
+
+.map-search-input {
+
+  width: 100%;
+
+  max-width: 500px;
+
+  padding:
+    14px 18px;
+
+  border-radius:
+    14px;
+
+  border:
+    1px solid #d1d5db;
+
+  font-size:
+    16px;
+
+  outline: none;
+
+  box-sizing:
+    border-box;
+
+}
+
+.map-search-input:focus {
+
+  border-color:
+    #d97706;
+
+}
+
   </style>
 
 </head>
@@ -405,6 +456,16 @@
     </h1>
 
   </header>
+
+  <div class="map-search">
+
+  <input
+    type="text"
+    class="map-search-input"
+    placeholder="Cerca stand..."
+  >
+
+</div>
 
   <div class="legend">
 

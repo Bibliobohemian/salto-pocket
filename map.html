@@ -33,8 +33,11 @@
 
     .topbar {
 
-      padding:
-        18px 24px;
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
 
       background:
         white;
@@ -42,11 +45,28 @@
       box-shadow:
         0 2px 12px rgba(0,0,0,0.08);
 
-      position: sticky;
+    }
 
-      top: 0;
+    .topbar-inner {
 
-      z-index: 50;
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 14px;
+
+      padding:
+        16px;
+
+    }
+
+    .topbar-title {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
 
     }
 
@@ -54,7 +74,43 @@
 
       margin: 0;
 
-      font-size: 24px;
+      font-size: 28px;
+
+    }
+
+    .map-search-input {
+
+      width: 100%;
+
+      padding:
+        14px 18px;
+
+      border-radius:
+        14px;
+
+      border:
+        1px solid #d1d5db;
+
+      font-size:
+        16px;
+
+      outline: none;
+
+      box-sizing:
+        border-box;
+
+      background:
+        #fafafa;
+
+    }
+
+    .map-search-input:focus {
+
+      border-color:
+        #d97706;
+
+      background:
+        white;
 
     }
 
@@ -62,12 +118,21 @@
 
       display: flex;
 
-      gap: 16px;
+      gap: 10px;
 
-      padding:
-        16px 24px;
+      overflow-x: auto;
 
-      flex-wrap: wrap;
+      padding-bottom: 4px;
+
+      scrollbar-width: none;
+
+      -ms-overflow-style: none;
+
+    }
+
+    .legend::-webkit-scrollbar {
+
+      display: none;
 
     }
 
@@ -79,15 +144,52 @@
 
       gap: 8px;
 
+      flex-shrink: 0;
+
+      padding:
+        10px 14px;
+
+      border-radius:
+        999px;
+
+      background:
+        #f3f4f6;
+
+      cursor: pointer;
+
+      transition:
+        opacity 0.2s,
+        transform 0.2s,
+        background 0.2s;
+
+      user-select: none;
+
+      font-size: 14px;
+
+    }
+
+    .legend-item:hover {
+
+      transform:
+        translateY(-1px);
+
+    }
+
+    .legend-item.inactive {
+
+      opacity: 0.35;
+
     }
 
     .legend-color {
 
-      width: 16px;
+      width: 14px;
 
-      height: 16px;
+      height: 14px;
 
-      border-radius: 4px;
+      border-radius: 999px;
+
+      flex-shrink: 0;
 
     }
 
@@ -127,6 +229,12 @@
       background: #7c3aed;
     }
 
+    .map-container {
+
+      text-align: center;
+
+    }
+
     .map-wrapper {
 
       position: relative;
@@ -137,12 +245,6 @@
 
       margin:
         24px auto;
-
-    }
-
-    .map-container {
-
-      text-align: center;
 
     }
 
@@ -181,7 +283,8 @@
       transition:
         fill-opacity 0.2s,
         stroke-width 0.2s,
-        filter 0.2s;
+        filter 0.2s,
+        stroke-opacity 0.2s;
 
     }
 
@@ -206,6 +309,14 @@
 
       animation:
         pulseArea 1.8s infinite;
+
+    }
+
+    .map-area.dimmed {
+
+      fill-opacity: 0.05 !important;
+
+      stroke-opacity: 0.08 !important;
 
     }
 
@@ -361,14 +472,25 @@
 
     @media (max-width: 768px) {
 
-      .legend {
-
-        gap: 12px;
+      .topbar-inner {
 
         padding:
-          12px 16px;
+          14px;
 
-        font-size: 14px;
+      }
+
+      .topbar h1 {
+
+        font-size: 22px;
+
+      }
+
+      .legend-item {
+
+        padding:
+          8px 12px;
+
+        font-size: 13px;
 
       }
 
@@ -392,57 +514,6 @@
 
     }
 
-    .map-search {
-
-  padding:
-    16px 24px;
-
-  background:
-    white;
-
-  position: sticky;
-
-  top: 72px;
-
-  z-index: 40;
-
-  box-shadow:
-    0 2px 8px rgba(0,0,0,0.04);
-
-}
-
-.map-search-input {
-
-  width: 100%;
-
-  max-width: 500px;
-
-  padding:
-    14px 18px;
-
-  border-radius:
-    14px;
-
-  border:
-    1px solid #d1d5db;
-
-  font-size:
-    16px;
-
-  outline: none;
-
-  box-sizing:
-    border-box;
-
-}
-
-.map-search-input:focus {
-
-  border-color:
-    #d97706;
-
-}
-
   </style>
 
 </head>
@@ -451,70 +522,101 @@
 
   <header class="topbar">
 
-    <h1>
-      SalTo Pocket
-    </h1>
+    <div class="topbar-inner">
+
+      <div class="topbar-title">
+
+        <h1>
+          SalTo Pocket
+        </h1>
+
+      </div>
+
+      <input
+        type="text"
+        class="map-search-input"
+        placeholder="Cerca stand..."
+      >
+
+      <div class="legend">
+
+        <div
+          class="legend-item"
+          data-type="stand"
+        >
+          <span class="legend-color stand"></span>
+          Stand
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="room"
+        >
+          <span class="legend-color room"></span>
+          Sale
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="food"
+        >
+          <span class="legend-color food"></span>
+          Food
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="wc"
+        >
+          <span class="legend-color wc"></span>
+          Bagni
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="smoking"
+        >
+          <span class="legend-color smoking"></span>
+          Fumatori
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="kids"
+        >
+          <span class="legend-color kids"></span>
+          Bambini
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="info"
+        >
+          <span class="legend-color info"></span>
+          Info
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="entrance"
+        >
+          <span class="legend-color entrance"></span>
+          Ingressi
+        </div>
+
+        <div
+          class="legend-item"
+          data-type="service"
+        >
+          <span class="legend-color service"></span>
+          Servizi
+        </div>
+
+      </div>
+
+    </div>
 
   </header>
-
-  <div class="map-search">
-
-  <input
-    type="text"
-    class="map-search-input"
-    placeholder="Cerca stand..."
-  >
-
-</div>
-
-  <div class="legend">
-
-    <div class="legend-item">
-      <span class="legend-color stand"></span>
-      Stand
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color room"></span>
-      Sale
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color food"></span>
-      Food
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color wc"></span>
-      Bagni
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color smoking"></span>
-      Area fumatori
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color kids"></span>
-      Area bambini
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color info"></span>
-      Infopoint
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color entrance"></span>
-      Ingresso
-    </div>
-
-    <div class="legend-item">
-      <span class="legend-color service"></span>
-      Servizi
-    </div>
-
-  </div>
 
   <div class="map-container">
 

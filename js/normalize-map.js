@@ -41,6 +41,12 @@ async function normalizeMap() {
     if (name.includes("bambini"))
       return "kids";
 
+    if (name.includes("Fontanelle"))
+      return "water";
+
+    if (name.includes("Torre"))
+      return "landmark";
+    
     return "service";
   }
 

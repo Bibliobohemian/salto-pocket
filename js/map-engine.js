@@ -213,6 +213,10 @@ function renderArea(area) {
     "click",
     () => {
 
+tooltip.classList.add(
+  "hidden"
+);
+      
       popupName.textContent =
         area.exhibitor ||
         area.name;
@@ -220,8 +224,39 @@ function renderArea(area) {
       popupLocation.textContent =
         area.name;
 
-      popupType.textContent =
-        area.type;
+      const TYPE_LABELS = {
+
+  stand: "Stand",
+
+  room: "Sala",
+
+  food: "Food",
+
+  wc: "Bagno",
+
+  smoking:
+    "Area fumatori",
+
+  kids:
+    "Area bambini",
+
+  info: "Infopoint",
+
+  entrance:
+    "Ingresso",
+
+  water:
+    "Fontanella",
+
+  service:
+    "Servizio"
+
+};
+
+popupType.textContent =
+  TYPE_LABELS[
+    area.type
+  ] || area.type;
 
       popup.classList.remove(
         "hidden"

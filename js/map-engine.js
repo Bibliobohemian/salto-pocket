@@ -13,6 +13,11 @@ const popup =
     ".popup"
   );
 
+const popupBackdrop =
+  document.querySelector(
+    ".popup-backdrop"
+  );
+
 const popupName =
   document.querySelector(
     ".popup-name"
@@ -32,17 +37,6 @@ const popupClose =
   document.querySelector(
     ".popup-close"
   );
-
-popupClose.addEventListener(
-  "click",
-  () => {
-
-    popup.classList.add(
-      "hidden"
-    );
-
-  }
-);
 
 const TYPE_COLORS = {
 
@@ -67,10 +61,93 @@ const TYPE_COLORS = {
   water: "#0ea5e9",
 
   landmark: "#f97316",
-  
+
   unknown: "#ffffff"
 
 };
+
+const TYPE_LABELS = {
+
+  stand: "Stand",
+
+  room: "Sala",
+
+  food: "Food",
+
+  wc: "Bagno",
+
+  smoking:
+    "Area fumatori",
+
+  kids:
+    "Area bambini",
+
+  info:
+    "Infopoint",
+
+  entrance:
+    "Ingresso",
+
+  water:
+    "Fontanella",
+
+  service:
+    "Servizio",
+
+  landmark:
+    "Punto interesse"
+
+};
+
+function closePopup() {
+
+  popup.classList.add(
+    "hidden"
+  );
+
+  popupBackdrop.classList.add(
+    "hidden"
+  );
+
+}
+
+popupClose.addEventListener(
+  "click",
+  closePopup
+);
+
+popupBackdrop.addEventListener(
+  "click",
+  closePopup
+);
+
+function setActiveArea(
+  areaElement
+) {
+
+  document
+    .querySelectorAll(
+      ".map-area.active"
+    )
+    .forEach(
+      el =>
+        el.classList.remove(
+          "active"
+        )
+    );
+
+  if (!areaElement)
+    return;
+
+  areaElement.classList.add(
+    "active"
+  );
+
+  svg.appendChild(
+    areaElement
+  );
+
+}
 
 async function loadMap() {
 
@@ -178,6 +255,12 @@ function renderArea(area) {
     "mousemove",
     (event) => {
 
+      if (
+        window.innerWidth <= 768
+      ) {
+        return;
+      }
+
       tooltip.textContent =
         area.name;
 
@@ -213,10 +296,14 @@ function renderArea(area) {
     "click",
     () => {
 
-tooltip.classList.add(
-  "hidden"
-);
-      
+      tooltip.classList.add(
+        "hidden"
+      );
+
+      setActiveArea(
+        element
+      );
+
       popupName.textContent =
         area.exhibitor ||
         area.name;
@@ -224,41 +311,16 @@ tooltip.classList.add(
       popupLocation.textContent =
         area.name;
 
-      const TYPE_LABELS = {
-
-  stand: "Stand",
-
-  room: "Sala",
-
-  food: "Food",
-
-  wc: "Bagno",
-
-  smoking:
-    "Area fumatori",
-
-  kids:
-    "Area bambini",
-
-  info: "Infopoint",
-
-  entrance:
-    "Ingresso",
-
-  water:
-    "Fontanella",
-
-  service:
-    "Servizio"
-
-};
-
-popupType.textContent =
-  TYPE_LABELS[
-    area.type
-  ] || area.type;
+      popupType.textContent =
+        TYPE_LABELS[
+          area.type
+        ] || area.type;
 
       popup.classList.remove(
+        "hidden"
+      );
+
+      popupBackdrop.classList.remove(
         "hidden"
       );
 
@@ -270,5 +332,24 @@ popupType.textContent =
   );
 
 }
+
+svg.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === svg
+    ) {
+
+      setActiveArea(
+        null
+      );
+
+      closePopup();
+
+    }
+
+  }
+);
 
 loadMap();

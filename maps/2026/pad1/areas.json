@@ -1,0 +1,1433 @@
+[
+  {
+    "id": "P1_SALA_GRANATA_0",
+    "hall": "pad1",
+    "name": "Sala Granata",
+    "type": "room",
+    "shape": "rect",
+    "coords": {
+      "x": 31,
+      "y": 238,
+      "width": 134,
+      "height": 165
+    }
+  },
+  {
+    "id": "P1_SALA_ROSSA_1",
+    "hall": "pad1",
+    "name": "Sala Rossa",
+    "type": "room",
+    "shape": "rect",
+    "coords": {
+      "x": 32,
+      "y": 513,
+      "width": 206,
+      "height": 207
+    }
+  },
+  {
+    "id": "P1_TORRE_DI_LIBRI_2",
+    "hall": "pad1",
+    "name": "Torre di libri",
+    "type": "service",
+    "shape": "rect",
+    "coords": {
+      "x": 212,
+      "y": 388,
+      "width": 97,
+      "height": 87
+    }
+  },
+  {
+    "id": "P1_FONTANELLE_3",
+    "hall": "pad1",
+    "name": "Fontanelle",
+    "type": "service",
+    "shape": "circle",
+    "coords": {
+      "cx": 63,
+      "cy": 483,
+      "radius": 27
+    }
+  },
+  {
+    "id": "P1_BAGNO_4",
+    "hall": "pad1",
+    "name": "Bagno",
+    "type": "wc",
+    "shape": "circle",
+    "coords": {
+      "cx": 285,
+      "cy": 770,
+      "radius": 28
+    }
+  },
+  {
+    "id": "P1_BAGNO_5",
+    "hall": "pad1",
+    "name": "Bagno",
+    "type": "wc",
+    "shape": "circle",
+    "coords": {
+      "cx": 1305,
+      "cy": 458,
+      "radius": 28
+    }
+  },
+  {
+    "id": "P1_BAGNO_6",
+    "hall": "pad1",
+    "name": "Bagno",
+    "type": "wc",
+    "shape": "circle",
+    "coords": {
+      "cx": 1304,
+      "cy": 360,
+      "radius": 28
+    }
+  },
+  {
+    "id": "P1_AREA_FUMATORI_7",
+    "hall": "pad1",
+    "name": "Area fumatori",
+    "type": "smoking",
+    "shape": "circle",
+    "coords": {
+      "cx": 226,
+      "cy": 769,
+      "radius": 29
+    }
+  },
+  {
+    "id": "P1_BAR_8",
+    "hall": "pad1",
+    "name": "Bar",
+    "type": "food",
+    "shape": "circle",
+    "coords": {
+      "cx": 447,
+      "cy": 263,
+      "radius": 29
+    }
+  },
+  {
+    "id": "P1_BAR_9",
+    "hall": "pad1",
+    "name": "Bar",
+    "type": "food",
+    "shape": "circle",
+    "coords": {
+      "cx": 1267,
+      "cy": 685,
+      "radius": 29
+    }
+  },
+  {
+    "id": "P1_BAR_10",
+    "hall": "pad1",
+    "name": "Bar",
+    "type": "food",
+    "shape": "circle",
+    "coords": {
+      "cx": 292,
+      "cy": 684,
+      "radius": 29
+    }
+  },
+  {
+    "id": "P1_RISTORANTE_11",
+    "hall": "pad1",
+    "name": "Ristorante",
+    "type": "food",
+    "shape": "circle",
+    "coords": {
+      "cx": 1268,
+      "cy": 626,
+      "radius": 28
+    }
+  },
+  {
+    "id": "P1_AREA_BAMBINI_12",
+    "hall": "pad1",
+    "name": "Area bambini",
+    "type": "kids",
+    "shape": "circle",
+    "coords": {
+      "cx": 1246,
+      "cy": 458,
+      "radius": 31
+    }
+  },
+  {
+    "id": "P1_AREA_BAMBINI_13",
+    "hall": "pad1",
+    "name": "Area bambini",
+    "type": "kids",
+    "shape": "circle",
+    "coords": {
+      "cx": 1245,
+      "cy": 360,
+      "radius": 31
+    }
+  },
+  {
+    "id": "P1_SALA_OLIMPICA_14",
+    "hall": "pad1",
+    "name": "Sala Olimpica",
+    "type": "room",
+    "shape": "rect",
+    "coords": {
+      "x": 822,
+      "y": 605,
+      "width": 144,
+      "height": 114
+    }
+  },
+  {
+    "id": "P1_SALA_DEL_FUMETTO_15",
+    "hall": "pad1",
+    "name": "Sala del Fumetto",
+    "type": "room",
+    "shape": "rect",
+    "coords": {
+      "x": 1014,
+      "y": 605,
+      "width": 144,
+      "height": 113
+    }
+  },
+  {
+    "id": "P1_SALA_NUOVI_EDITORI_16",
+    "hall": "pad1",
+    "name": "Sala Nuovi Editori",
+    "type": "room",
+    "shape": "rect",
+    "coords": {
+      "x": 1244,
+      "y": 239,
+      "width": 61,
+      "height": 76
+    }
+  },
+  {
+    "id": "P1_SALA_AVORIO_17",
+    "hall": "pad1",
+    "name": "Sala Avorio",
+    "type": "room",
+    "shape": "rect",
+    "coords": {
+      "x": 1321,
+      "y": 226,
+      "width": 101,
+      "height": 110
+    }
+  },
+  {
+    "id": "P1_D102_18",
+    "hall": "pad1",
+    "name": "D102",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 165,
+      "y": 238,
+      "width": 152,
+      "height": 107
+    }
+  },
+  {
+    "id": "P1_E84_19",
+    "hall": "pad1",
+    "name": "E84",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 386,
+      "y": 238,
+      "width": 35,
+      "height": 19
+    }
+  },
+  {
+    "id": "P1_E76_20",
+    "hall": "pad1",
+    "name": "E76",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 474,
+      "y": 238,
+      "width": 36,
+      "height": 19
+    }
+  },
+  {
+    "id": "P1_E69_D70_21",
+    "hall": "pad1",
+    "name": "E69-D70",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 386,
+      "y": 295,
+      "width": 163,
+      "height": 74
+    }
+  },
+  {
+    "id": "P1_E51_D52_22",
+    "hall": "pad1",
+    "name": "E51-D52",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 593,
+      "y": 295,
+      "width": 161,
+      "height": 73
+    }
+  },
+  {
+    "id": "P1_E72_23",
+    "hall": "pad1",
+    "name": "E72",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 512,
+      "y": 239,
+      "width": 36,
+      "height": 19
+    }
+  },
+  {
+    "id": "P1_E68_24",
+    "hall": "pad1",
+    "name": "E68",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 550,
+      "y": 238,
+      "width": 36,
+      "height": 19
+    }
+  },
+  {
+    "id": "P1_E64_25",
+    "hall": "pad1",
+    "name": "E64",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 587,
+      "y": 238,
+      "width": 36,
+      "height": 19
+    }
+  },
+  {
+    "id": "P1_E60_26",
+    "hall": "pad1",
+    "name": "E60",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 625,
+      "y": 238,
+      "width": 36,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E52_27",
+    "hall": "pad1",
+    "name": "E52",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 718,
+      "y": 239,
+      "width": 36,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_E47_28",
+    "hall": "pad1",
+    "name": "E47",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 821,
+      "y": 294,
+      "width": 37,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_E45_29",
+    "hall": "pad1",
+    "name": "E45",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 859,
+      "y": 294,
+      "width": 18,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_E43_30",
+    "hall": "pad1",
+    "name": "E43",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 877,
+      "y": 295,
+      "width": 18,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_D85_31",
+    "hall": "pad1",
+    "name": "D85",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 385,
+      "y": 409,
+      "width": 36,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_D77_32",
+    "hall": "pad1",
+    "name": "D77",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 422,
+      "y": 409,
+      "width": 73,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_C86_33",
+    "hall": "pad1",
+    "name": "C86",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 385,
+      "y": 446,
+      "width": 35,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_C78_34",
+    "hall": "pad1",
+    "name": "C78",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 421,
+      "y": 446,
+      "width": 73,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_D65_35",
+    "hall": "pad1",
+    "name": "D65",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 532,
+      "y": 409,
+      "width": 72,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_C66_36",
+    "hall": "pad1",
+    "name": "C66",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 531,
+      "y": 446,
+      "width": 73,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_D51_C52_37",
+    "hall": "pad1",
+    "name": "D51-C52",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 645,
+      "y": 409,
+      "width": 110,
+      "height": 54
+    }
+  },
+  {
+    "id": "P1_C85_38",
+    "hall": "pad1",
+    "name": "C85",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 385,
+      "y": 501,
+      "width": 35,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_C81_39",
+    "hall": "pad1",
+    "name": "C81",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 422,
+      "y": 502,
+      "width": 34,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_C77_40",
+    "hall": "pad1",
+    "name": "C77",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 459,
+      "y": 502,
+      "width": 36,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_B86_41",
+    "hall": "pad1",
+    "name": "B86",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 386,
+      "y": 520,
+      "width": 34,
+      "height": 53
+    }
+  },
+  {
+    "id": "P1_B78_42",
+    "hall": "pad1",
+    "name": "B78",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 422,
+      "y": 540,
+      "width": 72,
+      "height": 34
+    }
+  },
+  {
+    "id": "P1_B70_C69_43",
+    "hall": "pad1",
+    "name": "B70-C69",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 532,
+      "y": 501,
+      "width": 17,
+      "height": 74
+    }
+  },
+  {
+    "id": "P1_B66_C65_44",
+    "hall": "pad1",
+    "name": "B66-C65",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 551,
+      "y": 502,
+      "width": 53,
+      "height": 72
+    }
+  },
+  {
+    "id": "P1_B60_C59_45",
+    "hall": "pad1",
+    "name": "B60-C59",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 645,
+      "y": 502,
+      "width": 53,
+      "height": 72
+    }
+  },
+  {
+    "id": "P1_C51_46",
+    "hall": "pad1",
+    "name": "C51",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 700,
+      "y": 502,
+      "width": 54,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_B52_47",
+    "hall": "pad1",
+    "name": "B52",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 700,
+      "y": 539,
+      "width": 54,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_A85_48",
+    "hall": "pad1",
+    "name": "A85",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 387,
+      "y": 685,
+      "width": 147,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_A59_49",
+    "hall": "pad1",
+    "name": "A59",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 600,
+      "y": 686,
+      "width": 78,
+      "height": 34
+    }
+  },
+  {
+    "id": "P1_A51_50",
+    "hall": "pad1",
+    "name": "A51",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 683,
+      "y": 685,
+      "width": 69,
+      "height": 34
+    }
+  },
+  {
+    "id": "P1_B85_51",
+    "hall": "pad1",
+    "name": "B85",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 385,
+      "y": 618,
+      "width": 36,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_B81_52",
+    "hall": "pad1",
+    "name": "B81",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 423,
+      "y": 618,
+      "width": 36,
+      "height": 16
+    }
+  },
+  {
+    "id": "P1_B77_53",
+    "hall": "pad1",
+    "name": "B77",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 460,
+      "y": 617,
+      "width": 35,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_A86_54",
+    "hall": "pad1",
+    "name": "A86",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 385,
+      "y": 636,
+      "width": 34,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_A78_55",
+    "hall": "pad1",
+    "name": "A78",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 422,
+      "y": 635,
+      "width": 72,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_A66_B65_56",
+    "hall": "pad1",
+    "name": "A66-B65",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 531,
+      "y": 617,
+      "width": 72,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_B59_57",
+    "hall": "pad1",
+    "name": "B59",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 644,
+      "y": 618,
+      "width": 35,
+      "height": 16
+    }
+  },
+  {
+    "id": "P1_B55_58",
+    "hall": "pad1",
+    "name": "B55",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 681,
+      "y": 618,
+      "width": 36,
+      "height": 16
+    }
+  },
+  {
+    "id": "P1_B51_59",
+    "hall": "pad1",
+    "name": "B51",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 719,
+      "y": 619,
+      "width": 36,
+      "height": 16
+    }
+  },
+  {
+    "id": "P1_A60_60",
+    "hall": "pad1",
+    "name": "A60",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 645,
+      "y": 636,
+      "width": 34,
+      "height": 16
+    }
+  },
+  {
+    "id": "P1_A56_61",
+    "hall": "pad1",
+    "name": "A56",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 681,
+      "y": 636,
+      "width": 36,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_A52_62",
+    "hall": "pad1",
+    "name": "A52",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 719,
+      "y": 636,
+      "width": 36,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_B09_63",
+    "hall": "pad1",
+    "name": "B09",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1157,
+      "y": 604,
+      "width": 20,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_INFOPOINT_64",
+    "hall": "pad1",
+    "name": "Infopoint",
+    "type": "info",
+    "shape": "circle",
+    "coords": {
+      "cx": 1411,
+      "cy": 411,
+      "radius": 28
+    }
+  },
+  {
+    "id": "P1_INGRESSO_A_65",
+    "hall": "pad1",
+    "name": "Ingresso A",
+    "type": "entrance",
+    "shape": "rect",
+    "coords": {
+      "x": 1581,
+      "y": 423,
+      "width": 248,
+      "height": 59
+    }
+  },
+  {
+    "id": "P1_B48_66",
+    "hall": "pad1",
+    "name": "B48",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 822,
+      "y": 539,
+      "width": 53,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_B40_67",
+    "hall": "pad1",
+    "name": "B40",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 877,
+      "y": 540,
+      "width": 55,
+      "height": 34
+    }
+  },
+  {
+    "id": "P1_B32_68",
+    "hall": "pad1",
+    "name": "B32",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 967,
+      "y": 540,
+      "width": 36,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_B28_69",
+    "hall": "pad1",
+    "name": "B28",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1005,
+      "y": 539,
+      "width": 36,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_B24_C23_70",
+    "hall": "pad1",
+    "name": "B24-C23",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1042,
+      "y": 502,
+      "width": 37,
+      "height": 73
+    }
+  },
+  {
+    "id": "P1_C43_71",
+    "hall": "pad1",
+    "name": "C43",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 821,
+      "y": 502,
+      "width": 73,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_C39_72",
+    "hall": "pad1",
+    "name": "C39",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 896,
+      "y": 502,
+      "width": 36,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_C31_73",
+    "hall": "pad1",
+    "name": "C31",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 967,
+      "y": 502,
+      "width": 36,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_V27_74",
+    "hall": "pad1",
+    "name": "V27",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1005,
+      "y": 502,
+      "width": 36,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_B10_75",
+    "hall": "pad1",
+    "name": "B10",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1114,
+      "y": 539,
+      "width": 91,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_C17_76",
+    "hall": "pad1",
+    "name": "C17",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1114,
+      "y": 502,
+      "width": 53,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_C09_77",
+    "hall": "pad1",
+    "name": "C09",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1169,
+      "y": 502,
+      "width": 36,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_C07_78",
+    "hall": "pad1",
+    "name": "C07",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1243,
+      "y": 549,
+      "width": 45,
+      "height": 24
+    }
+  },
+  {
+    "id": "P1_C05_79",
+    "hall": "pad1",
+    "name": "C05",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1290,
+      "y": 511,
+      "width": 16,
+      "height": 37
+    }
+  },
+  {
+    "id": "P1_C40_D39_80",
+    "hall": "pad1",
+    "name": "C40-D39",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 822,
+      "y": 410,
+      "width": 110,
+      "height": 52
+    }
+  },
+  {
+    "id": "P1_C28_D27_81",
+    "hall": "pad1",
+    "name": "C28-D27",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 966,
+      "y": 409,
+      "width": 75,
+      "height": 53
+    }
+  },
+  {
+    "id": "P1_C24_D23_82",
+    "hall": "pad1",
+    "name": "C24-D23",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1042,
+      "y": 410,
+      "width": 36,
+      "height": 53
+    }
+  },
+  {
+    "id": "P1_D13_83",
+    "hall": "pad1",
+    "name": "D13",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1113,
+      "y": 409,
+      "width": 73,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_C10_D09_84",
+    "hall": "pad1",
+    "name": "C10-D09",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1188,
+      "y": 409,
+      "width": 37,
+      "height": 53
+    }
+  },
+  {
+    "id": "P1_C18_85",
+    "hall": "pad1",
+    "name": "C18",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1114,
+      "y": 445,
+      "width": 36,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_C14_86",
+    "hall": "pad1",
+    "name": "C14",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1152,
+      "y": 446,
+      "width": 35,
+      "height": 16
+    }
+  },
+  {
+    "id": "P1_D10_E09_87",
+    "hall": "pad1",
+    "name": "D10-E09",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1114,
+      "y": 295,
+      "width": 102,
+      "height": 71
+    }
+  },
+  {
+    "id": "P1_D24_E23_88",
+    "hall": "pad1",
+    "name": "D24-E23",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1042,
+      "y": 295,
+      "width": 37,
+      "height": 73
+    }
+  },
+  {
+    "id": "P1_D28_E27_89",
+    "hall": "pad1",
+    "name": "D28-E27",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 967,
+      "y": 295,
+      "width": 73,
+      "height": 73
+    }
+  },
+  {
+    "id": "P1_E39_90",
+    "hall": "pad1",
+    "name": "E39",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 897,
+      "y": 295,
+      "width": 35,
+      "height": 35
+    }
+  },
+  {
+    "id": "P1_D44_91",
+    "hall": "pad1",
+    "name": "D44",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 822,
+      "y": 331,
+      "width": 73,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_D40_92",
+    "hall": "pad1",
+    "name": "D40",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 897,
+      "y": 331,
+      "width": 35,
+      "height": 36
+    }
+  },
+  {
+    "id": "P1_E46_93",
+    "hall": "pad1",
+    "name": "E46",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 820,
+      "y": 239,
+      "width": 36,
+      "height": 19
+    }
+  },
+  {
+    "id": "P1_E44_94",
+    "hall": "pad1",
+    "name": "E44",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 859,
+      "y": 239,
+      "width": 22,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_E42_95",
+    "hall": "pad1",
+    "name": "E42",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 882,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E40_96",
+    "hall": "pad1",
+    "name": "E40",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 902,
+      "y": 239,
+      "width": 20,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E38_97",
+    "hall": "pad1",
+    "name": "E38",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 924,
+      "y": 239,
+      "width": 20,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E36_98",
+    "hall": "pad1",
+    "name": "E36",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 945,
+      "y": 239,
+      "width": 19,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_E34_99",
+    "hall": "pad1",
+    "name": "E34",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 967,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E32_100",
+    "hall": "pad1",
+    "name": "E32",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 987,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E30_101",
+    "hall": "pad1",
+    "name": "E30",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1008,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E28_102",
+    "hall": "pad1",
+    "name": "E28",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1029,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E26_103",
+    "hall": "pad1",
+    "name": "E26",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1050,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E24_104",
+    "hall": "pad1",
+    "name": "E24",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1070,
+      "y": 239,
+      "width": 20,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E20_105",
+    "hall": "pad1",
+    "name": "E20",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1091,
+      "y": 239,
+      "width": 20,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_E18_106",
+    "hall": "pad1",
+    "name": "E18",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1113,
+      "y": 239,
+      "width": 20,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E16_107",
+    "hall": "pad1",
+    "name": "E16",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1134,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E12_108",
+    "hall": "pad1",
+    "name": "E12",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1155,
+      "y": 239,
+      "width": 19,
+      "height": 17
+    }
+  },
+  {
+    "id": "P1_E10_109",
+    "hall": "pad1",
+    "name": "E10",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1176,
+      "y": 239,
+      "width": 19,
+      "height": 18
+    }
+  },
+  {
+    "id": "P1_E08_110",
+    "hall": "pad1",
+    "name": "E08",
+    "type": "stand",
+    "shape": "rect",
+    "coords": {
+      "x": 1197,
+      "y": 239,
+      "width": 20,
+      "height": 18
+    }
+  }
+]

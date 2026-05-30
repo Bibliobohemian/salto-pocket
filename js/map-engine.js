@@ -473,25 +473,45 @@ function buildExhibitorIndex() {
 
     if (!ex.stand) return;
 
-    const stands =
+    const standGroups =
       ex.stand
         .split("/")
         .map(s => s.trim());
 
-    stands.forEach(stand => {
+    standGroups.forEach(group => {
 
-      if (!exhibitorsByStand[stand]) {
-        exhibitorsByStand[stand] = [];
+      if (!group) return;
+
+      // Stand completo
+      if (!exhibitorsByStand[group]) {
+        exhibitorsByStand[group] = [];
       }
 
-      exhibitorsByStand[stand].push(ex);
+      exhibitorsByStand[group].push(ex);
+
+      // Singoli stand (es. D52-E51 → D52 + E51)
+      const singleStands =
+        group
+          .split("-")
+          .map(s => s.trim());
+
+      singleStands.forEach(single => {
+
+        if (!single) return;
+
+        if (!exhibitorsByStand[single]) {
+          exhibitorsByStand[single] = [];
+        }
+
+        exhibitorsByStand[single].push(ex);
+
+      });
 
     });
 
   });
 
 }
-
 async function loadMap() {
 
   const areasResponse =

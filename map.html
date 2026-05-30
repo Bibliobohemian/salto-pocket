@@ -5,15 +5,13 @@
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="
-      width=device-width,
-      initial-scale=1.0,
-      maximum-scale=1.0,
-      user-scalable=no
-    "
-  >
+<meta
+  name="viewport"
+  content="
+    width=device-width,
+    initial-scale=1.0
+  "
+>
 
   <title>
     SalTo Pocket
@@ -240,27 +238,23 @@
       background: #f97316;
     }
 
-    .map-container {
+.map-container {
 
-      text-align: center;
+  overflow-x: auto;
 
-      overflow: hidden;
+  overflow-y: auto;
 
-    }
+  -webkit-overflow-scrolling: touch;
+
+}
 
     .map-wrapper {
-
       position: relative;
-
       display: inline-block;
-
       max-width: 100%;
-
       margin:
         24px auto;
-
       touch-action: pan-x pan-y;
-
     }
 
     .map-image {
@@ -502,34 +496,41 @@
     }
 
     @media (max-width: 768px) {
-
       body {
-
         padding-bottom: 140px;
-
       }
 
-      .topbar-inner {
+      .map-wrapper {
 
-        padding:
-          14px;
+  width: 1800px;
 
-      }
+  max-width: none;
+
+}
+      
+.topbar-inner {
+
+  padding:
+    10px 12px;
+
+  gap: 10px;
+
+}
 
       .topbar h1 {
 
-        font-size: 22px;
+        font-size: 18px;
 
       }
 
-      .legend-item {
+.legend-item {
 
-        padding:
-          8px 12px;
+  padding:
+    6px 10px;
 
-        font-size: 13px;
+  font-size: 12px;
 
-      }
+}
 
       .map-wrapper {
 
@@ -538,33 +539,35 @@
 
       }
 
-      .popup {
+     .popup {
 
-        left: 0;
+  left: 0;
 
-        right: 0;
+  right: 0;
 
-        top: auto;
+  top: auto;
 
-        bottom: 0;
+  bottom: 0;
 
-        width: 100%;
+  width: 100%;
 
-        max-width: 100%;
+  max-width: 100%;
 
-        border-radius:
-          24px 24px 0 0;
+  min-height: 180px;
 
-        transform:
-          translateY(0);
+  border-radius:
+    24px 24px 0 0;
 
-        padding:
-          24px;
+  transform:
+    translateY(0);
 
-        box-sizing:
-          border-box;
+  padding:
+    20px;
 
-      }
+  box-sizing:
+    border-box;
+
+}
 
       .popup-name {
 
@@ -609,6 +612,12 @@
         class="map-search-input"
         placeholder="Cerca stand..."
       >
+
+      <button
+  class="search-clear hidden"
+>
+  ×
+</button>
 
       <div class="legend">
 

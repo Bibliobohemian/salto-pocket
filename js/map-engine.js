@@ -788,8 +788,10 @@ const id =
 
 const exhibitor =
   (
-    area.exhibitor || ""
+    exhibitorsByStand[area.name] || []
   )
+    .map(p => p.name)
+    .join(" ")
     .toLowerCase()
     .normalize("NFD")
     .replace(

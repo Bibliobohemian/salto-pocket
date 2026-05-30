@@ -121,6 +121,75 @@ let missions =
 let activeSpecialFilter =
   null;
 
+const mapContainer =
+  document.querySelector(
+    ".map-container"
+  );
+
+function centerArea(area) {
+
+  if (
+    !mapContainer ||
+    !area ||
+    !area.coords
+  ) {
+    return;
+  }
+
+  let centerX;
+  let centerY;
+
+  if (area.shape === "rect") {
+
+    centerX =
+      area.coords.x +
+      area.coords.width / 2;
+
+    centerY =
+      area.coords.y +
+      area.coords.height / 2;
+
+  } else if (
+    area.shape === "circle"
+  ) {
+
+    centerX =
+      area.coords.cx;
+
+    centerY =
+      area.coords.cy;
+
+  } else {
+
+    return;
+
+  }
+
+  const scale =
+    mapImage.clientWidth / 1846;
+
+  const targetX =
+    centerX * scale;
+
+  const targetY =
+    centerY * scale;
+
+  mapContainer.scrollTo({
+
+    left:
+      targetX -
+      mapContainer.clientWidth / 2,
+
+    top:
+      targetY -
+      mapContainer.clientHeight / 2,
+
+    behavior: "smooth"
+
+  });
+
+}
+
 const TYPE_COLORS = {
 
   stand: "#d97706",
@@ -420,11 +489,15 @@ function openArea(
 
   }
 
-  setActiveArea(
-    element
-  );
+setActiveArea(
+  element
+);
 
-  activeAreaData =
+centerArea(
+  area
+);
+
+activeAreaData =
   area;
 
   if (area.type === "stand") {

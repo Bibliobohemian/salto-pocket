@@ -126,33 +126,46 @@ const mapContainer =
     ".map-container"
   );
 
-const mapWrapper =
-  document.querySelector(
-    ".map-wrapper"
-  );
+function centerArea(area) {
 
-let panzoom = null;
+  if (
+    !mapContainer ||
+    !area ||
+    !area.coords
+  ) {
+    return;
+  }
 
-window.addEventListener(
-  "load",
-  () => {
+  let centerX;
+  let centerY;
 
-    panzoom = Panzoom(
-      mapWrapper,
-      {
-        maxScale: 6,
-        minScale: 1,
-        contain: "outside"
-      }
-    );
+  if (area.shape === "rect") {
 
-    mapContainer.addEventListener(
-      "wheel",
-      panzoom.zoomWithWheel
-    );
+    centerX =
+      area.coords.x +
+      area.coords.width / 2;
+
+    centerY =
+      area.coords.y +
+      area.coords.height / 2;
+
+  } else if (
+    area.shape === "circle"
+  ) {
+
+    centerX =
+      area.coords.cx;
+
+    centerY =
+      area.coords.cy;
+
+  } else {
+
+    return;
 
   }
-);
+
+}
 
 function centerArea(area) {
 

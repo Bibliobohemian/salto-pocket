@@ -482,36 +482,54 @@ function buildExhibitorIndex() {
 
       if (!group) return;
 
+      const addExhibitor = (key) => {
+
+        if (!exhibitorsByStand[key]) {
+          exhibitorsByStand[key] = [];
+        }
+
+        const alreadyExists =
+          exhibitorsByStand[key]
+            .some(item => item.name === ex.name);
+
+        if (!alreadyExists) {
+          exhibitorsByStand[key].push(ex);
+        }
+
+      };
+
       // Stand completo
-      if (!exhibitorsByStand[group]) {
-        exhibitorsByStand[group] = [];
-      }
+      addExhibitor(group);
 
-      exhibitorsByStand[group].push(ex);
-
-      // Singoli stand (es. D52-E51 → D52 + E51)
       const singleStands =
         group
           .split("-")
           .map(s => s.trim());
 
+      // Singoli stand
       singleStands.forEach(single => {
-
-        if (!single) return;
-
-        if (!exhibitorsByStand[single]) {
-          exhibitorsByStand[single] = [];
-        }
-
-        exhibitorsByStand[single].push(ex);
-
+        addExhibitor(single);
       });
+
+      // Versione invertita dello stand doppio
+      if (singleStands.length === 2) {
+
+        const reversed =
+          [...singleStands]
+            .reverse()
+            .join("-");
+
+        addExhibitor(reversed);
+
+      }
 
     });
 
   });
 
 }
+
+
 async function loadMap() {
 
   const areasResponse =

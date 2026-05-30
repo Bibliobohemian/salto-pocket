@@ -154,9 +154,33 @@
 
 .map-filters {
 
-  display: flex;
+  display: inline-flex;
 
   gap: 10px;
+
+  margin-right: 16px;
+
+}
+
+    .filters-header {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+}
+
+.filters-label {
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  font-weight: 600;
 
 }
 
@@ -194,27 +218,27 @@
 
     }
 
-    .legend {
+.legend {
 
-      display: flex;
+  display: flex;
 
-      gap: 10px;
+  gap: 10px;
 
-      overflow-x: auto;
+  overflow-x: auto;
 
-      padding-bottom: 4px;
+  padding-bottom: 4px;
 
-      scrollbar-width: none;
+  scrollbar-width: none;
 
-      -ms-overflow-style: none;
+  -ms-overflow-style: none;
 
-    }
+}
 
-    .legend::-webkit-scrollbar {
+.legend::-webkit-scrollbar {
 
-      display: none;
+  display: none;
 
-    }
+}
 
     .legend-item {
 
@@ -750,19 +774,27 @@ filter: none;
 
 </div>
 
-      <div class="map-filters">
+<div class="filters-header">
 
-  <button class="map-filter-btn" data-filter="favorites">
-    ❤️ Preferiti
-  </button>
+  <div class="map-filters">
 
-  <button class="map-filter-btn" data-filter="missions">
-    🎯 Missioni
-  </button>
+    <button class="map-filter-btn" data-filter="favorites">
+      ❤️ Preferiti
+    </button>
+
+    <button class="map-filter-btn" data-filter="missions">
+      🎯 Missioni
+    </button>
+
+  </div>
+
+  <div class="filters-label">
+    | Filtra la mappa:
+  </div>
 
 </div>
 
-      <div class="legend">
+<div class="legend">
 
         <div
           class="legend-item"

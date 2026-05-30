@@ -399,8 +399,12 @@ function openArea(
 
   if (area.type === "stand") {
 
-  const publishers =
-    exhibitorsByStand[area.id] || [];
+console.log("AREA ID:", area.id);
+
+const publishers =
+  exhibitorsByStand[area.id] || [];
+
+console.log("PUBLISHERS:", publishers);
 
   if (publishers.length) {
 

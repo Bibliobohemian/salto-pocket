@@ -381,6 +381,16 @@ function resetSearch() {
 
   clearFilter();
 
+  activeSpecialFilter = null;
+
+favoriteFilterBtn.classList.remove(
+  "active"
+);
+
+missionFilterBtn.classList.remove(
+  "active"
+);
+
   activeArea =
     null;
 
@@ -750,6 +760,16 @@ svg.addEventListener(
   "hidden"
 );
 
+        activeSpecialFilter = null;
+
+favoriteFilterBtn.classList.remove(
+  "active"
+);
+
+missionFilterBtn.classList.remove(
+  "active"
+);
+
       }
 
     }
@@ -938,12 +958,101 @@ favoriteFilterBtn.addEventListener(
       )
       .forEach(el => {
 
-        el.style.display =
+        const isFavorite =
           favorites.includes(
             el.dataset.id
-          )
+          );
+
+        el.style.display =
+          isFavorite
             ? ""
             : "none";
+
+        el.classList.remove(
+          "active"
+        );
+
+        if (isFavorite) {
+
+          el.classList.add(
+            "active"
+          );
+
+        }
+
+      });
+
+  }
+);
+
+missionFilterBtn.addEventListener(
+  "click",
+  () => {
+
+    const isActive =
+      activeSpecialFilter === "missions";
+
+    resetMapVisibility();
+
+    favoriteFilterBtn.classList.remove(
+      "active"
+    );
+
+    missionFilterBtn.classList.remove(
+      "active"
+    );
+
+    if (isActive) {
+
+      activeSpecialFilter =
+        null;
+
+      return;
+
+    }
+
+    activeSpecialFilter =
+      "missions";
+
+    missionFilterBtn.classList.add(
+      "active"
+    );
+
+    document
+      .querySelectorAll(
+        ".map-area"
+      )
+      .forEach(el => {
+
+        const standName =
+          el.dataset.id
+            .replace(/^P1_/, "")
+            .replace(/_\d+$/, "")
+            .replaceAll("_", "-");
+
+        const isMission =
+          missions.some(
+            mission =>
+              mission.stand ===
+              standName
+          );
+
+        el.style.display =
+          isMission
+            ? ""
+            : "none";
+
+        el.classList.remove(
+          "active"
+        );
+
+        if (isMission) {
+
+          el.classList.add(
+            "active"
+          );
+
+        }
 
       });
 

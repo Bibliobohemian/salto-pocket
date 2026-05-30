@@ -363,8 +363,12 @@ function resetSearch() {
 
   resetMapVisibility();
 
-  activeAreaData =
+activeAreaData =
   null;
+
+searchClear.classList.add(
+  "hidden"
+);
 
 }
 
@@ -618,6 +622,10 @@ svg.addEventListener(
 
         resetMapVisibility();
 
+        searchClear.classList.add(
+  "hidden"
+);
+
       }
 
     }
@@ -760,17 +768,9 @@ searchInput.addEventListener(
   }
 );
 
-  searchClear.addEventListener(
+searchClear.addEventListener(
   "click",
-  () => {
-
-    resetSearch();
-
-    searchClear.classList.add(
-      "hidden"
-    );
-
-  }
+  resetSearch
 );
 
 function updateActionButtons(

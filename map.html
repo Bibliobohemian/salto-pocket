@@ -84,31 +84,74 @@
     }
 
     .map-search-input {
-
-      width: 100%;
-
-      padding:
-        14px 18px;
-
+  width: 100%;
+  padding:
+    14px 48px 14px 18px;
       border-radius:
         14px;
-
       border:
         1px solid #d1d5db;
-
       font-size:
         16px;
-
       outline: none;
-
       box-sizing:
         border-box;
-
       background:
         #fafafa;
-
     }
 
+.search-wrapper {
+
+  position: relative;
+
+  width: 100%;
+
+}
+
+.search-clear {
+
+  position: absolute;
+
+  right: 12px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  width: 32px;
+
+  height: 32px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    #e5e7eb;
+
+  color:
+    #374151;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+.search-clear:hover {
+
+  background:
+    #d1d5db;
+
+}
+    
     .map-search-input:focus {
 
       border-color:
@@ -316,23 +359,26 @@
 
     }
 
-    .map-area.active {
+.map-area.active {
 
-      fill-opacity: 0.42 !important;
+  fill-opacity:
+    0.60 !important;
 
-      stroke: #ffffff;
+  stroke:
+    #ffffff;
 
-      stroke-width: 3;
+  stroke-width:
+    5;
 
-      filter:
-        drop-shadow(
-          0 0 8px rgba(255,255,255,0.7)
-        );
+  filter:
+    drop-shadow(
+      0 0 18px rgba(255,255,255,0.95)
+    );
 
-      animation:
-        pulseArea 1.8s infinite;
+  animation:
+    pulseArea 1.4s infinite;
 
-    }
+}
 
     .map-area.dimmed {
 
@@ -342,28 +388,30 @@
 
     }
 
-    @keyframes pulseArea {
+@keyframes pulseArea {
 
-      0% {
+  0% {
 
-        fill-opacity: 0.32;
+    fill-opacity:
+      0.35;
 
-      }
+  }
 
-      50% {
+  50% {
 
-        fill-opacity: 0.48;
+    fill-opacity:
+      0.75;
 
-      }
+  }
 
-      100% {
+  100% {
 
-        fill-opacity: 0.32;
+    fill-opacity:
+      0.35;
 
-      }
+  }
 
-    }
-
+}
     .popup-backdrop {
 
       position: fixed;
@@ -495,6 +543,56 @@
 
     }
 
+    .popup-actions {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+}
+
+.popup-favorite-btn,
+.popup-visited-btn {
+
+  flex: 1;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding:
+    12px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+}
+
+.popup-favorite-btn {
+
+  background:
+    #ec4899;
+
+  color:
+    white;
+
+}
+
+.popup-visited-btn {
+
+  background:
+    #10b981;
+
+  color:
+    white;
+
+}
+
     @media (max-width: 768px) {
       body {
         padding-bottom: 140px;
@@ -607,17 +705,21 @@
 
       </div>
 
-      <input
-        type="text"
-        class="map-search-input"
-        placeholder="Cerca stand..."
-      >
+<div class="search-wrapper">
 
-      <button
-  class="search-clear hidden"
->
-  ×
-</button>
+  <input
+    type="text"
+    class="map-search-input"
+    placeholder="Cerca stand..."
+  >
+
+  <button
+    class="search-clear hidden"
+  >
+    ×
+  </button>
+
+</div>
 
       <div class="legend">
 
@@ -746,6 +848,24 @@
       <div class="popup-type">
       </div>
 
+<div
+  class="popup-actions hidden"
+>
+
+  <button
+    class="popup-favorite-btn"
+  >
+    🤍 Preferito
+  </button>
+
+  <button
+    class="popup-visited-btn"
+  >
+    ✅ Visitato
+  </button>
+
+</div>
+      
     </div>
 
   </div>

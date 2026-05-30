@@ -58,6 +58,21 @@ const mapImage =
     ".map-image"
   );
 
+const popupActions =
+  document.querySelector(
+    ".popup-actions"
+  );
+
+const popupFavoriteBtn =
+  document.querySelector(
+    ".popup-favorite-btn"
+  );
+
+const popupVisitedBtn =
+  document.querySelector(
+    ".popup-visited-btn"
+  );
+
 const AREA_INDEX = [];
 
 let activeFilter =
@@ -65,6 +80,23 @@ let activeFilter =
 
 let activeArea =
   null;
+
+let activeAreaData =
+  null;
+
+let favorites =
+  JSON.parse(
+    localStorage.getItem(
+      "favorites"
+    )
+  ) || [];
+
+let visited =
+  JSON.parse(
+    localStorage.getItem(
+      "visited"
+    )
+  ) || [];
 
 const TYPE_COLORS = {
 
@@ -136,12 +168,12 @@ function closePopup() {
 
 popupClose.addEventListener(
   "click",
-  closePopup
+  resetSearch
 );
 
 popupBackdrop.addEventListener(
   "click",
-  closePopup
+  resetSearch
 );
 
 function clearAreaStates() {
@@ -331,6 +363,9 @@ function resetSearch() {
 
   resetMapVisibility();
 
+  activeAreaData =
+  null;
+
 }
 
 function openArea(
@@ -352,6 +387,9 @@ function openArea(
     element
   );
 
+  activeAreaData =
+  area;
+
   popupName.textContent =
     area.exhibitor ||
     area.name;
@@ -363,6 +401,26 @@ function openArea(
     TYPE_LABELS[
       area.type
     ] || area.type;
+
+  if (
+  area.type === "stand"
+) {
+
+  popupActions.classList.remove(
+    "hidden"
+  );
+
+  updateActionButtons(
+    area
+  );
+
+} else {
+
+  popupActions.classList.add(
+    "hidden"
+  );
+
+}
 
   popup.classList.remove(
     "hidden"
@@ -554,7 +612,7 @@ svg.addEventListener(
       activeArea =
         null;
 
-      closePopup();
+      resetSearch();
 
       if (!activeFilter) {
 
@@ -659,20 +717,6 @@ searchInput.blur();
       match.element
     );
 
-document
-  .querySelector(
-    ".map-container"
-  )
-  .scrollIntoView({
-
-    behavior:
-      "smooth",
-
-    block:
-      "center"
-
-  });
-
   }
 );
 
@@ -724,6 +768,129 @@ searchInput.addEventListener(
 
     searchClear.classList.add(
       "hidden"
+    );
+
+  }
+);
+
+function updateActionButtons(
+  area
+) {
+
+  const id =
+    area.id;
+
+  const isFavorite =
+    favorites.includes(
+      id
+    );
+
+  const isVisited =
+    visited.includes(
+      id
+    );
+
+  popupFavoriteBtn.textContent =
+    isFavorite
+      ? "❤️ Nei preferiti"
+      : "🤍 Preferito";
+
+  popupVisitedBtn.textContent =
+    isVisited
+      ? "☑️ Visitato"
+      : "✅ Visitato";
+
+}
+
+popupFavoriteBtn.addEventListener(
+  "click",
+  () => {
+
+    if (
+      !activeAreaData
+    ) {
+      return;
+    }
+
+    const id =
+      activeAreaData.id;
+
+    if (
+      favorites.includes(
+        id
+      )
+    ) {
+
+      favorites =
+        favorites.filter(
+          item =>
+            item !== id
+        );
+
+    } else {
+
+      favorites.push(
+        id
+      );
+
+    }
+
+    localStorage.setItem(
+      "favorites",
+      JSON.stringify(
+        favorites
+      )
+    );
+
+    updateActionButtons(
+      activeAreaData
+    );
+
+  }
+);
+
+popupVisitedBtn.addEventListener(
+  "click",
+  () => {
+
+    if (
+      !activeAreaData
+    ) {
+      return;
+    }
+
+    const id =
+      activeAreaData.id;
+
+    if (
+      visited.includes(
+        id
+      )
+    ) {
+
+      visited =
+        visited.filter(
+          item =>
+            item !== id
+        );
+
+    } else {
+
+      visited.push(
+        id
+      );
+
+    }
+
+    localStorage.setItem(
+      "visited",
+      JSON.stringify(
+        visited
+      )
+    );
+
+    updateActionButtons(
+      activeAreaData
     );
 
   }

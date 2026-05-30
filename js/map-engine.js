@@ -73,6 +73,16 @@ const popupVisitedBtn =
     ".popup-visited-btn"
   );
 
+const favoriteFilterBtn =
+  document.querySelector(
+    '[data-filter="favorites"]'
+  );
+
+const missionFilterBtn =
+  document.querySelector(
+    '[data-filter="missions"]'
+  );
+
 let exhibitors = [];
 let exhibitorsByStand = {};
 
@@ -100,6 +110,16 @@ let visited =
       "visited"
     )
   ) || [];
+
+let missions =
+  JSON.parse(
+    localStorage.getItem(
+      "missions"
+    )
+  ) || [];
+
+let activeSpecialFilter =
+  null;
 
 const TYPE_COLORS = {
 
@@ -877,6 +897,57 @@ searchInput.addEventListener(
 searchClear.addEventListener(
   "click",
   resetSearch
+);
+
+favoriteFilterBtn.addEventListener(
+  "click",
+  () => {
+
+    const isActive =
+      activeSpecialFilter === "favorites";
+
+    resetMapVisibility();
+
+    favoriteFilterBtn.classList.remove(
+      "active"
+    );
+
+    missionFilterBtn.classList.remove(
+      "active"
+    );
+
+    if (isActive) {
+
+      activeSpecialFilter =
+        null;
+
+      return;
+
+    }
+
+    activeSpecialFilter =
+      "favorites";
+
+    favoriteFilterBtn.classList.add(
+      "active"
+    );
+
+    document
+      .querySelectorAll(
+        ".map-area"
+      )
+      .forEach(el => {
+
+        el.style.display =
+          favorites.includes(
+            el.dataset.id
+          )
+            ? ""
+            : "none";
+
+      });
+
+  }
 );
 
 function updateActionButtons(

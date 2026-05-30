@@ -73,6 +73,9 @@ const popupVisitedBtn =
     ".popup-visited-btn"
   );
 
+let exhibitors = [];
+let exhibitorsByStand = {};
+
 const AREA_INDEX = [];
 
 let activeFilter =
@@ -394,9 +397,31 @@ function openArea(
   activeAreaData =
   area;
 
+  if (area.type === "stand") {
+
+  const publishers =
+    exhibitorsByStand[area.id] || [];
+
+  if (publishers.length) {
+
+    popupName.textContent =
+      publishers
+        .map(p => p.name)
+        .join(", ");
+
+  } else {
+
+    popupName.textContent =
+      area.name;
+
+  }
+
+} else {
+
   popupName.textContent =
-    area.exhibitor ||
     area.name;
+
+}
 
   popupLocation.textContent =
     area.name;
@@ -436,15 +461,52 @@ function openArea(
 
 }
 
+function buildExhibitorIndex() {
+
+  exhibitorsByStand = {};
+
+  exhibitors.forEach(ex => {
+
+    if (!ex.stand) return;
+
+    const stands =
+      ex.stand
+        .split("/")
+        .map(s => s.trim());
+
+    stands.forEach(stand => {
+
+      if (!exhibitorsByStand[stand]) {
+        exhibitorsByStand[stand] = [];
+      }
+
+      exhibitorsByStand[stand].push(ex);
+
+    });
+
+  });
+
+}
+
 async function loadMap() {
 
-  const response =
+  const areasResponse =
     await fetch(
       "./maps/2026/pad1/areas.json"
     );
 
+  const exhibitorsResponse =
+    await fetch(
+      "./data/exhibitors.json"
+    );
+
   const areas =
-    await response.json();
+    await areasResponse.json();
+
+  exhibitors =
+    await exhibitorsResponse.json();
+
+  buildExhibitorIndex();
 
   areas.forEach(
     renderArea

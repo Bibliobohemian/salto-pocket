@@ -402,7 +402,7 @@ function openArea(
 console.log("AREA ID:", area.id);
 
 const publishers =
-  exhibitorsByStand[area.id] || [];
+  exhibitorsByStand[area.name] || [];
 
 console.log("PUBLISHERS:", publishers);
 

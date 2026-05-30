@@ -126,10 +126,38 @@ const mapContainer =
     ".map-container"
   );
 
+const mapWrapper =
+  document.querySelector(
+    ".map-wrapper"
+  );
+
+let panzoom = null;
+
+window.addEventListener(
+  "load",
+  () => {
+
+    panzoom = Panzoom(
+      mapWrapper,
+      {
+        maxScale: 6,
+        minScale: 1,
+        contain: "outside"
+      }
+    );
+
+    mapContainer.addEventListener(
+      "wheel",
+      panzoom.zoomWithWheel
+    );
+
+  }
+);
+
 function centerArea(area) {
 
   if (
-    !mapContainer ||
+    !panzoom ||
     !area ||
     !area.coords
   ) {
@@ -149,9 +177,7 @@ function centerArea(area) {
       area.coords.y +
       area.coords.height / 2;
 
-  } else if (
-    area.shape === "circle"
-  ) {
+  } else {
 
     centerX =
       area.coords.cx;
@@ -159,11 +185,38 @@ function centerArea(area) {
     centerY =
       area.coords.cy;
 
-  } else {
-
-    return;
-
   }
+
+  const scale = 2.2;
+
+  panzoom.zoom(
+    scale,
+    { animate: true }
+  );
+
+  const renderedWidth =
+    mapImage.clientWidth;
+
+  const renderedHeight =
+    mapImage.clientHeight;
+
+  const x =
+    (centerX / 1846) *
+    renderedWidth;
+
+  const y =
+    (centerY / 811) *
+    renderedHeight;
+
+  panzoom.pan(
+    mapContainer.clientWidth / 2 - x * scale,
+    mapContainer.clientHeight / 2 - y * scale,
+    {
+      animate: true
+    }
+  );
+
+}
 
   const scale =
     mapImage.clientWidth / 1846;

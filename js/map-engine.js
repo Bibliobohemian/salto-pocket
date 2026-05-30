@@ -43,6 +43,11 @@ const searchInput =
     ".map-search-input"
   );
 
+const searchClear =
+  document.querySelector(
+    ".search-clear"
+  );
+
 const legendItems =
   document.querySelectorAll(
     ".legend-item"
@@ -310,6 +315,21 @@ function clearFilter() {
     );
 
   });
+}
+
+function resetSearch() {
+
+  searchInput.value =
+    "";
+
+  closePopup();
+
+  clearFilter();
+
+  activeArea =
+    null;
+
+  resetMapVisibility();
 
 }
 
@@ -558,9 +578,14 @@ searchInput.addEventListener(
     }
 
     const query =
-      searchInput.value
-        .trim()
-        .toLowerCase();
+  searchInput.value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(
+      /[\u0300-\u036f]/g,
+      ""
+    );
 
     if (!query)
       return;
@@ -570,19 +595,37 @@ searchInput.addEventListener(
         ({ area }) => {
 
           const name =
-            (
-              area.name || ""
-            ).toLowerCase();
+  (
+    area.name || ""
+  )
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(
+      /[\u0300-\u036f]/g,
+      ""
+    );
 
-          const id =
-            (
-              area.id || ""
-            ).toLowerCase();
+const id =
+  (
+    area.id || ""
+  )
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(
+      /[\u0300-\u036f]/g,
+      ""
+    );
 
-          const exhibitor =
-            (
-              area.exhibitor || ""
-            ).toLowerCase();
+const exhibitor =
+  (
+    area.exhibitor || ""
+  )
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(
+      /[\u0300-\u036f]/g,
+      ""
+    );
 
           return (
 
@@ -597,9 +640,11 @@ searchInput.addEventListener(
         }
       );
 
-    if (!match)
-      return;
+if (!match)
+  return;
 
+searchInput.blur();
+    
     if (
       activeFilter &&
       match.area.type !== activeFilter
@@ -614,19 +659,19 @@ searchInput.addEventListener(
       match.element
     );
 
-    document
-      .querySelector(
-        ".map-wrapper"
-      )
-      .scrollIntoView({
+document
+  .querySelector(
+    ".map-container"
+  )
+  .scrollIntoView({
 
-        behavior:
-          "smooth",
+    behavior:
+      "smooth",
 
-        block:
-          "center"
+    block:
+      "center"
 
-      });
+  });
 
   }
 );
@@ -659,4 +704,29 @@ legendItems.forEach(item => {
 
 });
 
+searchInput.addEventListener(
+  "input",
+  () => {
+
+    searchClear.classList.toggle(
+      "hidden",
+      !searchInput.value.trim()
+    );
+
+  }
+);
+
+  searchClear.addEventListener(
+  "click",
+  () => {
+
+    resetSearch();
+
+    searchClear.classList.add(
+      "hidden"
+    );
+
+  }
+);
+  
 loadMap();

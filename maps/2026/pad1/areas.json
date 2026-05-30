@@ -950,9 +950,9 @@
     }
   },
   {
-    "id": "P1_V27_74",
+    "id": "P1_C27_74",
     "hall": "pad1",
-    "name": "V27",
+    "name": "C27",
     "type": "stand",
     "shape": "rect",
     "coords": {

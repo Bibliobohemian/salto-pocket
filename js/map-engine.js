@@ -231,31 +231,6 @@ function centerArea(area) {
 
 }
 
-  const scale =
-    mapImage.clientWidth / 1846;
-
-  const targetX =
-    centerX * scale;
-
-  const targetY =
-    centerY * scale;
-
-  mapContainer.scrollTo({
-
-    left:
-      targetX -
-      mapContainer.clientWidth / 2,
-
-    top:
-      targetY -
-      mapContainer.clientHeight / 2,
-
-    behavior: "smooth"
-
-  });
-
-}
-
 const TYPE_COLORS = {
 
   stand: "#d97706",

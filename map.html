@@ -151,6 +151,38 @@
     #d1d5db;
 
 }
+
+.map-filters {
+
+  display: flex;
+
+  gap: 10px;
+
+}
+
+.map-filter-btn {
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 10px 14px;
+
+  cursor: pointer;
+
+  background: #f3f4f6;
+
+  font-size: 14px;
+
+}
+
+.map-filter-btn.active {
+
+  background: #d97706;
+
+  color: white;
+
+}
     
     .map-search-input:focus {
 
@@ -714,6 +746,18 @@ filter: none;
     class="search-clear hidden"
   >
     ×
+  </button>
+
+</div>
+
+      <div class="map-filters">
+
+  <button class="map-filter-btn" data-filter="favorites">
+    ❤️ Preferiti
+  </button>
+
+  <button class="map-filter-btn" data-filter="missions">
+    🎯 Missioni
   </button>
 
 </div>

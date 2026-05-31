@@ -434,6 +434,10 @@ function openArea(
     element
   );
 
+  centerArea(
+  area
+);
+
   activeAreaData =
   area;
 
@@ -1202,6 +1206,44 @@ const panzoom = Panzoom(
     contain: "outside"
   }
 );
+
+function centerArea(area) {
+
+  if (!area || !area.coords) {
+    return;
+  }
+
+  let centerX;
+  let centerY;
+
+  if (area.shape === "rect") {
+
+    centerX =
+      area.coords.x +
+      area.coords.width / 2;
+
+    centerY =
+      area.coords.y +
+      area.coords.height / 2;
+
+  } else {
+
+    centerX =
+      area.coords.cx;
+
+    centerY =
+      area.coords.cy;
+
+  }
+
+  console.log(
+    "CENTER AREA",
+    area.name,
+    centerX,
+    centerY
+  );
+
+}
 
 window.resetMapView = () => {
 

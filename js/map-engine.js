@@ -1236,11 +1236,35 @@ function centerArea(area) {
 
   }
 
-  console.log(
-    "CENTER AREA",
-    area.name,
-    centerX,
-    centerY
+  const scale = 2;
+
+  panzoom.zoom(scale);
+
+  const mapWidth =
+    mapImage.clientWidth;
+
+  const mapHeight =
+    mapImage.clientHeight;
+
+  const targetX =
+    (centerX / 1846) *
+    mapWidth;
+
+  const targetY =
+    (centerY / 811) *
+    mapHeight;
+
+  const panX =
+    mapViewport.clientWidth / 2 -
+    targetX * scale;
+
+  const panY =
+    mapViewport.clientHeight / 2 -
+    targetY * scale;
+
+  panzoom.pan(
+    panX,
+    panY
   );
 
 }

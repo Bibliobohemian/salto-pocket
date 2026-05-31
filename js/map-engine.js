@@ -1267,6 +1267,15 @@ window.resetMapView = () => {
 
 };
 
+window.testPan = () => {
+
+  panzoom.pan(
+    300,
+    0
+  );
+
+};
+
 mapViewport.addEventListener(
   "wheel",
   panzoom.zoomWithWheel

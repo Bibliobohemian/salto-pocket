@@ -1199,15 +1199,6 @@ popupVisitedBtn.addEventListener(
 
   }
 );
-
-function centerArea(area) {
-
-  console.log(
-    "CENTER",
-    area.name
-  );
-
-}
   
 loadMap();
 
@@ -1227,36 +1218,56 @@ console.log(
 
 function centerArea(area) {
 
-  console.log("AREA", area);
+  const viewportWidth =
+    mapViewport.clientWidth;
 
-  console.log(
-    "VIEWPORT",
-    mapViewport.getBoundingClientRect()
+  const viewportHeight =
+    mapViewport.clientHeight;
+
+  let centerX;
+  let centerY;
+
+  if (area.shape === "rect") {
+
+    centerX =
+      area.coords.x +
+      area.coords.width / 2;
+
+    centerY =
+      area.coords.y +
+      area.coords.height / 2;
+
+  } else {
+
+    centerX =
+      area.coords.cx;
+
+    centerY =
+      area.coords.cy;
+
+  }
+
+  const targetScale = 2;
+
+  const scaledX =
+    centerX * targetScale;
+
+  const scaledY =
+    centerY * targetScale;
+
+  const panX =
+    viewportWidth / 2 - scaledX;
+
+  const panY =
+    viewportHeight / 2 - scaledY;
+
+  panzoom.zoom(
+    targetScale
   );
 
-  console.log(
-    "WRAPPER",
-    mapWrapper.getBoundingClientRect()
-  );
-
-  console.log(
-    "IMAGE",
-    mapImage.getBoundingClientRect()
-  );
-
-  console.log(
-    "SVG",
-    svg.getBoundingClientRect()
-  );
-
-  console.log(
-    "PAN",
-    panzoom.getPan()
-  );
-
-  console.log(
-    "SCALE",
-    panzoom.getScale()
+  panzoom.pan(
+    panX,
+    panY
   );
 
 }

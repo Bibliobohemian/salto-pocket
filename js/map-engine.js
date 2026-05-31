@@ -1285,6 +1285,9 @@ console.log(
   panzoom.getScale()
 );
 
+  console.log("PANX", panX);
+console.log("PANY", panY);
+
   panzoom.pan(
     panX,
     panY

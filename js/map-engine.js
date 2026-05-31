@@ -1249,11 +1249,21 @@ function centerArea(area) {
 
   const targetScale = 2;
 
-  const scaledX =
-    centerX * targetScale;
+const mapScaleX =
+  mapWrapper.clientWidth / 1846;
 
-  const scaledY =
-    centerY * targetScale;
+const mapScaleY =
+  mapWrapper.clientHeight / 811;
+
+const scaledX =
+  centerX *
+  mapScaleX *
+  targetScale;
+
+const scaledY =
+  centerY *
+  mapScaleY *
+  targetScale;
 
   const panX =
     viewportWidth / 2 - scaledX;

@@ -884,11 +884,6 @@ searchInput.blur();
       match.area,
       match.element
     );
-
-    centerArea(
-  match.area
-);
-
   }
 );
 

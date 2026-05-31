@@ -1198,7 +1198,8 @@ const panzoom = Panzoom(
   mapWrapper,
   {
     maxScale: 5,
-    minScale: 1
+    minScale: 1,
+    contain: "outside"
   }
 );
 

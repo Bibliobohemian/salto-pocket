@@ -58,6 +58,16 @@ const mapImage =
     ".map-image"
   );
 
+const mapViewport =
+  document.querySelector(
+    ".map-viewport"
+  );
+
+const mapWrapper =
+  document.querySelector(
+    ".map-wrapper"
+  );
+
 const popupActions =
   document.querySelector(
     ".popup-actions"
@@ -1183,3 +1193,16 @@ popupVisitedBtn.addEventListener(
 );
   
 loadMap();
+
+const panzoom = Panzoom(
+  mapWrapper,
+  {
+    maxScale: 5,
+    minScale: 1
+  }
+);
+
+mapViewport.addEventListener(
+  "wheel",
+  panzoom.zoomWithWheel
+);

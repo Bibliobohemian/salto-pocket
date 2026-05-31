@@ -717,7 +717,7 @@ filter: none;
 
   top: auto;
 
-  bottom: 0;
+  bottom: env(safe-area-inset-bottom);
 
   width: 100%;
 
@@ -738,6 +738,12 @@ filter: none;
     border-box;
 
 }
+
+      padding-bottom:
+  calc(
+    20px +
+    env(safe-area-inset-bottom)
+  );
 
       .popup-name {
 

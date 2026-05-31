@@ -1238,6 +1238,10 @@ function centerArea(area) {
 
   const scale = 2;
 
+console.log(
+  panzoom.getScale()
+);
+  
   panzoom.zoom(scale);
 
   const mapWidth =
@@ -1262,6 +1266,10 @@ function centerArea(area) {
     mapViewport.clientHeight / 2 -
     targetY * scale;
 
+console.log(
+  panzoom.getPan()
+);
+  
   panzoom.pan(
     panX,
     panY

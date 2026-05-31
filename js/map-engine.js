@@ -1267,12 +1267,10 @@ console.log(
     mapHeight;
 
   const panX =
-    mapViewport.clientWidth / 2 -
-    targetX * scale;
+  -(targetX * scale);
 
-  const panY =
-    mapViewport.clientHeight / 2 -
-    targetY * scale;
+const panY =
+  -(targetY * scale);
 
 console.log(
   panzoom.getPan()

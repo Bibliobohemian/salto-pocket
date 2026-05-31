@@ -1207,6 +1207,11 @@ const panzoom = Panzoom(
   }
 );
 
+console.log(
+  "PANZOOM",
+  panzoom
+);
+
 function centerArea(area) {
 
   console.log(

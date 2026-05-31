@@ -1209,76 +1209,9 @@ const panzoom = Panzoom(
 
 function centerArea(area) {
 
-  if (!area || !area.coords) {
-    return;
-  }
-
-  let centerX;
-  let centerY;
-
-  if (area.shape === "rect") {
-
-    centerX =
-      area.coords.x +
-      area.coords.width / 2;
-
-    centerY =
-      area.coords.y +
-      area.coords.height / 2;
-
-  } else {
-
-    centerX =
-      area.coords.cx;
-
-    centerY =
-      area.coords.cy;
-
-  }
-
-  const scale = 2;
-
-panzoom.zoom(
-  scale,
-  {
-    animate: true
-  }
-);
-
-console.log(
-  "AFTER ZOOM",
-  panzoom.getScale()
-);
-  
-  panzoom.zoom(scale);
-
-  const mapWidth =
-    mapImage.clientWidth;
-
-  const mapHeight =
-    mapImage.clientHeight;
-
-  const targetX =
-    (centerX / 1846) *
-    mapWidth;
-
-  const targetY =
-    (centerY / 811) *
-    mapHeight;
-
-  const panX =
-  -(targetX * scale);
-
-const panY =
-  -(targetY * scale);
-
-console.log(
-  panzoom.getPan()
-);
-  
-  panzoom.pan(
-    panX,
-    panY
+  console.log(
+    "CENTER",
+    area.name
   );
 
 }

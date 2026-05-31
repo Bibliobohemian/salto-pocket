@@ -1203,6 +1203,12 @@ const panzoom = Panzoom(
   }
 );
 
+window.resetMapView = () => {
+
+  panzoom.reset();
+
+};
+
 mapViewport.addEventListener(
   "wheel",
   panzoom.zoomWithWheel

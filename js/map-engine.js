@@ -1227,9 +1227,26 @@ console.log(
 
 function centerArea(area) {
 
+  console.log("AREA", area);
+
   console.log(
-    "CENTER",
-    area.name
+    "VIEWPORT",
+    mapViewport.getBoundingClientRect()
+  );
+
+  console.log(
+    "WRAPPER",
+    mapWrapper.getBoundingClientRect()
+  );
+
+  console.log(
+    "IMAGE",
+    mapImage.getBoundingClientRect()
+  );
+
+  console.log(
+    "SVG",
+    svg.getBoundingClientRect()
   );
 
   console.log(

@@ -1219,6 +1219,16 @@ function centerArea(area) {
     area.name
   );
 
+  console.log(
+    "PAN",
+    panzoom.getPan()
+  );
+
+  console.log(
+    "SCALE",
+    panzoom.getScale()
+  );
+
 }
 
 window.resetMapView = () => {

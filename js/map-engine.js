@@ -1238,7 +1238,15 @@ function centerArea(area) {
 
   const scale = 2;
 
+panzoom.zoom(
+  scale,
+  {
+    animate: true
+  }
+);
+
 console.log(
+  "AFTER ZOOM",
   panzoom.getScale()
 );
   

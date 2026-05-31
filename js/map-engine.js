@@ -885,6 +885,10 @@ searchInput.blur();
       match.element
     );
 
+    centerArea(
+  match.area
+);
+
   }
 );
 
@@ -1195,6 +1199,15 @@ popupVisitedBtn.addEventListener(
 
   }
 );
+
+function centerArea(area) {
+
+  console.log(
+    "CENTER",
+    area.name
+  );
+
+}
   
 loadMap();
 

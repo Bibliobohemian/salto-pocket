@@ -1271,9 +1271,19 @@ const scaledY =
   const panY =
     viewportHeight / 2 - scaledY;
 
+console.log(
+  "SCALE PRIMA",
+  panzoom.getScale()
+);
+  
   panzoom.zoom(
     targetScale
   );
+
+  console.log(
+  "SCALE DOPO",
+  panzoom.getScale()
+);
 
   panzoom.pan(
     panX,

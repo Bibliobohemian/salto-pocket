@@ -44,11 +44,6 @@ const saveMissionBtn =
 const missionsList =
   document.getElementById("missionsList");
 
-const missionType =
-  document.getElementById(
-    "missionType"
-  );
-
 const missionTitle =
   document.getElementById(
     "missionTitle"
@@ -57,9 +52,6 @@ const missionTitle =
 const missionPublisher =
   document.getElementById("missionPublisher");
 
-const missionPriority =
-  document.getElementById("missionPriority");
-
 const missionNotes =
   document.getElementById(
     "missionNotes"
@@ -67,15 +59,83 @@ const missionNotes =
 
 function updateMissionForm(){
 
-  if(missionType.value === "stand"){
+  missionBookBtn.classList.remove(
+    "active"
+  );
+
+  missionStandBtn.classList.remove(
+    "active"
+  );
+
+  if(
+    selectedMissionType ===
+    "book"
+  ){
+
+    missionBookBtn.classList.add(
+      "active"
+    );
+
+    missionTitle.placeholder =
+      "Libro da cercare";
+
+  } else {
+
+    missionStandBtn.classList.add(
+      "active"
+    );
 
     missionTitle.placeholder =
       "Cosa devo fare a questo stand?";
 
-  } else {
+  }
 
-    missionTitle.placeholder =
-      "Libro da cercare";
+}
+
+function updatePriorityButtons(){
+
+  priorityHighBtn.classList.remove(
+    "active"
+  );
+
+  priorityMediumBtn.classList.remove(
+    "active"
+  );
+
+  priorityLowBtn.classList.remove(
+    "active"
+  );
+
+  if(
+    selectedPriority ===
+    "high"
+  ){
+
+    priorityHighBtn.classList.add(
+      "active"
+    );
+
+  }
+
+  if(
+    selectedPriority ===
+    "medium"
+  ){
+
+    priorityMediumBtn.classList.add(
+      "active"
+    );
+
+  }
+
+  if(
+    selectedPriority ===
+    "low"
+  ){
+
+    priorityLowBtn.classList.add(
+      "active"
+    );
 
   }
 
@@ -94,10 +154,101 @@ const missionsSection =
     "missionsSection"
   );
 
+const missionBookBtn =
+  document.getElementById(
+    "missionBookBtn"
+  );
+
+const missionStandBtn =
+  document.getElementById(
+    "missionStandBtn"
+  );
+
+const priorityHighBtn =
+  document.getElementById(
+    "priorityHighBtn"
+  );
+
+const priorityMediumBtn =
+  document.getElementById(
+    "priorityMediumBtn"
+  );
+
+const priorityLowBtn =
+  document.getElementById(
+    "priorityLowBtn"
+  );
+
 let missions =
   JSON.parse(
     localStorage.getItem("missions")
   ) || [];
+
+let selectedMissionType =
+  "book";
+
+let selectedPriority =
+  "medium";
+
+missionBookBtn.addEventListener(
+  "click",
+  () => {
+
+    selectedMissionType =
+      "book";
+
+    updateMissionForm();
+
+  }
+);
+
+missionStandBtn.addEventListener(
+  "click",
+  () => {
+
+    selectedMissionType =
+      "stand";
+
+    updateMissionForm();
+
+  }
+);
+
+priorityHighBtn.addEventListener(
+  "click",
+  () => {
+
+    selectedPriority =
+      "high";
+
+    updatePriorityButtons();
+
+  }
+);
+
+priorityMediumBtn.addEventListener(
+  "click",
+  () => {
+
+    selectedPriority =
+      "medium";
+
+    updatePriorityButtons();
+
+  }
+);
+
+priorityLowBtn.addEventListener(
+  "click",
+  () => {
+
+    selectedPriority =
+      "low";
+
+    updatePriorityButtons();
+
+  }
+);
 
 /* =========================
    SCROLL TOP
@@ -786,8 +937,8 @@ function populatePublishers(){
 
 function saveMission(){
 
-  const type =
-  missionType.value;
+ const type =
+  selectedMissionType;
 
 const title =
   missionTitle.value.trim();
@@ -795,8 +946,8 @@ const title =
   const publisher =
     missionPublisher.value.trim();
 
-  const priority =
-    missionPriority.value;
+const priority =
+  selectedPriority;
 
   const notes =
   missionNotes.value.trim();
@@ -847,6 +998,16 @@ title,
   missionPublisher.value = "";
 
   missionNotes.value = "";
+
+  selectedMissionType =
+  "book";
+
+selectedPriority =
+  "medium";
+
+updateMissionForm();
+
+updatePriorityButtons();
 
   renderMissions();
 
@@ -907,7 +1068,7 @@ function editMission(id){
 
   if(!mission) return;
 
-  missionType.value =
+  selectedMissionType =
   mission.type || "book";
 
 missionTitle.value =
@@ -916,8 +1077,12 @@ missionTitle.value =
 missionPublisher.value =
   mission.publisher || "";
 
-missionPriority.value =
+selectedPriority =
   mission.priority || "medium";
+
+  updateMissionForm();
+
+updatePriorityButtons();
 
   missionNotes.value =
   mission.notes || "";
@@ -1273,11 +1438,8 @@ window.editMission =
    INIT
 ========================= */
 
-missionType.addEventListener(
-  "change",
-  updateMissionForm
-);
-
 updateMissionForm();
+
+updatePriorityButtons();
 
 loadExhibitors();

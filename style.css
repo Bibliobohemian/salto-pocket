@@ -1178,13 +1178,21 @@ body.dark .mission-card p{
 
 }
 
+.mission-type-buttons {
+
+  max-width: 420px;
+
+  margin-bottom: 12px;
+
+}
+
 .mission-toggle-btn,
 .priority-btn {
 
   flex: 1;
 
   border: 2px solid
-    var(--primary);
+    var(--salone-blue);
 
   background: transparent;
 
@@ -1213,13 +1221,33 @@ body.dark .mission-card p{
 
 /* attivo */
 
-.mission-toggle-btn.active,
-.priority-btn.active {
+.mission-toggle-btn.active {
 
   background:
-    var(--primary);
+    var(--salone-blue);
 
   color: white;
+
+  border-color:
+    var(--salone-blue);
+
+}
+
+.priority-btn.active {
+
+  color: white;
+
+}
+
+.mission-toggle-btn {
+
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 
 }
 

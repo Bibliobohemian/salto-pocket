@@ -44,14 +44,37 @@ const saveMissionBtn =
 const missionsList =
   document.getElementById("missionsList");
 
-const missionBook =
-  document.getElementById("missionBook");
+const missionType =
+  document.getElementById(
+    "missionType"
+  );
+
+const missionTitle =
+  document.getElementById(
+    "missionTitle"
+  );
 
 const missionPublisher =
   document.getElementById("missionPublisher");
 
 const missionPriority =
   document.getElementById("missionPriority");
+
+function updateMissionForm(){
+
+  if(missionType.value === "stand"){
+
+    missionTitle.placeholder =
+      "Cosa devo fare a questo stand?";
+
+  } else {
+
+    missionTitle.placeholder =
+      "Libro da cercare";
+
+  }
+
+}
 
 const publisherList =
   document.getElementById("publisherList");
@@ -758,8 +781,11 @@ function populatePublishers(){
 
 function saveMission(){
 
-  const book =
-    missionBook.value.trim();
+  const type =
+  missionType.value;
+
+const title =
+  missionTitle.value.trim();
 
   const publisher =
     missionPublisher.value.trim();
@@ -767,9 +793,9 @@ function saveMission(){
   const priority =
     missionPriority.value;
 
-  if(!book || !publisher){
-    return;
-  }
+  if(!title || !publisher){
+  return;
+}
 
   const exhibitor =
     exhibitors.find(item =>
@@ -783,9 +809,9 @@ missions.push({
 
   id: Date.now(),
 
-  type: "book",
+  type,
 
-  book,
+title,
 
   publisher,
 
@@ -808,7 +834,7 @@ missions.push({
     JSON.stringify(missions)
   );
 
-  missionBook.value = "";
+  missionTitle.value = "";
 
   missionPublisher.value = "";
 
@@ -871,11 +897,17 @@ function editMission(id){
 
   if(!mission) return;
 
-  missionBook.value =
-    mission.book;
+  missionType.value =
+  mission.type || "book";
 
-  missionPublisher.value =
-    mission.publisher;
+missionTitle.value =
+  mission.title || "";
+
+missionPublisher.value =
+  mission.publisher || "";
+
+missionPriority.value =
+  mission.priority || "medium";
 
   missionForm.classList.remove(
     "hidden"
@@ -966,8 +998,13 @@ function renderMissions(){
             <div>
 
               <h3>
-                📚 ${item.book}
-              </h3>
+  ${
+    item.type === "stand"
+      ? "🎯"
+      : "📚"
+  }
+  ${item.title}
+</h3>
 
               <p>
                 ${item.publisher}
@@ -1200,5 +1237,12 @@ window.editMission =
 /* =========================
    INIT
 ========================= */
+
+missionType.addEventListener(
+  "change",
+  updateMissionForm
+);
+
+updateMissionForm();
 
 loadExhibitors();

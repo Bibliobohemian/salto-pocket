@@ -50,6 +50,9 @@ const missionBook =
 const missionPublisher =
   document.getElementById("missionPublisher");
 
+const missionPriority =
+  document.getElementById("missionPriority");
+
 const publisherList =
   document.getElementById("publisherList");
 
@@ -761,6 +764,9 @@ function saveMission(){
   const publisher =
     missionPublisher.value.trim();
 
+  const priority =
+    missionPriority.value;
+
   if(!book || !publisher){
     return;
   }
@@ -789,7 +795,7 @@ missions.push({
   stand:
     exhibitor?.stand || "",
 
-  priority: "medium",
+  priority,
 
   notes: "",
 

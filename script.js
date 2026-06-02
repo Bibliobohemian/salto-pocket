@@ -773,23 +773,29 @@ function saveMission(){
       publisher.toLowerCase()
     );
 
-  missions.push({
+missions.push({
 
-    id:Date.now(),
+  id: Date.now(),
 
-    book,
+  type: "book",
 
-    publisher,
+  book,
 
-    hall:
-      exhibitor?.hall || "",
+  publisher,
 
-    stand:
-      exhibitor?.stand || "",
+  hall:
+    exhibitor?.hall || "",
 
-    done:false
+  stand:
+    exhibitor?.stand || "",
 
-  });
+  priority: "medium",
+
+  notes: "",
+
+  done: false
+
+});
 
   localStorage.setItem(
     "missions",

@@ -254,17 +254,25 @@
       class="mission-form hidden"
     >
 
-      <select id="missionType">
+<div class="mission-type-buttons">
 
-  <option value="book">
+  <button
+    type="button"
+    id="missionBookBtn"
+    class="mission-toggle-btn"
+  >
     📚 Libro
-  </option>
+  </button>
 
-  <option value="stand">
+  <button
+    type="button"
+    id="missionStandBtn"
+    class="mission-toggle-btn"
+  >
     🎯 Stand
-  </option>
+  </button>
 
-</select>
+</div>
 
 <input
   type="text"
@@ -280,29 +288,33 @@
 
       <datalist id="publisherList"></datalist>
 
-      <select id="missionPriority">
+     <div class="mission-priority-buttons">
 
-        <textarea
-  id="missionNotes"
-  placeholder="Note (facoltative)"
-></textarea>
-
-  <option value="high">
-    🔴 Alta priorità
-  </option>
-
-  <option
-    value="medium"
-    selected
+  <button
+    type="button"
+    id="priorityHighBtn"
+    class="priority-btn"
   >
-    🟡 Priorità media
-  </option>
+    🔴 Alta
+  </button>
 
-  <option value="low">
-    🟢 Bassa priorità
-  </option>
+  <button
+    type="button"
+    id="priorityMediumBtn"
+    class="priority-btn"
+  >
+    🟡 Media
+  </button>
 
-</select>
+  <button
+    type="button"
+    id="priorityLowBtn"
+    class="priority-btn"
+  >
+    🟢 Bassa
+  </button>
+
+</div>
       
       <button
         id="saveMissionBtn"

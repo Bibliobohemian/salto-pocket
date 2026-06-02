@@ -971,27 +971,53 @@ favoriteFilterBtn.addEventListener(
       )
       .forEach(el => {
 
-        const isFavorite =
-          favorites.includes(
-            el.dataset.id
-          );
+const areaId =
+  el.dataset.id;
 
-        el.style.display =
-          isFavorite
-            ? ""
-            : "none";
+const areaData =
+  AREA_INDEX.find(
+    item =>
+      item.area.id === areaId
+  )?.area;
 
-        el.classList.remove(
-          "active"
-        );
+if (!areaData) {
+  el.style.display = "none";
+  return;
+}
 
-        if (isFavorite) {
+const publishers =
+  exhibitorsByStand[
+    areaData.name
+  ] || [];
 
-          el.classList.add(
-            "active"
-          );
+const publisherNames =
+  publishers
+    .map(p => p.name)
+    .filter(name =>
+      !name.includes("&")
+    );
 
-        }
+const isFavorite =
+  publisherNames.some(name =>
+    favorites.includes(name)
+  );
+
+el.style.display =
+  isFavorite
+    ? ""
+    : "none";
+
+el.classList.remove(
+  "active"
+);
+
+if (isFavorite) {
+
+  el.classList.add(
+    "active"
+  );
+
+}
 
       });
 

@@ -1143,3 +1143,25 @@ body.dark .mission-card p{
   text-decoration:none;
 
 }
+
+.mission-priority {
+
+  margin-top: 8px;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+}
+
+.mission-notes {
+
+  margin-top: 6px;
+
+  opacity: 0.85;
+
+  font-size: 0.9rem;
+
+  line-height: 1.4;
+
+}

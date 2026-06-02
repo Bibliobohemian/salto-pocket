@@ -1010,7 +1010,7 @@ function renderMissions(){
 
             <div>
 
-              <h3>
+             <h3>
   ${
     item.type === "stand"
       ? "🎯"
@@ -1019,13 +1019,35 @@ function renderMissions(){
   ${item.title}
 </h3>
 
-              <p>
-                ${item.publisher}
-              </p>
+<p>
+  ${item.publisher}
+</p>
 
-              <p>
-                ${item.stand}
-              </p>
+<p>
+  ${item.stand}
+</p>
+
+<p class="mission-priority">
+
+  ${
+    item.priority === "high"
+      ? "🔴 Alta priorità"
+      : item.priority === "low"
+      ? "🟢 Bassa priorità"
+      : "🟡 Priorità media"
+  }
+
+</p>
+
+${
+  item.notes
+  ? `
+    <p class="mission-notes">
+      📝 ${item.notes}
+    </p>
+  `
+  : ""
+}
 
             </div>
 

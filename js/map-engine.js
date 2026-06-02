@@ -1076,17 +1076,24 @@ function updateActionButtons(
   area
 ) {
 
-  const id =
-    area.id;
+  const publishers =
+    exhibitorsByStand[area.name] || [];
+
+  const publisherNames =
+    publishers
+      .map(p => p.name)
+      .filter(name =>
+        !name.includes("&")
+      );
 
   const isFavorite =
-    favorites.includes(
-      id
+    publisherNames.some(name =>
+      favorites.includes(name)
     );
 
   const isVisited =
-    visited.includes(
-      id
+    publisherNames.some(name =>
+      visited.includes(name)
     );
 
   popupFavoriteBtn.textContent =
@@ -1105,40 +1112,52 @@ popupFavoriteBtn.addEventListener(
   "click",
   () => {
 
-    if (
-      !activeAreaData
-    ) {
+    if (!activeAreaData) {
       return;
     }
 
-    const id =
-      activeAreaData.id;
+    const publishers =
+      exhibitorsByStand[
+        activeAreaData.name
+      ] || [];
 
-    if (
-      favorites.includes(
-        id
-      )
-    ) {
+    const publisherNames =
+      publishers
+        .map(p => p.name)
+        .filter(name =>
+          !name.includes("&")
+        );
+
+    const allAlreadyFavorite =
+      publisherNames.every(name =>
+        favorites.includes(name)
+      );
+
+    if (allAlreadyFavorite) {
 
       favorites =
         favorites.filter(
-          item =>
-            item !== id
+          name =>
+            !publisherNames.includes(name)
         );
 
     } else {
 
-      favorites.push(
-        id
-      );
+      publisherNames.forEach(name => {
+
+        if (
+          !favorites.includes(name)
+        ) {
+          favorites.push(name);
+        }
+
+      });
 
     }
 
     localStorage.setItem(
       "favorites",
-      JSON.stringify(
-        favorites
-      )
+      JSON.stringify(favorites)
     );
 
     updateActionButtons(

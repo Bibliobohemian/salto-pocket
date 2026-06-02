@@ -92,6 +92,42 @@ function updateMissionForm(){
 
 }
 
+.mission-form textarea{
+
+  width:100%;
+
+  border:none;
+
+  background:var(--input);
+
+  color:var(--text);
+
+  padding:14px;
+
+  border-radius:14px;
+
+  font-size:16px;
+
+  font-family:'Inter',sans-serif;
+
+  min-height:90px;
+
+  resize:vertical;
+
+  outline:none;
+
+  transition:0.2s;
+
+}
+
+.mission-form textarea:focus{
+
+  box-shadow:
+    0 0 0 3px
+    rgba(52,180,231,0.22);
+
+}
+
 function updatePriorityButtons(){
 
   priorityHighBtn.classList.remove(

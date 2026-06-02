@@ -128,6 +128,16 @@ function updateMissionForm(){
 
 }
 
+.mission-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:14px;
+
+}
+
 function updatePriorityButtons(){
 
   priorityHighBtn.classList.remove(
@@ -174,6 +184,17 @@ function updatePriorityButtons(){
     );
 
   }
+
+}
+
+.mission-priority-buttons{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:10px;
 
 }
 

@@ -254,11 +254,23 @@
       class="mission-form hidden"
     >
 
-      <input
-        type="text"
-        id="missionBook"
-        placeholder="Libro da cercare"
-      />
+      <select id="missionType">
+
+  <option value="book">
+    📚 Libro
+  </option>
+
+  <option value="stand">
+    🎯 Stand
+  </option>
+
+</select>
+
+<input
+  type="text"
+  id="missionTitle"
+  placeholder="Libro da cercare"
+/>
 
       <input
         list="publisherList"

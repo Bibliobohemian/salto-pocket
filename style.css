@@ -1164,3 +1164,85 @@ body.dark .mission-card p{
   line-height: 1.4;
 
 }
+
+/* =========================
+   MISSION BUTTONS
+========================= */
+
+.mission-type-buttons,
+.mission-priority-buttons {
+
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+
+}
+
+.mission-toggle-btn,
+.priority-btn {
+
+  flex: 1;
+
+  border: 2px solid
+    var(--primary);
+
+  background: transparent;
+
+  color: inherit;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+}
+
+.mission-toggle-btn:hover,
+.priority-btn:hover {
+
+  transform: translateY(-1px);
+
+}
+
+/* attivo */
+
+.mission-toggle-btn.active,
+.priority-btn.active {
+
+  background:
+    var(--primary);
+
+  color: white;
+
+}
+
+/* priorità */
+
+#priorityHighBtn.active {
+
+  background: #d62828;
+  border-color: #d62828;
+
+}
+
+#priorityMediumBtn.active {
+
+  background: #f4b400;
+  border-color: #f4b400;
+  color: black;
+
+}
+
+#priorityLowBtn.active {
+
+  background: #2a9d8f;
+  border-color: #2a9d8f;
+
+}

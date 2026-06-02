@@ -60,6 +60,11 @@ const missionPublisher =
 const missionPriority =
   document.getElementById("missionPriority");
 
+const missionNotes =
+  document.getElementById(
+    "missionNotes"
+  );
+
 function updateMissionForm(){
 
   if(missionType.value === "stand"){
@@ -793,6 +798,9 @@ const title =
   const priority =
     missionPriority.value;
 
+  const notes =
+  missionNotes.value.trim();
+
   if(!title || !publisher){
   return;
 }
@@ -823,7 +831,7 @@ title,
 
   priority,
 
-  notes: "",
+  notes,
 
   done: false
 
@@ -837,6 +845,8 @@ title,
   missionTitle.value = "";
 
   missionPublisher.value = "";
+
+  missionNotes.value = "";
 
   renderMissions();
 
@@ -908,6 +918,9 @@ missionPublisher.value =
 
 missionPriority.value =
   mission.priority || "medium";
+
+  missionNotes.value =
+  mission.notes || "";
 
   missionForm.classList.remove(
     "hidden"

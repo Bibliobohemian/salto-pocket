@@ -977,9 +977,19 @@ body.dark .mission-card p{
 
   background:none;
 
-  font-size:20px;
+  font-size:18px;
 
   cursor:pointer;
+
+  opacity:.75;
+
+  transition:.2s;
+
+}
+
+.mission-actions button:hover{
+
+  opacity:1;
 
 }
 
@@ -1329,5 +1339,72 @@ body.dark .mission-card p{
     repeat(3,1fr);
 
   gap:10px;
+
+}
+
+.mission-meta{
+
+  display:flex;
+
+  gap:6px;
+
+  flex-wrap:wrap;
+
+  margin-top:4px;
+
+  color:#777;
+
+  font-size:14px;
+
+}
+
+.mission-badge{
+
+  display:inline-block;
+
+  margin-top:10px;
+
+  padding:4px 10px;
+
+  border-radius:999px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+}
+
+.mission-badge-high{
+
+  background:#d62828;
+
+  color:white;
+
+}
+
+.mission-badge-medium{
+
+  background:#f4b400;
+
+  color:black;
+
+}
+
+.mission-badge-low{
+
+  background:#2a9d8f;
+
+  color:white;
+
+}
+
+.mission-notes{
+
+  margin-top:10px;
+
+  padding-top:10px;
+
+  border-top:1px solid
+    var(--border);
 
 }

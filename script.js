@@ -72,8 +72,6 @@ const allMissionFilterBtn =
     "allMissionFilterBtn"
   );
 
-_______________________________________
-
 function updateMissionForm(){
 
   missionBookBtn.classList.remove(
@@ -1119,11 +1117,13 @@ updatePriorityButtons();
 
   renderMissions();
 
-}
-
-missionForm.classList.add(
+  missionForm.classList.add(
   "hidden"
 );
+
+}
+
+
 
 saveMissionBtn.addEventListener(
   "click",
@@ -1214,27 +1214,7 @@ updatePriorityButtons();
 
 function renderMissions(){
 
-  missionsList.innerHTML = "";
-
-  if(
-  filteredMissions.length === 0
-)
-
-    missionsList.innerHTML = `
-
-      <div class="card">
-
-        <p>
-          Nessuna missione salvata.
-        </p>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
+      missionsList.innerHTML = "";
 
   let filteredMissions =
   [...missions];
@@ -1260,6 +1240,23 @@ if(
     );
 
 }
+
+ if(
+    filteredMissions.length === 0
+  ){
+
+    missionsList.innerHTML = `
+      <div class="card">
+        <p>
+          Nessuna missione da mostrare.
+        </p>
+      </div>
+    `;
+
+    return;
+
+  }
+
 
   const grouped = {};
 
@@ -1598,5 +1595,7 @@ window.editMission =
 updateMissionForm();
 
 updatePriorityButtons();
+
+updateMissionFilter();
 
 loadExhibitors();

@@ -57,6 +57,23 @@ const missionNotes =
     "missionNotes"
   );
 
+const todoFilterBtn =
+  document.getElementById(
+    "todoFilterBtn"
+  );
+
+const doneFilterBtn =
+  document.getElementById(
+    "doneFilterBtn"
+  );
+
+const allMissionFilterBtn =
+  document.getElementById(
+    "allMissionFilterBtn"
+  );
+
+_______________________________________
+
 function updateMissionForm(){
 
   missionBookBtn.classList.remove(
@@ -190,6 +207,51 @@ let selectedMissionType =
 let selectedPriority =
   "medium";
 
+let missionFilter =
+  "todo";
+
+todoFilterBtn.addEventListener(
+  "click",
+  () => {
+
+    missionFilter =
+      "todo";
+
+    updateMissionFilter();
+
+    renderMissions();
+
+  }
+);
+
+doneFilterBtn.addEventListener(
+  "click",
+  () => {
+
+    missionFilter =
+      "done";
+
+    updateMissionFilter();
+
+    renderMissions();
+
+  }
+);
+
+allMissionFilterBtn.addEventListener(
+  "click",
+  () => {
+
+    missionFilter =
+      "all";
+
+    updateMissionFilter();
+
+    renderMissions();
+
+  }
+);
+
 missionBookBtn.addEventListener(
   "click",
   () => {
@@ -213,6 +275,52 @@ missionStandBtn.addEventListener(
 
   }
 );
+
+function updateMissionFilter(){
+
+  todoFilterBtn.classList.remove(
+    "active"
+  );
+
+  doneFilterBtn.classList.remove(
+    "active"
+  );
+
+  allMissionFilterBtn.classList.remove(
+    "active"
+  );
+
+  if(
+    missionFilter === "todo"
+  ){
+
+    todoFilterBtn.classList.add(
+      "active"
+    );
+
+  }
+
+  if(
+    missionFilter === "done"
+  ){
+
+    doneFilterBtn.classList.add(
+      "active"
+    );
+
+  }
+
+  if(
+    missionFilter === "all"
+  ){
+
+    allMissionFilterBtn.classList.add(
+      "active"
+    );
+
+  }
+
+}
 
 priorityHighBtn.addEventListener(
   "click",
@@ -1108,7 +1216,9 @@ function renderMissions(){
 
   missionsList.innerHTML = "";
 
-  if(missions.length === 0){
+  if(
+  filteredMissions.length === 0
+)
 
     missionsList.innerHTML = `
 
@@ -1126,9 +1236,35 @@ function renderMissions(){
 
   }
 
+  let filteredMissions =
+  [...missions];
+
+if(
+  missionFilter === "todo"
+){
+
+  filteredMissions =
+    filteredMissions.filter(
+      item => !item.done
+    );
+
+}
+
+if(
+  missionFilter === "done"
+){
+
+  filteredMissions =
+    filteredMissions.filter(
+      item => item.done
+    );
+
+}
+
   const grouped = {};
 
-  missions.forEach(item => {
+  filteredMissions.forEach(
+  item => {
 
     const hall =
       item.hall || "Altro";

@@ -1013,6 +1013,10 @@ updatePriorityButtons();
 
 }
 
+missionForm.classList.add(
+  "hidden"
+);
+
 saveMissionBtn.addEventListener(
   "click",
   saveMission
@@ -1184,25 +1188,42 @@ function renderMissions(){
   ${item.title}
 </h3>
 
-<p>
-  ${item.publisher}
-</p>
+<div class="mission-meta">
 
-<p>
-  ${item.stand}
-</p>
+  <span>
+    ${item.publisher}
+  </span>
 
-<p class="mission-priority">
+  ${
+    item.stand
+      ? `
+        <span>
+          • ${item.stand}
+        </span>
+      `
+      : ""
+  }
+
+</div>
+
+<span
+  class="
+    mission-badge
+    mission-badge-${
+      item.priority
+    }
+  "
+>
 
   ${
     item.priority === "high"
-      ? "🔴 Alta priorità"
+      ? "ALTA"
       : item.priority === "low"
-      ? "🟢 Bassa priorità"
-      : "🟡 Priorità media"
+      ? "BASSA"
+      : "MEDIA"
   }
 
-</p>
+</span>
 
 ${
   item.notes

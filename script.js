@@ -320,6 +320,29 @@ function updateMissionFilter(){
 
 }
 
+function updateMissionCounters(){
+
+  const todoCount =
+    missions.filter(
+      item => !item.done
+    ).length;
+
+  const doneCount =
+    missions.filter(
+      item => item.done
+    ).length;
+
+  todoFilterBtn.innerText =
+    `Da fare (${todoCount})`;
+
+  doneFilterBtn.innerText =
+    `Fatte (${doneCount})`;
+
+  allMissionFilterBtn.innerText =
+    `Tutte (${missions.length})`;
+
+}
+
 priorityHighBtn.addEventListener(
   "click",
   () => {
@@ -1215,6 +1238,7 @@ updatePriorityButtons();
 function renderMissions(){
 
       missionsList.innerHTML = "";
+  updateMissionCounters();
 
   let filteredMissions =
   [...missions];

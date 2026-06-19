@@ -204,6 +204,36 @@ let missions =
     localStorage.getItem("missions")
   ) || [];
 
+function saveMissions(){
+
+  localStorage.setItem(
+    "missions",
+    JSON.stringify(missions)
+  );
+
+  window.dispatchEvent(
+    new Event(
+      "missions:updated"
+    )
+  );
+
+}
+
+function syncMissionsFromStorage(){
+
+  missions =
+    JSON.parse(
+      localStorage.getItem(
+        "missions"
+      )
+    ) || [];
+
+  renderMissions();
+
+  updateView();
+
+}
+
 let selectedMissionType =
   "book";
 
@@ -911,6 +941,18 @@ function renderResults(items, value){
     const isVisited =
       visited.includes(item.name);
 
+    const exhibitorMissions =
+      missions.filter(mission =>
+        mission.publisher === item.name
+      );
+
+    const visibleMissions =
+      exhibitorMissions.slice(0, 3);
+
+    const hiddenMissionsCount =
+      exhibitorMissions.length -
+      visibleMissions.length;
+
     results.innerHTML += `
 
       <div class="card">
@@ -949,6 +991,59 @@ function renderResults(items, value){
               )}
 
             </p>
+
+            ${
+              exhibitorMissions.length
+              ? `
+                <div class="card-missions">
+
+                  <div class="card-missions-title">
+                    🎯 ${exhibitorMissions.length}
+                    ${
+                      exhibitorMissions.length === 1
+                      ? "missione"
+                      : "missioni"
+                    }
+                  </div>
+
+                  <div class="card-missions-list">
+
+                    ${
+                      visibleMissions
+                        .map(mission => `
+                          <div class="card-mission-item">
+                            <span>
+                              ${
+                                mission.type === "stand"
+                                ? "🎯"
+                                : "📚"
+                              }
+                            </span>
+                            <span>
+                              ${mission.title}
+                            </span>
+                          </div>
+                        `)
+                        .join("")
+                    }
+
+                    ${
+                      hiddenMissionsCount > 0
+                      ? `
+                        <div class="card-mission-more">
+                          +${hiddenMissionsCount}
+                          altre missioni
+                        </div>
+                      `
+                      : ""
+                    }
+
+                  </div>
+
+                </div>
+              `
+              : ""
+            }
 
             ${
               item.category
@@ -1122,10 +1217,7 @@ title,
 
 });
 
-  localStorage.setItem(
-    "missions",
-    JSON.stringify(missions)
-  );
+  saveMissions();
 
   missionTitle.value = "";
 
@@ -1144,6 +1236,8 @@ updateMissionForm();
 updatePriorityButtons();
 
   renderMissions();
+
+  updateView();
 
   missionForm.classList.add(
   "hidden"
@@ -1180,12 +1274,11 @@ function toggleMission(id){
 
   });
 
-  localStorage.setItem(
-    "missions",
-    JSON.stringify(missions)
-  );
+  saveMissions();
 
   renderMissions();
+
+  updateView();
 
 }
 
@@ -1195,12 +1288,11 @@ function deleteMission(id){
     item.id !== id
   );
 
-  localStorage.setItem(
-    "missions",
-    JSON.stringify(missions)
-  );
+  saveMissions();
 
   renderMissions();
+
+  updateView();
 
 }
 
@@ -1692,6 +1784,21 @@ window.deleteMission =
 
 window.editMission =
   editMission;
+
+window.addEventListener(
+  "storage",
+  event => {
+
+    if(
+      event.key === "missions"
+    ){
+
+      syncMissionsFromStorage();
+
+    }
+
+  }
+);
 
 /* =========================
    INIT

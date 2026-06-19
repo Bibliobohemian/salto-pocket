@@ -57,6 +57,11 @@ const missionNotes =
     "missionNotes"
   );
 
+const missionSortSelect =
+  document.getElementById(
+    "missionSortSelect"
+  );
+
 const todoFilterBtn =
   document.getElementById(
     "todoFilterBtn"
@@ -1153,6 +1158,11 @@ saveMissionBtn.addEventListener(
   saveMission
 );
 
+missionSortSelect.addEventListener(
+  "change",
+  renderMissions
+);
+
 function toggleMission(id){
 
   missions = missions.map(item => {
@@ -1265,6 +1275,77 @@ if(
 
 }
 
+const priorityOrder = {
+  high:0,
+  medium:1,
+  low:2
+};
+
+const hallOrder = {
+  "PAD 1":0,
+  "PAD 2":1,
+  "PAD 3":2,
+  OVAL:3,
+  Altro:4
+};
+
+function getMissionHall(mission){
+
+  return mission.hall || "Altro";
+
+}
+
+function getHallRank(mission){
+
+  const hall =
+    getMissionHall(mission);
+
+  return hallOrder[hall] ?? hallOrder.Altro;
+
+}
+
+function getPriorityRank(mission){
+
+  return priorityOrder[
+    mission.priority
+  ] ?? priorityOrder.low;
+
+}
+
+filteredMissions.sort((a,b) => {
+
+  const sortBy =
+    missionSortSelect.value;
+
+  if(sortBy === "hall"){
+
+    return (
+      getHallRank(a) -
+      getHallRank(b)
+    ) || (
+      b.id - a.id
+    );
+
+  }
+
+  if(sortBy === "created"){
+
+    return b.id - a.id;
+
+  }
+
+  return (
+    getPriorityRank(a) -
+    getPriorityRank(b)
+  ) || (
+    getHallRank(a) -
+    getHallRank(b)
+  ) || (
+    b.id - a.id
+  );
+
+});
+
  if(
     filteredMissions.length === 0
   ){
@@ -1288,7 +1369,7 @@ if(
   item => {
 
     const hall =
-      item.hall || "Altro";
+      getMissionHall(item);
 
     if(!grouped[hall]){
 

@@ -513,6 +513,84 @@ body.dark .card p{
 
 }
 
+.card-missions{
+
+  margin-top:10px;
+
+  margin-bottom:10px;
+
+  padding:10px 12px;
+
+  border:1px solid
+    var(--border);
+
+  border-radius:14px;
+
+  background:
+    rgba(52,180,231,0.08);
+
+}
+
+.card-missions-title{
+
+  margin-bottom:6px;
+
+  color:var(--salone-blue);
+
+  font-size:13px;
+
+  font-weight:700;
+
+}
+
+.card-missions-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:4px;
+
+}
+
+.card-mission-item{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:6px;
+
+  color:#666;
+
+  font-size:13px;
+
+  line-height:1.35;
+
+}
+
+body.dark .card-mission-item{
+
+  color:#bbb;
+
+}
+
+.card-mission-more{
+
+  color:#777;
+
+  font-size:12px;
+
+  font-weight:600;
+
+}
+
+body.dark .card-mission-more{
+
+  color:#aaa;
+
+}
+
 /* =========================
    ACTIONS
 ========================= */

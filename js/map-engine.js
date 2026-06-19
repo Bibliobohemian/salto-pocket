@@ -33,6 +33,21 @@ const popupType =
     ".popup-type"
   );
 
+const popupMissions =
+  document.querySelector(
+    ".popup-missions"
+  );
+
+const popupMissionsList =
+  document.querySelector(
+    ".popup-missions-list"
+  );
+
+const popupCompleteMissionsBtn =
+  document.querySelector(
+    ".popup-complete-missions-btn"
+  );
+
 const popupClose =
   document.querySelector(
     ".popup-close"
@@ -131,6 +146,16 @@ let missions =
 let activeSpecialFilter =
   null;
 
+const normalizeMissionValue = value =>
+  (value || "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(
+      /[\u0300-\u036f]/g,
+      ""
+    );
+
 const TYPE_COLORS = {
 
   stand: "#d97706",
@@ -196,6 +221,273 @@ function closePopup() {
   popupBackdrop.classList.add(
     "hidden"
   );
+
+}
+
+function getPublisherNamesForArea(area) {
+
+  return (exhibitorsByStand[area.name] || [])
+    .map(p => p.name)
+    .filter(name =>
+      name &&
+      !name.includes("&")
+    );
+
+}
+
+function getMissionsForArea(area) {
+
+  if (
+    !area ||
+    area.type !== "stand"
+  ) {
+    return [];
+  }
+
+  const publisherNames =
+    getPublisherNamesForArea(area)
+      .map(normalizeMissionValue);
+
+  return missions.filter(mission =>
+    publisherNames.includes(
+      normalizeMissionValue(
+        mission.publisher
+      )
+    )
+  );
+
+}
+
+function saveMissions() {
+
+  localStorage.setItem(
+    "missions",
+    JSON.stringify(missions)
+  );
+
+  window.dispatchEvent(
+    new Event(
+      "missions:updated"
+    )
+  );
+
+}
+
+function syncMissionsFromStorage() {
+
+  missions =
+    JSON.parse(
+      localStorage.getItem(
+        "missions"
+      )
+    ) || [];
+
+}
+
+function getMissionIndicatorPosition(area) {
+
+  if (area.shape === "rect") {
+
+    return {
+      x:
+        area.coords.x +
+        area.coords.width -
+        7,
+      y:
+        area.coords.y +
+        7
+    };
+
+  }
+
+  if (area.shape === "circle") {
+
+    return {
+      x:
+        area.coords.cx +
+        area.coords.radius * 0.65,
+      y:
+        area.coords.cy -
+        area.coords.radius * 0.65
+    };
+
+  }
+
+  return null;
+
+}
+
+function updateMissionIndicators() {
+
+  AREA_INDEX.forEach(item => {
+
+    const hasMissions =
+      getMissionsForArea(
+        item.area
+      ).length > 0;
+
+    item.element.classList.toggle(
+      "has-missions",
+      hasMissions
+    );
+
+    if (
+      !hasMissions &&
+      item.missionIndicator
+    ) {
+
+      item.missionIndicator.remove();
+      item.missionIndicator =
+        null;
+
+      return;
+
+    }
+
+    if (
+      !hasMissions ||
+      item.missionIndicator
+    ) {
+      return;
+    }
+
+    const position =
+      getMissionIndicatorPosition(
+        item.area
+      );
+
+    if (!position) {
+      return;
+    }
+
+    const indicator =
+      document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle"
+      );
+
+    indicator.classList.add(
+      "map-mission-indicator"
+    );
+
+    indicator.setAttribute(
+      "cx",
+      position.x
+    );
+
+    indicator.setAttribute(
+      "cy",
+      position.y
+    );
+
+    indicator.setAttribute(
+      "r",
+      6
+    );
+
+    svg.appendChild(
+      indicator
+    );
+
+    item.missionIndicator =
+      indicator;
+
+  });
+
+  syncMissionIndicatorVisibility();
+
+}
+
+function syncMissionIndicatorVisibility() {
+
+  AREA_INDEX.forEach(item => {
+
+    if (!item.missionIndicator) {
+      return;
+    }
+
+    item.missionIndicator.style.display =
+      item.element.style.display;
+
+  });
+
+}
+
+function renderPopupMissions(area) {
+
+  const areaMissions =
+    getMissionsForArea(area);
+
+  if (!areaMissions.length) {
+
+    popupMissions.classList.add(
+      "hidden"
+    );
+
+    popupMissionsList.innerHTML =
+      "";
+
+    return;
+
+  }
+
+  popupMissionsList.innerHTML =
+    areaMissions
+      .map(mission => `
+        <div class="popup-mission-item">
+          <span class="popup-mission-title">
+            ${
+              mission.done
+                ? "✅"
+                : mission.type === "stand"
+                ? "🎯"
+                : "📚"
+            }
+            ${mission.title}
+          </span>
+          <span class="popup-mission-status">
+            ${
+              mission.done
+                ? "Completata"
+                : "Da fare"
+            }
+          </span>
+        </div>
+      `)
+      .join("");
+
+  popupMissions.classList.remove(
+    "hidden"
+  );
+
+}
+
+function refreshMissionUI() {
+
+  syncMissionsFromStorage();
+
+  updateMissionIndicators();
+
+  if (
+    activeSpecialFilter === "missions"
+  ) {
+
+    applyMissionFilter();
+
+  }
+
+  if (
+    activeAreaData &&
+    !popup.classList.contains(
+      "hidden"
+    )
+  ) {
+
+    renderPopupMissions(
+      activeAreaData
+    );
+
+  }
 
 }
 
@@ -268,6 +560,21 @@ function setActiveArea(
     areaElement
   );
 
+  const activeItem =
+    AREA_INDEX.find(item =>
+      item.element === areaElement
+    );
+
+  if (
+    activeItem?.missionIndicator
+  ) {
+
+    svg.appendChild(
+      activeItem.missionIndicator
+    );
+
+  }
+
 }
 
 function resetMapVisibility() {
@@ -288,6 +595,8 @@ function resetMapVisibility() {
   );
 
   clearAreaStates();
+
+  syncMissionIndicatorVisibility();
 
 }
 
@@ -343,6 +652,8 @@ function applyFilter(
 
   });
 
+  syncMissionIndicatorVisibility();
+
 }
 
 function clearFilter() {
@@ -380,6 +691,8 @@ function clearFilter() {
     );
 
   });
+
+  syncMissionIndicatorVisibility();
 }
 
 function resetSearch() {
@@ -478,6 +791,10 @@ console.log("PUBLISHERS:", publishers);
     TYPE_LABELS[
       area.type
     ] || area.type;
+
+  renderPopupMissions(
+    area
+  );
 
   if (
   area.type === "stand"
@@ -597,6 +914,8 @@ async function loadMap() {
   areas.forEach(
     renderArea
   );
+
+  updateMissionIndicators();
 
 }
 
@@ -1021,8 +1340,55 @@ if (isFavorite) {
 
       });
 
+    syncMissionIndicatorVisibility();
+
   }
 );
+
+function applyMissionFilter() {
+
+  document
+    .querySelectorAll(
+      ".map-area"
+    )
+    .forEach(el => {
+
+      const areaId =
+        el.dataset.id;
+
+      const areaData =
+        AREA_INDEX.find(
+          item =>
+            item.area.id === areaId
+        )?.area;
+
+      const isMission =
+        getMissionsForArea(
+          areaData
+        ).length > 0;
+
+      el.style.display =
+        isMission
+          ? ""
+          : "none";
+
+      el.classList.remove(
+        "active"
+      );
+
+      if (isMission) {
+
+        el.classList.add(
+          "active"
+        );
+
+      }
+
+    });
+
+  syncMissionIndicatorVisibility();
+
+}
 
 missionFilterBtn.addEventListener(
   "click",
@@ -1057,43 +1423,7 @@ missionFilterBtn.addEventListener(
       "active"
     );
 
-    document
-      .querySelectorAll(
-        ".map-area"
-      )
-      .forEach(el => {
-
-        const standName =
-          el.dataset.id
-            .replace(/^P1_/, "")
-            .replace(/_\d+$/, "")
-            .replaceAll("_", "-");
-
-        const isMission =
-          missions.some(
-            mission =>
-              mission.stand ===
-              standName
-          );
-
-        el.style.display =
-          isMission
-            ? ""
-            : "none";
-
-        el.classList.remove(
-          "active"
-        );
-
-        if (isMission) {
-
-          el.classList.add(
-            "active"
-          );
-
-        }
-
-      });
+    applyMissionFilter();
 
   }
 );
@@ -1238,6 +1568,65 @@ popupVisitedBtn.addEventListener(
     );
 
   }
+);
+
+popupCompleteMissionsBtn.addEventListener(
+  "click",
+  () => {
+
+    if (!activeAreaData) {
+      return;
+    }
+
+    const areaMissionIds =
+      getMissionsForArea(
+        activeAreaData
+      )
+        .map(mission =>
+          mission.id
+        );
+
+    if (!areaMissionIds.length) {
+      return;
+    }
+
+    missions =
+      missions.map(mission =>
+        areaMissionIds.includes(
+          mission.id
+        )
+          ? {
+              ...mission,
+              done: true
+            }
+          : mission
+      );
+
+    saveMissions();
+
+    refreshMissionUI();
+
+  }
+);
+
+window.addEventListener(
+  "storage",
+  event => {
+
+    if (
+      event.key === "missions"
+    ) {
+
+      refreshMissionUI();
+
+    }
+
+  }
+);
+
+window.addEventListener(
+  "missions:updated",
+  refreshMissionUI
 );
   
 loadMap();

@@ -1261,7 +1261,7 @@ body.dark .mission-card p{
 
 }
 
-/* priorità */
+/* prioritÃ  */
 
 #priorityHighBtn.active {
 
@@ -1416,6 +1416,56 @@ body.dark .mission-card p{
   gap:10px;
 
   margin-bottom:14px;
+
+}
+
+.mission-sort{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:14px;
+
+}
+
+.mission-sort label{
+
+  color:#777;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  white-space:nowrap;
+
+}
+
+body.dark .mission-sort label{
+
+  color:#aaa;
+
+}
+
+.mission-sort select{
+
+  flex:1;
+
+  border:none;
+
+  background:var(--input);
+
+  color:var(--text);
+
+  padding:10px 14px;
+
+  border-radius:12px;
+
+  font-size:14px;
+
+  outline:none;
 
 }
 

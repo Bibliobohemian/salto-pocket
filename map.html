@@ -591,6 +591,105 @@ filter: none;
 
     }
 
+    .popup-missions {
+
+      margin-top: 18px;
+
+      padding-top: 16px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.14);
+
+    }
+
+    .popup-missions-title {
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      margin-bottom: 10px;
+
+    }
+
+    .popup-missions-list {
+
+      display: grid;
+
+      gap: 8px;
+
+      margin-bottom: 12px;
+
+    }
+
+    .popup-mission-item {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 12px;
+
+      font-size: 14px;
+
+      line-height: 1.35;
+
+    }
+
+    .popup-mission-title {
+
+      font-weight: 600;
+
+    }
+
+    .popup-mission-status {
+
+      color: #d1d5db;
+
+      white-space: nowrap;
+
+    }
+
+    .popup-complete-missions-btn {
+
+      width: 100%;
+
+      border: none;
+
+      border-radius: 12px;
+
+      padding:
+        11px 12px;
+
+      background:
+        #7c3aed;
+
+      color:
+        white;
+
+      cursor: pointer;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+    }
+
+    .map-mission-indicator {
+
+      fill:
+        #7c3aed;
+
+      stroke:
+        white;
+
+      stroke-width:
+        2;
+
+      pointer-events: none;
+
+    }
+
     .tooltip {
 
       position: fixed;
@@ -948,6 +1047,21 @@ filter: none;
       </div>
 
       <div class="popup-type">
+      </div>
+
+      <div class="popup-missions hidden">
+
+        <div class="popup-missions-title">
+          🎯 Missioni
+        </div>
+
+        <div class="popup-missions-list">
+        </div>
+
+        <button class="popup-complete-missions-btn">
+          Segna tutte come completate
+        </button>
+
       </div>
 
 <div

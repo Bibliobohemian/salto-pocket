@@ -1,81 +1,120 @@
 const CACHE_NAME =
-  "salto-pocket-v1";
+  "salto-pocket-v2";
 
 const urlsToCache = [
 
-  "/",
+  "./",
 
-  "/index.html",
+  "./index.html",
 
-  "/style.css",
+  "./style.css",
 
-  "/script.js",
+  "./script.js",
 
-  "/manifest.json",
+  "./manifest.json",
 
-  "/data/exhibitors.json",
+  "./data/exhibitors.json",
 
-  "/images/icon-192.png",
+  "./map.html",
 
-  "/images/icon-512.png",
+  "./js/map-engine.js",
 
-  "/images/SDL26_mappa_V_1.png",
+  "./maps/2026/pad1/areas.json",
 
-  "/images/SDL26_mappa_V_2.png",
+  "./maps/2026/pad1/map.png",
 
-  "/images/SDL26_mappa_V_3.png",
+  "./maps/2026/pad1/raw-map.json",
 
-  "/images/SDL26_mappa_V_4.png",
+  "./images/icon-192.png",
 
-  "/images/SDL26_mappa_V_5.png"
+  "./images/icon-512.png",
+
+  "./images/SDL26_mappa_V_1.png",
+
+  "./images/SDL26_mappa_V_2.png",
+
+  "./images/SDL26_mappa_V_3.png",
+
+  "./images/SDL26_mappa_V_4.png",
+
+  "./images/SDL26_mappa_V_5.png"
 
 ];
 
-/* =========================
-   INSTALL
-========================= */
-
 self.addEventListener(
   "install",
-  (event) => {
+  event => {
+
+    self.skipWaiting();
 
     event.waitUntil(
-
       caches.open(CACHE_NAME)
-        .then(cache => {
-
-          return cache.addAll(
-            urlsToCache
-          );
-
-        })
-
+        .then(cache =>
+          cache.addAll(urlsToCache)
+        )
     );
 
   }
 );
 
-/* =========================
-   FETCH
-========================= */
+self.addEventListener(
+  "activate",
+  event => {
+
+    event.waitUntil(
+      caches.keys()
+        .then(names =>
+          Promise.all(
+            names
+              .filter(name =>
+                name !== CACHE_NAME
+              )
+              .map(name =>
+                caches.delete(name)
+              )
+          )
+        )
+        .then(() =>
+          self.clients.claim()
+        )
+    );
+
+  }
+);
 
 self.addEventListener(
   "fetch",
-  (event) => {
+  event => {
+
+    if (
+      event.request.method !== "GET"
+    ) {
+      return;
+    }
 
     event.respondWith(
-
-      caches.match(event.request)
+      fetch(event.request)
         .then(response => {
 
-          return (
-            response
-            ||
-            fetch(event.request)
-          );
+          const copy =
+            response.clone();
+
+          caches.open(CACHE_NAME)
+            .then(cache =>
+              cache.put(
+                event.request,
+                copy
+              )
+            );
+
+          return response;
 
         })
-
+        .catch(() =>
+          caches.match(
+            event.request
+          )
+        )
     );
 
   }

@@ -1856,20 +1856,17 @@ window.deleteMission =
 window.editMission =
   editMission;
 
-window.addEventListener(
-  "storage",
-  event => {
-
-    if(
-      event.key === "missions"
-    ){
-
-      syncMissionsFromStorage();
-
-    }
-
+window.addEventListener("storage", event => {
+  if (event.key === "missions" || event.key === null) {
+    syncMissionsFromStorage();
   }
-);
+  if (event.key === "favorites" || event.key === "visited" || event.key === null) {
+    favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    visited = JSON.parse(localStorage.getItem("visited")) || [];
+    updateCounters();
+    updateView();
+  }
+});
 
 /* =========================
    INIT

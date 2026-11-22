@@ -1023,14 +1023,37 @@ async function loadMap() {
 
   buildExhibitorIndex();
 
-  areas.forEach(
-    renderArea
-  );
-
+  areas.forEach(renderArea);
+  migrateLegacyVisitedAreas();
   updateMissionIndicators();
 
   openInitialMapTarget();
 
+}
+
+function migrateLegacyVisitedAreas() {
+  // Preserve user data while converting legacy map SVG IDs into publisher names.
+  const areasById = new Map(AREA_INDEX.map(item => [item.area.id, item.area]));
+  const updated = new Set();
+  let changed = false;
+
+  visited.forEach(value => {
+    const area = areasById.get(value);
+    if (area && area.type === "stand") {
+      const names = getPublisherNamesForArea(area);
+      if (names.length) {
+        names.forEach(name => updated.add(name));
+        changed = true;
+        return;
+      }
+    }
+    updated.add(value);
+  });
+
+  if (changed) {
+    visited = [...updated];
+    localStorage.setItem("visited", JSON.stringify(visited));
+  }
 }
 
 function renderArea(area) {
@@ -1647,27 +1670,17 @@ popupVisitedBtn.addEventListener(
       return;
     }
 
-    const id =
-      activeAreaData.id;
+    // Use exhibitor names, the same identifiers stored by the Pocket.
+    const publisherNames = getPublisherNamesForArea(activeAreaData);
+    if (!publisherNames.length) return;
 
-    if (
-      visited.includes(
-        id
-      )
-    ) {
-
-      visited =
-        visited.filter(
-          item =>
-            item !== id
-        );
-
+    const allVisited = publisherNames.every(name => visited.includes(name));
+    if (allVisited) {
+      visited = visited.filter(name => !publisherNames.includes(name));
     } else {
-
-      visited.push(
-        id
-      );
-
+      publisherNames.forEach(name => {
+        if (!visited.includes(name)) visited.push(name);
+      });
     }
 
     localStorage.setItem(
@@ -1723,20 +1736,29 @@ popupCompleteMissionsBtn.addEventListener(
   }
 );
 
-window.addEventListener(
-  "storage",
-  event => {
-
-    if (
-      event.key === "missions"
-    ) {
-
-      refreshMissionUI();
-
-    }
-
+window.addEventListener("storage", event => {
+  if (event.key === "missions" || event.key === null) {
+    refreshMissionUI();
   }
-);
+  if (event.key === "favorites" || event.key === "visited" || event.key === null) {
+    favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    visited = JSON.parse(localStorage.getItem("visited")) || [];
+    if (activeAreaData && !popup.classList.contains("hidden")) {
+      updateActionButtons(activeAreaData);
+    }
+    if (activeSpecialFilter === "favorites") {
+      // Re-apply current filter without toggling its button or changing other state.
+      document.querySelectorAll(".map-area").forEach(el => {
+        const area = AREA_INDEX.find(item => item.area.id === el.dataset.id)?.area;
+        const names = area ? getPublisherNamesForArea(area) : [];
+        const isFavorite = names.some(name => favorites.includes(name));
+        el.style.display = isFavorite ? "" : "none";
+        el.classList.toggle("active", isFavorite);
+      });
+      syncMissionIndicatorVisibility();
+    }
+  }
+});
 
 window.addEventListener(
   "missions:updated",

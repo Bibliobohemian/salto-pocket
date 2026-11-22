@@ -788,9 +788,8 @@ function highlight(text, value){
 
   if(!value) return text;
 
-  const escapedValue = value.replace(/[.*+?^\$\{\}()|[\]\\]/g, "\\  const regex =
-    new RegExp(`(${value})`, "gi");");
-  const regex = new RegExp(`(${escapedValue})`, "gi");
+  const escapedValue = [...value].map(char => "\\^$.*+?()[]{}|".includes(char) ? "\\" + char : char).join("");
+  const regex = new RegExp("(" + escapedValue + ")", "gi");
 
   return text.replace(
     regex,
